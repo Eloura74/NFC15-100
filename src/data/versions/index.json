@@ -1,0 +1,30 @@
+[
+  {
+    "id": "nfc15100-2015",
+    "name": "NF C 15-100 (2015)",
+    "fullName": "NF C 15-100 - Installations électriques à basse tension (2015)",
+    "startDate": "2015-06-01",
+    "endDate": "2020-11-01",
+    "isCurrent": false,
+    "description": "Version 2015 de la norme NF C 15-100",
+    "majorChanges": [
+      "Évolution des exigences pour les logements",
+      "Nouvelles règles pour les IRVE",
+      "Mise à jour des volumes de salle d'eau"
+    ]
+  },
+  {
+    "id": "nfc15100-2020",
+    "name": "NF C 15-100 (2020)",
+    "fullName": "NF C 15-100 - Installations électriques à basse tension (2020)",
+    "startDate": "2020-11-01",
+    "isCurrent": true,
+    "description": "Version actuelle de la norme NF C 15-100",
+    "majorChanges": [
+      "Renforcement des exigences IRVE",
+      "Évolution du nombre de circuits",
+      "Nouvelles règles pour le photovoltaïque",
+      "Mise à jour des protections différentielles"
+    ]
+  }
+]

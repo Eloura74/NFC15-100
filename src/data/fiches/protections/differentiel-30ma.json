@@ -1,0 +1,212 @@
+{
+  "id": "diff-30ma-logement",
+  "title": "Protection différentielle 30 mA en logement",
+  "summary": "Obligation et règles d'installation des dispositifs différentiels 30 mA dans les installations domestiques",
+  "immediateAnswer": "Tous les circuits d'un logement doivent être protégés par au moins un dispositif différentiel 30 mA. Au minimum 2 DDR 30 mA de type A ou F sont requis.",
+  "domain": "protections",
+  "subDomain": "differentiel",
+  "keywords": [
+    "différentiel",
+    "30mA",
+    "DDR",
+    "interrupteur différentiel",
+    "disjoncteur différentiel",
+    "protection personnes",
+    "type A",
+    "type AC",
+    "type F"
+  ],
+  "synonyms": [
+    "inter diff",
+    "diff 30",
+    "protection différentielle",
+    "dispositif différentiel résiduel"
+  ],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement individuel",
+      "required": true
+    },
+    {
+      "type": "installation",
+      "value": "Logement collectif",
+      "required": true
+    },
+    {
+      "type": "work",
+      "value": "Neuf",
+      "required": false
+    },
+    {
+      "type": "work",
+      "value": "Rénovation totale",
+      "required": false
+    }
+  ],
+  "excludedContexts": [
+    {
+      "type": "installation",
+      "value": "Tertiaire"
+    },
+    {
+      "type": "installation",
+      "value": "Industrie"
+    }
+  ],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-05-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Cette règle s'applique à toutes les installations électriques des logements neufs et en rénovation totale. Elle concerne la protection des personnes contre les contacts indirects et les défauts d'isolement.",
+    "requirements": [
+      "Au minimum 2 dispositifs différentiels 30 mA",
+      "Au moins un DDR de type A ou F",
+      "Répartition équilibrée des circuits",
+      "Sélectivité avec le disjoncteur de branchement si différentiel",
+      "Accessibilité des dispositifs"
+    ],
+    "values": [
+      {
+        "label": "Sensibilité maximale",
+        "value": 30,
+        "unit": "mA",
+        "conditions": ["Protection des personnes"],
+        "source": "NF C 15-100 § 771.531.2.1"
+      },
+      {
+        "label": "Nombre minimal de DDR",
+        "value": 2,
+        "conditions": ["Logement", "Surface > 35 m²"],
+        "source": "NF C 15-100 § 771.531.2.1"
+      },
+      {
+        "label": "Nombre minimal de type A ou F",
+        "value": 1,
+        "conditions": ["Circuits spécialisés"],
+        "source": "NF C 15-100 § 771.531.2.1"
+      }
+    ],
+    "exceptions": [
+      "Les logements de surface ≤ 35 m² peuvent n'avoir qu'un seul DDR 30 mA",
+      "Les circuits alimentés en TBTS ou TBTP peuvent être dispensés de protection différentielle 30 mA",
+      "Certains équipements fixes peuvent être protégés par DDR 300 mA si justifié"
+    ],
+    "specialCases": [
+      "Type A obligatoire pour : plaques de cuisson, lave-linge, prises commandées, circuits spécialisés",
+      "Type F recommandé pour améliorer la continuité de service",
+      "Type B nécessaire pour certaines installations photovoltaïques ou IRVE",
+      "En présence d'un disjoncteur de branchement différentiel 500 mA, vérifier la sélectivité"
+    ],
+    "commonErrors": [
+      "Installer un seul DDR 30 mA pour tout le logement (sauf ≤ 35 m²)",
+      "Utiliser uniquement des DDR de type AC",
+      "Ne pas répartir équitablement les circuits",
+      "Oublier la protection différentielle sur certains circuits",
+      "Installer les DDR dans un endroit non accessible",
+      "Ne pas vérifier la sélectivité avec le disjoncteur de branchement"
+    ],
+    "risks": [
+      {
+        "description": "Électrisation ou électrocution en cas de défaut d'isolement",
+        "level": "critique",
+        "consequences": [
+          "Danger mortel pour les personnes",
+          "Non-conformité réglementaire",
+          "Refus CONSUEL"
+        ]
+      },
+      {
+        "description": "Perte totale de l'installation en cas de déclenchement",
+        "level": "moyen",
+        "consequences": [
+          "Inconfort (un seul DDR)",
+          "Perte de réfrigération",
+          "Perte de chauffage"
+        ]
+      }
+    ],
+    "controls": [
+      "Vérifier le nombre de DDR installés",
+      "Vérifier qu'au moins un est de type A ou F",
+      "Tester le déclenchement de chaque DDR (bouton test)",
+      "Vérifier la répartition des circuits",
+      "Mesurer le courant de déclenchement si possible",
+      "Vérifier l'accessibilité",
+      "Contrôler le repérage"
+    ],
+    "checklist": [
+      "Minimum 2 DDR 30 mA installés (ou 1 si ≤ 35 m²)",
+      "Au moins 1 DDR de type A ou F",
+      "Circuits répartis équitablement",
+      "DDR accessibles",
+      "Repérage clair",
+      "Test de déclenchement OK",
+      "Sélectivité vérifiée si DB différentiel"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100-771",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100",
+      "article": "§ 771.531.2",
+      "date": "2020-11",
+      "url": "https://www.boutique.afnor.org/"
+    },
+    {
+      "id": "guide-promotelec",
+      "type": "institutionnelle",
+      "title": "Guide Promotelec",
+      "reference": "Guide Promotelec Locaux d'habitation",
+      "date": "2021"
+    }
+  ],
+  "relatedSheets": [
+    "diff-type-a-ac",
+    "diff-selectivite",
+    "tableau-logement",
+    "circuits-specialises"
+  ],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {
+      "date": "2026-01-15",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    },
+    {
+      "date": "2026-02-10",
+      "author": "Expert technique",
+      "action": "validated",
+      "description": "Validation technique et des sources"
+    },
+    {
+      "date": "2026-02-15",
+      "author": "Équipe éditoriale",
+      "action": "published",
+      "description": "Publication",
+      "changes": ["Ajout d'exemples", "Précision sur le type F"]
+    },
+    {
+      "date": "2026-05-15",
+      "author": "Expert technique",
+      "action": "updated",
+      "description": "Vérification périodique - Aucun changement nécessaire"
+    }
+  ],
+  "tags": [
+    "protection",
+    "différentiel",
+    "30mA",
+    "logement",
+    "obligatoire",
+    "sécurité",
+    "personnes"
+  ]
+}

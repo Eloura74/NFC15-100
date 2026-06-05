@@ -1,0 +1,152 @@
+[
+  {
+    "id": "alimentation",
+    "name": "Alimentation et distribution",
+    "description": "Branchement, comptage, tableaux et distribution principale",
+    "icon": "zap",
+    "sheetCount": 12,
+    "subDomains": [
+      {
+        "id": "branchement",
+        "name": "Branchement",
+        "description": "Raccordement au réseau de distribution",
+        "sheetCount": 3
+      },
+      {
+        "id": "comptage",
+        "name": "Comptage",
+        "description": "Installation et protection du compteur",
+        "sheetCount": 2
+      },
+      {
+        "id": "tableaux",
+        "name": "Tableaux électriques",
+        "description": "Tableaux principaux et divisionnaires",
+        "sheetCount": 7
+      }
+    ]
+  },
+  {
+    "id": "protections",
+    "name": "Protections",
+    "description": "Dispositifs de protection des personnes et des biens",
+    "icon": "shield",
+    "sheetCount": 15,
+    "subDomains": [
+      {
+        "id": "differentiel",
+        "name": "Protection différentielle",
+        "description": "DDR, interrupteurs et disjoncteurs différentiels",
+        "sheetCount": 6
+      },
+      {
+        "id": "surintensites",
+        "name": "Protection contre les surintensités",
+        "description": "Disjoncteurs, fusibles, calibres",
+        "sheetCount": 5
+      },
+      {
+        "id": "surtensions",
+        "name": "Protection contre les surtensions",
+        "description": "Parafoudre et paratonnerre",
+        "sheetCount": 4
+      }
+    ]
+  },
+  {
+    "id": "terre",
+    "name": "Mise à la terre",
+    "description": "Prises de terre et liaisons équipotentielles",
+    "icon": "anchor",
+    "sheetCount": 8,
+    "subDomains": [
+      {
+        "id": "prise-terre",
+        "name": "Prise de terre",
+        "description": "Installation et mesure de la prise de terre",
+        "sheetCount": 4
+      },
+      {
+        "id": "liaisons",
+        "name": "Liaisons équipotentielles",
+        "description": "LEP et LES",
+        "sheetCount": 4
+      }
+    ]
+  },
+  {
+    "id": "circuits",
+    "name": "Circuits terminaux",
+    "description": "Éclairage, prises, chauffage et circuits spécialisés",
+    "icon": "cable",
+    "sheetCount": 20,
+    "subDomains": [
+      {
+        "id": "eclairage",
+        "name": "Circuits d'éclairage",
+        "description": "Points lumineux et commandes",
+        "sheetCount": 5
+      },
+      {
+        "id": "prises",
+        "name": "Circuits de prises",
+        "description": "Prises de courant et circuits spécialisés",
+        "sheetCount": 8
+      },
+      {
+        "id": "chauffage",
+        "name": "Chauffage et eau chaude",
+        "description": "Circuits de chauffage électrique",
+        "sheetCount": 7
+      }
+    ]
+  },
+  {
+    "id": "locaux-speciaux",
+    "name": "Locaux spéciaux",
+    "description": "Salles d'eau, piscines, extérieur et locaux à risques",
+    "icon": "droplet",
+    "sheetCount": 18,
+    "subDomains": [
+      {
+        "id": "salle-eau",
+        "name": "Salles d'eau",
+        "description": "Volumes et règles d'installation",
+        "sheetCount": 6
+      },
+      {
+        "id": "piscine",
+        "name": "Piscines et bassins",
+        "description": "Installations pour piscines",
+        "sheetCount": 5
+      },
+      {
+        "id": "exterieur",
+        "name": "Installations extérieures",
+        "description": "Éclairage, prises et équipements extérieurs",
+        "sheetCount": 7
+      }
+    ]
+  },
+  {
+    "id": "energie",
+    "name": "Énergies renouvelables",
+    "description": "IRVE, photovoltaïque et stockage",
+    "icon": "battery-charging",
+    "sheetCount": 10,
+    "subDomains": [
+      {
+        "id": "irve",
+        "name": "IRVE",
+        "description": "Bornes de recharge pour véhicules électriques",
+        "sheetCount": 5
+      },
+      {
+        "id": "photovoltaique",
+        "name": "Photovoltaïque",
+        "description": "Installations solaires photovoltaïques",
+        "sheetCount": 5
+      }
+    ]
+  }
+]
