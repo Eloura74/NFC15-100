@@ -1,0 +1,71 @@
+{
+  "id": "disjoncteur-branchement",
+  "title": "Disjoncteur de branchement",
+  "summary": "Calibre et réglage du disjoncteur de branchement selon la puissance souscrite",
+  "immediateAnswer": "Le disjoncteur de branchement doit être calibré selon la puissance souscrite : 15/45A pour 9kVA, 30/60A pour 12kVA, 60/90A pour 18kVA.",
+  "domain": "protections",
+  "subDomain": "surintensites",
+  "keywords": ["disjoncteur", "branchement", "AGCP", "calibre", "puissance", "kVA", "ampères"],
+  "synonyms": ["DB", "AGCP", "appareil général de commande et protection"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement", "required": true},
+    {"type": "work", "value": "Neuf", "required": false}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Le disjoncteur de branchement est obligatoire pour toute installation électrique. Il assure la protection générale et permet la coupure d'urgence.",
+    "requirements": [
+      "Accessible depuis l'intérieur du logement",
+      "Hauteur entre 0,90m et 1,80m",
+      "Calibre adapté à la puissance souscrite",
+      "Sélectivité avec les protections aval"
+    ],
+    "values": [
+      {"label": "9 kVA", "value": "15/45", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
+      {"label": "12 kVA", "value": "30/60", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
+      {"label": "18 kVA", "value": "60/90", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
+      {"label": "36 kVA", "value": "60", "unit": "A", "conditions": ["Triphasé"], "source": "NF C 14-100"}
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "En triphasé, le calibre est différent",
+      "Certains DB sont différentiels 500mA",
+      "Le réglage peut être ajusté par le distributeur"
+    ],
+    "commonErrors": [
+      "DB installé trop haut ou trop bas",
+      "DB non accessible",
+      "Calibre inadapté à la puissance",
+      "Pas de sélectivité avec les DDR aval"
+    ],
+    "risks": [
+      {
+        "description": "Déclenchements intempestifs si mal calibré",
+        "level": "moyen",
+        "consequences": ["Inconfort", "Perte d'alimentation"]
+      }
+    ],
+    "controls": [
+      "Vérifier l'accessibilité",
+      "Vérifier la hauteur d'installation",
+      "Vérifier le calibre selon puissance souscrite",
+      "Tester le déclenchement"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc14100", "type": "normative", "title": "NF C 14-100", "reference": "NF C 14-100", "date": "2020"}
+  ],
+  "relatedSheets": ["diff-30ma-logement", "tableau-logement"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["disjoncteur", "branchement", "AGCP", "protection", "calibre"]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "gaine-technique-logement",
+  "title": "Gaine technique logement (GTL)",
+  "summary": "Dimensions, emplacement et contenu de la gaine technique logement",
+  "immediateAnswer": "La GTL doit mesurer minimum 600mm de large × 250mm de profondeur, contenir le tableau électrique, le panneau de contrôle et les équipements de communication.",
+  "domain": "alimentation",
+  "subDomain": "tableaux",
+  "keywords": ["GTL", "gaine technique", "tableau", "dimensions", "logement"],
+  "synonyms": ["gaine technique", "espace technique"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement", "required": true},
+    {"type": "work", "value": "Neuf", "required": false}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "attention",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Obligatoire dans tous les logements neufs. Recommandée en rénovation totale.",
+    "requirements": [
+      "Largeur minimale 600mm",
+      "Profondeur minimale 250mm",
+      "Du sol au plafond",
+      "Accessible",
+      "Contient DB, tableau, communication"
+    ],
+    "values": [
+      {"label": "Largeur minimale", "value": 600, "unit": "mm", "conditions": ["Standard"], "source": "NF C 15-100"},
+      {"label": "Profondeur minimale", "value": 250, "unit": "mm", "conditions": ["Standard"], "source": "NF C 15-100"},
+      {"label": "Hauteur", "value": "Sol au plafond", "conditions": ["Obligatoire"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [
+      "Logements existants : GTL non obligatoire sauf rénovation totale"
+    ],
+    "specialCases": [
+      "Exemple 1 : GTL 600×250mm avec DB + tableau 2 rangées + coffret communication → OK",
+      "Exemple 2 : GTL 450mm de large → Non conforme, trop étroite",
+      "Exemple 3 : GTL dans garage attenant → OK si accessible",
+      "Exemple 4 : GTL avec porte → OK, améliore l'esthétique"
+    ],
+    "commonErrors": [
+      "Largeur insuffisante (< 600mm)",
+      "GTL ne va pas jusqu'au plafond",
+      "Pas d'espace pour évolutions futures",
+      "GTL dans local non accessible"
+    ],
+    "risks": [
+      {
+        "description": "Impossibilité d'ajouter des équipements",
+        "level": "moyen",
+        "consequences": ["Non-conformité", "Travaux supplémentaires"]
+      }
+    ],
+    "controls": [
+      "Mesurer largeur et profondeur",
+      "Vérifier hauteur sol-plafond",
+      "Vérifier accessibilité",
+      "Vérifier espace disponible"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.559", "date": "2020"}
+  ],
+  "relatedSheets": ["disjoncteur-branchement"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["GTL", "gaine technique", "tableau", "dimensions", "logement"]
+}

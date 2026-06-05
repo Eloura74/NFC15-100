@@ -1,0 +1,76 @@
+{
+  "id": "prises-cuisine",
+  "title": "Prises de courant en cuisine",
+  "summary": "Nombre et disposition des prises de courant dans une cuisine",
+  "immediateAnswer": "Minimum 6 prises en cuisine dont 4 au-dessus du plan de travail. Circuits spécialisés obligatoires pour four, plaques, lave-vaisselle.",
+  "domain": "circuits",
+  "subDomain": "prises",
+  "keywords": ["prises", "cuisine", "plan de travail", "circuits spécialisés", "électroménager"],
+  "synonyms": ["socles de prise", "PC cuisine"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement", "required": true},
+    {"type": "local", "value": "Cuisine", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "attention",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Cette règle s'applique à toutes les cuisines de logements neufs ou en rénovation totale.",
+    "requirements": [
+      "Minimum 6 prises 16A 2P+T",
+      "4 prises au-dessus du plan de travail",
+      "Circuits spécialisés pour gros électroménager",
+      "Protection différentielle 30mA"
+    ],
+    "values": [
+      {"label": "Nombre minimal de prises", "value": 6, "conditions": ["Cuisine"], "source": "NF C 15-100 § 771.314.2.3"},
+      {"label": "Prises plan de travail", "value": 4, "conditions": ["Au-dessus du plan"], "source": "NF C 15-100"},
+      {"label": "Hauteur prises plan", "value": "8-25", "unit": "cm", "conditions": ["Au-dessus du plan"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [
+      "Les prises peuvent être réparties sur plusieurs circuits",
+      "Cuisine < 4m² : 3 prises minimum"
+    ],
+    "specialCases": [
+      "Plaques de cuisson : circuit spécialisé 32A",
+      "Four : circuit spécialisé 20A",
+      "Lave-vaisselle : circuit spécialisé 20A",
+      "Lave-linge : circuit spécialisé 20A (si en cuisine)"
+    ],
+    "commonErrors": [
+      "Moins de 6 prises au total",
+      "Moins de 4 prises au plan de travail",
+      "Prises trop hautes au-dessus du plan",
+      "Pas de circuits spécialisés",
+      "Prises trop proches de l'évier ou plaques"
+    ],
+    "risks": [
+      {
+        "description": "Surcharge des circuits si prises insuffisantes",
+        "level": "moyen",
+        "consequences": ["Déclenchements", "Échauffement", "Risque incendie"]
+      }
+    ],
+    "controls": [
+      "Compter le nombre total de prises",
+      "Compter les prises au plan de travail",
+      "Vérifier la hauteur des prises plan",
+      "Vérifier les circuits spécialisés",
+      "Vérifier l'éloignement eau/gaz"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100-771", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.314.2.3", "date": "2020"}
+  ],
+  "relatedSheets": ["circuits-specialises", "diff-30ma-logement"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["prises", "cuisine", "circuits", "plan de travail", "électroménager"]
+}

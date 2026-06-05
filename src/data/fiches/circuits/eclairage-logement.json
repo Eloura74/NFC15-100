@@ -1,0 +1,72 @@
+{
+  "id": "eclairage-logement",
+  "title": "Circuits d'éclairage en logement",
+  "summary": "Nombre de points d'éclairage par circuit et protection adaptée",
+  "immediateAnswer": "Maximum 8 points d'éclairage par circuit 16A ou 2 points par circuit 10A. Protection différentielle 30mA obligatoire.",
+  "domain": "circuits",
+  "subDomain": "eclairage",
+  "keywords": ["éclairage", "points lumineux", "circuit", "disjoncteur", "16A", "10A"],
+  "synonyms": ["lumière", "lampes", "spots"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "normal",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Tous les circuits d'éclairage dans un logement doivent respecter ces règles de dimensionnement et de protection.",
+    "requirements": [
+      "Maximum 8 points lumineux par circuit 16A",
+      "Maximum 2 points lumineux par circuit 10A",
+      "Section minimale 1,5mm²",
+      "Protection différentielle 30mA",
+      "Disjoncteur adapté à la section"
+    ],
+    "values": [
+      {"label": "Points max (16A)", "value": 8, "conditions": ["Circuit 1,5mm²"], "source": "NF C 15-100"},
+      {"label": "Points max (10A)", "value": 2, "conditions": ["Circuit 1,5mm²"], "source": "NF C 15-100"},
+      {"label": "Section minimale", "value": 1.5, "unit": "mm²", "conditions": ["Cuivre"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [
+      "Spots LED basse consommation : possibilité de plus de 8 points si puissance totale < 2300W"
+    ],
+    "specialCases": [
+      "Exemple 1 : Salon avec 6 spots + 1 plafonnier + 1 applique = 8 points → OK sur 1 circuit 16A",
+      "Exemple 2 : Couloir avec 3 spots = 3 points → OK sur circuit 10A ou 16A",
+      "Exemple 3 : Chambre avec 1 plafonnier + 2 appliques = 3 points → OK"
+    ],
+    "commonErrors": [
+      "Plus de 8 points sur un circuit 16A",
+      "Section inférieure à 1,5mm²",
+      "Pas de protection différentielle",
+      "Mélanger éclairage et prises sur même circuit"
+    ],
+    "risks": [
+      {
+        "description": "Surcharge du circuit si trop de points",
+        "level": "moyen",
+        "consequences": ["Déclenchements", "Échauffement"]
+      }
+    ],
+    "controls": [
+      "Compter le nombre de points par circuit",
+      "Vérifier la section des câbles",
+      "Vérifier le calibre du disjoncteur",
+      "Vérifier la protection différentielle 30mA"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.314.2.2", "date": "2020"}
+  ],
+  "relatedSheets": ["diff-30ma-logement", "prises-cuisine"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["éclairage", "circuits", "points lumineux", "16A", "10A"]
+}

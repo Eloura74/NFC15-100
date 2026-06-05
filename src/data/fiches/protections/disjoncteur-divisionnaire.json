@@ -1,0 +1,74 @@
+{
+  "id": "disjoncteur-divisionnaire",
+  "title": "Disjoncteurs divisionnaires - Calibres et sections",
+  "summary": "Correspondance entre calibre du disjoncteur et section de câble",
+  "immediateAnswer": "Disjoncteur 10A → 1,5mm² | 16A → 1,5mm² | 20A → 2,5mm² | 32A → 6mm². Le disjoncteur protège le câble contre les surintensités.",
+  "domain": "protections",
+  "subDomain": "surintensites",
+  "keywords": ["disjoncteur", "calibre", "section", "câble", "protection", "surintensité"],
+  "synonyms": ["disjoncteur modulaire", "protection circuit"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Toute installation", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Chaque circuit doit être protégé par un disjoncteur adapté à la section du câble pour éviter l'échauffement et l'incendie.",
+    "requirements": [
+      "Calibre adapté à la section",
+      "Courbe C pour usage domestique",
+      "Pouvoir de coupure suffisant",
+      "Repérage des circuits"
+    ],
+    "values": [
+      {"label": "10A", "value": 1.5, "unit": "mm²", "conditions": ["Éclairage"], "source": "NF C 15-100"},
+      {"label": "16A", "value": 1.5, "unit": "mm²", "conditions": ["Prises, éclairage"], "source": "NF C 15-100"},
+      {"label": "20A", "value": 2.5, "unit": "mm²", "conditions": ["Prises cuisine, circuits spécialisés"], "source": "NF C 15-100"},
+      {"label": "25A", "value": 4, "unit": "mm²", "conditions": ["Circuits spécialisés"], "source": "NF C 15-100"},
+      {"label": "32A", "value": 6, "unit": "mm²", "conditions": ["Plaques cuisson, gros appareils"], "source": "NF C 15-100"},
+      {"label": "40A", "value": 10, "unit": "mm²", "conditions": ["Chauffage, gros circuits"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Exemple 1 : Circuit prises 16A avec câble 1,5mm² → OK",
+      "Exemple 2 : Circuit prises 20A avec câble 2,5mm² → OK pour cuisine",
+      "Exemple 3 : Plaque cuisson 32A avec câble 6mm² → OK",
+      "Exemple 4 : Circuit 20A avec câble 1,5mm² → DANGER ! Non conforme",
+      "Exemple 5 : Chauffage 4500W (20A) avec câble 2,5mm² → OK"
+    ],
+    "commonErrors": [
+      "Calibre trop élevé pour la section",
+      "Section insuffisante pour le calibre",
+      "Pas de repérage des circuits",
+      "Courbe B au lieu de C"
+    ],
+    "risks": [
+      {
+        "description": "Échauffement du câble si calibre trop élevé",
+        "level": "critique",
+        "consequences": ["Incendie", "Destruction du câble", "Danger mortel"]
+      }
+    ],
+    "controls": [
+      "Vérifier la section du câble",
+      "Vérifier le calibre du disjoncteur",
+      "Vérifier la correspondance",
+      "Vérifier le repérage"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 433", "date": "2020"}
+  ],
+  "relatedSheets": ["disjoncteur-branchement", "prises-cuisine"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["disjoncteur", "calibre", "section", "protection", "surintensité"]
+}

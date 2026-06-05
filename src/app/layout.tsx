@@ -3,7 +3,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'ElecNorme - Référence métier pour électriciens',
-  description: 'Application web de référence pour les professionnels de l\'électricité en France. Normes, calculs, checklists et outils pratiques.',
+  description:
+    "Application web de référence pour les professionnels de l'électricité en France. Normes, calculs, checklists et outils pratiques.",
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -30,6 +31,10 @@ export const viewport: Viewport = {
   ],
 };
 
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { Providers } from './providers';
+
 export default function RootLayout({
   children,
 }: {
@@ -37,8 +42,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="dark" suppressHydrationWarning>
-      <body className="min-h-screen antialiased">
-        {children}
+      <body className="min-h-screen antialiased flex flex-col">
+        <Providers>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

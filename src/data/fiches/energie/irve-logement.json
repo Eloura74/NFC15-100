@@ -1,0 +1,76 @@
+{
+  "id": "irve-logement",
+  "title": "IRVE en logement individuel",
+  "summary": "Installation de borne de recharge pour véhicule électrique en maison",
+  "immediateAnswer": "Circuit dédié 32A minimum, protection différentielle type F ou B, délesteur recommandé si puissance limitée. Pré-équipement obligatoire en neuf.",
+  "domain": "energie",
+  "subDomain": "irve",
+  "keywords": ["IRVE", "borne recharge", "véhicule électrique", "wallbox", "VE"],
+  "synonyms": ["borne de recharge", "wallbox", "point de charge"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement individuel", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "attention",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation d'une Infrastructure de Recharge de Véhicule Électrique en maison individuelle.",
+    "requirements": [
+      "Circuit dédié depuis le tableau",
+      "Protection différentielle type F ou B",
+      "Section de câble adaptée",
+      "Disjoncteur de protection",
+      "Pré-équipement en neuf"
+    ],
+    "values": [
+      {"label": "Intensité minimale", "value": 32, "unit": "A", "conditions": ["Monophasé"], "source": "NF C 15-100"},
+      {"label": "Puissance typique", "value": "7.4", "unit": "kW", "conditions": ["230V 32A"], "source": "Calcul"},
+      {"label": "Section câble 32A", "value": 6, "unit": "mm²", "conditions": ["Cuivre, < 30m"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [
+      "Prise renforcée 16A possible (charge lente)",
+      "Triphasé possible pour charges rapides"
+    ],
+    "specialCases": [
+      "Délesteur recommandé si puissance souscrite limitée",
+      "Compteur Linky : pilotage heures creuses possible",
+      "Neuf : pré-équipement obligatoire (gaine + protection)",
+      "Type B obligatoire si charge > 7.4kW"
+    ],
+    "commonErrors": [
+      "Circuit non dédié",
+      "Protection différentielle type AC ou A",
+      "Section de câble insuffisante",
+      "Pas de protection contre les surtensions",
+      "Installation non déclarée"
+    ],
+    "risks": [
+      {
+        "description": "Surcharge de l'installation",
+        "level": "moyen",
+        "consequences": ["Déclenchements", "Échauffement", "Disjonction générale"]
+      }
+    ],
+    "controls": [
+      "Vérifier le circuit dédié",
+      "Vérifier le type de différentiel (F ou B)",
+      "Vérifier la section du câble",
+      "Vérifier la puissance disponible",
+      "Tester le fonctionnement"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 722", "date": "2020"}
+  ],
+  "relatedSheets": ["diff-type-a-ac", "circuits-specialises"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["IRVE", "borne", "recharge", "véhicule électrique", "wallbox"]
+}

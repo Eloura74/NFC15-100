@@ -1,0 +1,74 @@
+{
+  "id": "prise-terre-valeur",
+  "title": "Valeur de la prise de terre",
+  "summary": "Valeur maximale de résistance de la prise de terre selon le type d'installation",
+  "immediateAnswer": "La résistance de la prise de terre doit être ≤ 100Ω en général. Si DDR 30mA : pas de valeur maximale imposée mais recommandé ≤ 100Ω.",
+  "domain": "terre",
+  "subDomain": "prise-terre",
+  "keywords": ["prise de terre", "résistance", "ohm", "mesure", "terre"],
+  "synonyms": ["résistance de terre", "valeur de terre"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Toute installation", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Toute installation électrique doit disposer d'une prise de terre avec une résistance mesurée et conforme.",
+    "requirements": [
+      "Mesure obligatoire de la résistance",
+      "Valeur adaptée au type de protection",
+      "Continuité électrique vérifiée",
+      "Liaison équipotentielle principale"
+    ],
+    "values": [
+      {"label": "Valeur générale", "value": 100, "unit": "Ω", "conditions": ["Recommandé"], "source": "NF C 15-100"},
+      {"label": "Avec DDR 30mA", "value": "Pas de max", "conditions": ["Protection 30mA"], "source": "NF C 15-100"},
+      {"label": "Tension de contact", "value": 50, "unit": "V", "conditions": ["Limite sécurité"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [
+      "Avec protection différentielle 30mA : pas de valeur maximale imposée",
+      "Certaines installations spéciales ont des exigences différentes"
+    ],
+    "specialCases": [
+      "Terrain rocheux : valeur plus élevée acceptable si DDR 30mA",
+      "Terrain humide : valeur généralement bonne",
+      "Plusieurs bâtiments : interconnexion des terres"
+    ],
+    "commonErrors": [
+      "Pas de mesure effectuée",
+      "Terre mal réalisée (piquet trop court)",
+      "Connexions oxydées",
+      "Pas de liaison équipotentielle",
+      "Barrette de mesure absente"
+    ],
+    "risks": [
+      {
+        "description": "Électrocution en cas de défaut d'isolement",
+        "level": "critique",
+        "consequences": ["Danger mortel", "Protection inefficace", "Non-conformité"]
+      }
+    ],
+    "controls": [
+      "Mesurer la résistance de terre",
+      "Vérifier la barrette de mesure",
+      "Vérifier les connexions",
+      "Vérifier la liaison équipotentielle principale",
+      "Contrôler la continuité"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 542", "date": "2020"}
+  ],
+  "relatedSheets": ["diff-30ma-logement", "liaisons-equipotentielles"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["terre", "résistance", "mesure", "sécurité", "protection"]
+}

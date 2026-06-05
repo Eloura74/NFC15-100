@@ -1,0 +1,77 @@
+{
+  "id": "volumes-salle-eau",
+  "title": "Volumes de salle d'eau",
+  "summary": "Définition et règles des volumes 0, 1 et 2 dans les salles d'eau",
+  "immediateAnswer": "Volume 0 : baignoire/douche. Volume 1 : jusqu'à 2,25m au-dessus. Volume 2 : jusqu'à 60cm autour du volume 1. Matériel IPX4 minimum en volume 1.",
+  "domain": "locaux-speciaux",
+  "subDomain": "salle-eau",
+  "keywords": ["volumes", "salle d'eau", "salle de bain", "IPX", "protection", "douche", "baignoire"],
+  "synonyms": ["zones salle de bain", "volumes de protection"],
+  "applicableContexts": [
+    {"type": "local", "value": "Salle d'eau", "required": true},
+    {"type": "local", "value": "Salle de bain", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Ces règles s'appliquent à toutes les salles d'eau contenant une baignoire ou une douche.",
+    "requirements": [
+      "Respect strict des volumes",
+      "Matériel adapté à chaque volume",
+      "Liaisons équipotentielles locales",
+      "Protection différentielle 30mA"
+    ],
+    "values": [
+      {"label": "Volume 0", "value": "Intérieur baignoire/douche", "conditions": ["IPX7"], "source": "NF C 15-100 § 701"},
+      {"label": "Volume 1 hauteur", "value": 2.25, "unit": "m", "conditions": ["Au-dessus du fond"], "source": "NF C 15-100 § 701"},
+      {"label": "Volume 2 distance", "value": 60, "unit": "cm", "conditions": ["Autour du volume 1"], "source": "NF C 15-100 § 701"},
+      {"label": "Protection minimale V1", "value": "IPX4", "conditions": ["Volume 1"], "source": "NF C 15-100 § 701"}
+    ],
+    "exceptions": [
+      "Douche sans receveur : volume 1 étendu à 1,20m du pommeau",
+      "Douche italienne : volume 0 au sol"
+    ],
+    "specialCases": [
+      "Volume 0 : Uniquement TBTS 12V",
+      "Volume 1 : Chauffe-eau instantané autorisé",
+      "Volume 2 : Prises interdites sauf rasoir",
+      "Hors volumes : Installation normale"
+    ],
+    "commonErrors": [
+      "Prise de courant en volume 1 ou 2",
+      "Interrupteur en volume 1",
+      "Matériel non IPX4 en volume 1",
+      "Pas de liaison équipotentielle",
+      "Boîte de connexion en volume 1"
+    ],
+    "risks": [
+      {
+        "description": "Électrocution par contact avec l'eau",
+        "level": "critique",
+        "consequences": ["Danger mortel", "Électrocution", "Non-conformité CONSUEL"]
+      }
+    ],
+    "controls": [
+      "Identifier les volumes",
+      "Vérifier l'absence de prises en V1 et V2",
+      "Vérifier les indices IPX du matériel",
+      "Vérifier la liaison équipotentielle",
+      "Vérifier la protection 30mA"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100-701", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 701", "date": "2020"}
+  ],
+  "relatedSheets": ["diff-30ma-logement", "liaisons-equipotentielles"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["volumes", "salle d'eau", "IPX", "protection", "baignoire", "douche", "sécurité"]
+}

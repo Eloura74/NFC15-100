@@ -1,0 +1,72 @@
+{
+  "id": "liaison-equipotentielle-principale",
+  "title": "Liaison équipotentielle principale (LEP)",
+  "summary": "Connexion des masses métalliques à la terre pour éviter les différences de potentiel",
+  "immediateAnswer": "La LEP relie à la terre : huisseries métalliques, canalisations eau/gaz, charpente métallique. Section minimale 6mm² en cuivre.",
+  "domain": "terre",
+  "subDomain": "liaisons-equipotentielles",
+  "keywords": ["liaison équipotentielle", "LEP", "terre", "masse", "potentiel", "6mm²"],
+  "synonyms": ["LEP", "mise à la terre des masses"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Toute installation", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Toute installation doit disposer d'une liaison équipotentielle principale reliant les masses métalliques à la terre.",
+    "requirements": [
+      "Section minimale 6mm² cuivre",
+      "Relier toutes les masses métalliques",
+      "Connexion à la barrette de terre",
+      "Conducteur vert/jaune",
+      "Accessibilité pour contrôle"
+    ],
+    "values": [
+      {"label": "Section minimale", "value": 6, "unit": "mm²", "conditions": ["Cuivre"], "source": "NF C 15-100"},
+      {"label": "Section si > 25mm²", "value": "Moitié de la section", "conditions": ["Conducteur principal"], "source": "NF C 15-100"}
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Exemple 1 : Huisserie métallique de porte → Relier à la LEP",
+      "Exemple 2 : Canalisation eau métallique → Relier à la LEP",
+      "Exemple 3 : Canalisation gaz → Relier à la LEP AVANT le compteur",
+      "Exemple 4 : Charpente métallique → Relier à la LEP",
+      "Exemple 5 : Baignoire métallique → Liaison équipotentielle locale (salle d'eau)"
+    ],
+    "commonErrors": [
+      "Section insuffisante (< 6mm²)",
+      "Pas de liaison des huisseries",
+      "Pas de liaison des canalisations",
+      "Connexion après le compteur gaz",
+      "Conducteur non repéré"
+    ],
+    "risks": [
+      {
+        "description": "Électrocution par différence de potentiel",
+        "level": "critique",
+        "consequences": ["Danger mortel", "Électrocution", "Non-conformité"]
+      }
+    ],
+    "controls": [
+      "Vérifier la section du conducteur",
+      "Vérifier les connexions",
+      "Vérifier le repérage",
+      "Tester la continuité"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 542.4", "date": "2020"}
+  ],
+  "relatedSheets": ["prise-terre-valeur", "volumes-salle-eau"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["liaison équipotentielle", "LEP", "terre", "masse", "sécurité"]
+}

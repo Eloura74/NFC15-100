@@ -1,0 +1,72 @@
+{
+  "id": "disjoncteur-branchement-detail",
+  "title": "Installation du disjoncteur de branchement",
+  "summary": "Règles d'installation, hauteur et accessibilité du disjoncteur de branchement (AGCP)",
+  "immediateAnswer": "Le disjoncteur de branchement doit être installé entre 0,90m et 1,80m de hauteur, accessible depuis l'intérieur du logement, avec calibre adapté à la puissance souscrite.",
+  "domain": "alimentation",
+  "subDomain": "branchement",
+  "keywords": ["disjoncteur", "branchement", "AGCP", "hauteur", "accessibilité", "installation"],
+  "synonyms": ["DB", "AGCP", "appareil général"],
+  "applicableContexts": [
+    {"type": "installation", "value": "Logement", "required": true}
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2026-06-05",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Toute installation électrique de logement doit disposer d'un disjoncteur de branchement correctement installé.",
+    "requirements": [
+      "Hauteur entre 0,90m et 1,80m",
+      "Accessible depuis l'intérieur",
+      "Emplacement sec et ventilé",
+      "Repérage clair",
+      "Calibre adapté à la puissance"
+    ],
+    "values": [
+      {"label": "Hauteur minimale", "value": 0.90, "unit": "m", "conditions": ["Du sol fini"], "source": "NF C 14-100"},
+      {"label": "Hauteur maximale", "value": 1.80, "unit": "m", "conditions": ["Du sol fini"], "source": "NF C 14-100"},
+      {"label": "Hauteur recommandée", "value": 1.50, "unit": "m", "conditions": ["Confort d'usage"], "source": "Guide pratique"}
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Exemple 1 : DB installé à 1,50m → Hauteur idéale, facile d'accès",
+      "Exemple 2 : DB à 0,85m → Non conforme, trop bas",
+      "Exemple 3 : DB à 1,85m → Non conforme, trop haut",
+      "Exemple 4 : DB dans garage attenant → OK si accessible depuis l'intérieur"
+    ],
+    "commonErrors": [
+      "DB installé trop haut (> 1,80m)",
+      "DB installé trop bas (< 0,90m)",
+      "DB dans local technique non accessible",
+      "DB à l'extérieur du logement",
+      "Pas de repérage"
+    ],
+    "risks": [
+      {
+        "description": "Impossibilité de couper l'alimentation en urgence",
+        "level": "critique",
+        "consequences": ["Danger", "Non-conformité CONSUEL"]
+      }
+    ],
+    "controls": [
+      "Mesurer la hauteur depuis le sol fini",
+      "Vérifier l'accessibilité",
+      "Vérifier le repérage",
+      "Tester la manœuvre"
+    ],
+    "checklist": []
+  },
+  "sources": [
+    {"id": "nfc14100", "type": "normative", "title": "NF C 14-100", "reference": "NF C 14-100 § 10.2", "date": "2020"}
+  ],
+  "relatedSheets": ["disjoncteur-branchement"],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+  ],
+  "tags": ["disjoncteur", "branchement", "AGCP", "installation", "hauteur"]
+}
