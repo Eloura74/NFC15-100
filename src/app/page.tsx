@@ -70,45 +70,79 @@ export default function HomePage() {
     <div className="container py-8 space-y-12 max-w-7xl relative">
       {/* Animated background particles */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}} />
-        <div className="absolute top-40 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s', animationDelay: '1s'}} />
-        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s', animationDelay: '2s'}} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '7s', animationDelay: '0.5s'}} />
+        <div
+          className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: '4s' }}
+        />
+        <div
+          className="absolute top-40 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: '6s', animationDelay: '1s' }}
+        />
+        <div
+          className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: '5s', animationDelay: '2s' }}
+        />
+        <div
+          className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: '7s', animationDelay: '0.5s' }}
+        />
       </div>
       <AnimatedSection>
-        <section className="text-center space-y-6 py-16 relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl">
+        <section className="text-center space-y-3 py-8 relative rounded-xl overflow-hidden border border-primary/20 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80 backdrop-blur-sm animate-[fadeIn_0.6s_ease-out]">
           <div className="absolute inset-0 -z-10">
-            <img
-              src="/images/hero_bg.png"
-              alt="Hero Background"
-              className="w-full h-full object-cover opacity-40 mix-blend-screen animate-[pulse_8s_ease-in-out_infinite]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background"></div>
-            {/* Animated grid overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f0a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] animate-[pulse_4s_ease-in-out_infinite]"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-background/50 to-background"></div>
+            {/* Tech grid pattern */}
+            <div className="absolute inset-0 opacity-15">
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to right, rgba(59,130,246,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.15) 1px, transparent 1px)',
+                  backgroundSize: '20px 20px',
+                }}
+              ></div>
+            </div>
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-cyan-500/5 animate-[pulse_6s_ease-in-out_infinite]"></div>
+            {/* Animated corner accents */}
+            <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-primary/40 animate-[pulse_3s_ease-in-out_infinite]"></div>
+            <div
+              className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-primary/40 animate-[pulse_3s_ease-in-out_infinite]"
+              style={{ animationDelay: '0.5s' }}
+            ></div>
+            <div
+              className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-primary/40 animate-[pulse_3s_ease-in-out_infinite]"
+              style={{ animationDelay: '1s' }}
+            ></div>
+            <div
+              className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-primary/40 animate-[pulse_3s_ease-in-out_infinite]"
+              style={{ animationDelay: '1.5s' }}
+            ></div>
           </div>
-          <div className="relative z-10 p-8">
-            <div className="inline-block animate-[fadeIn_1s_ease-out]">
-              <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white glow-text pb-2 animate-[glow_3s_ease-in-out_infinite]">
+          <div className="relative z-10 p-5">
+            <div className="inline-block animate-[fadeIn_0.8s_ease-out]">
+              <h1 className="relative text-2xl md:text-4xl font-bold tracking-tight text-white animate-[fadeIn_1s_ease-out]">
                 ElecNorme
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed text-balance mt-4">
+            <p className="text-sm md:text-base text-slate-400 max-w-xl mx-auto font-normal leading-relaxed text-balance mt-2">
               La référence visuelle de la norme{' '}
-              <strong className="text-white font-medium">NFC 15-100</strong>
+              <span className="text-primary font-medium animate-[pulse_2s_ease-in-out_infinite]">
+                NFC 15-100
+              </span>
             </p>
-            <div className="flex items-center justify-center gap-3 flex-wrap pt-6">
+            <div className="flex items-center justify-center gap-2 flex-wrap pt-3">
               <Badge
                 variant="outline"
-                className="text-sm px-4 py-1.5 border-primary/50 bg-primary/10 text-primary backdrop-blur-md flex items-center gap-2"
+                className="text-xs px-2.5 py-0.5 border-primary/30 bg-primary/5 text-primary flex items-center gap-1"
               >
-                <Zap className="w-4 h-4" /> {totalSheets} fiches
+                <Zap className="w-3 h-3" /> {totalSheets} fiches
               </Badge>
               <Badge
                 variant="outline"
-                className="text-sm px-4 py-1.5 border-primary/50 bg-primary/10 text-primary backdrop-blur-md flex items-center gap-2"
+                className="text-xs px-2.5 py-0.5 border-primary/30 bg-primary/5 text-primary flex items-center gap-1"
               >
-                <Folder className="w-4 h-4" /> {domains.length} domaines
+                <Folder className="w-3 h-3" /> {domains.length} domaines
               </Badge>
             </div>
           </div>
@@ -116,21 +150,23 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection delay={100}>
-        <section className="max-w-2xl mx-auto relative z-20 -mt-8">
-          <div className="flex gap-2 p-2 glass rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] border border-primary/30 focus-within:border-primary focus-within:ring-4 ring-primary/20 transition-all glow-border">
-            <Input
-              type="search"
-              placeholder="Rechercher une fiche technique, un schéma..."
-              className="flex-1 border-0 focus-visible:ring-0 text-lg bg-transparent placeholder:text-muted-foreground/70 h-12 px-4"
-            />
-            <Link href="/recherche" tabIndex={-1}>
-              <Button
-                size="lg"
-                className="px-8 shadow-lg h-12 text-md font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Rechercher
-              </Button>
-            </Link>
+        <section className="max-w-xl mx-auto relative z-20 -mt-4">
+          <div className="relative group animate-[fadeIn_1.2s_ease-out]">
+            <div className="relative flex gap-2 p-1.5 bg-slate-900/60 backdrop-blur-md rounded-xl border border-white/10 focus-within:border-primary/50 transition-all">
+              <Input
+                type="search"
+                placeholder="Rechercher..."
+                className="flex-1 border-0 focus-visible:ring-0 text-base bg-transparent placeholder:text-muted-foreground/50 h-10 px-3"
+              />
+              <Link href="/recherche" tabIndex={-1}>
+                <Button
+                  size="sm"
+                  className="px-4 h-10 text-sm font-medium bg-primary hover:bg-primary/90 text-white"
+                >
+                  Rechercher
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </AnimatedSection>

@@ -23,12 +23,20 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/40 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20 shadow-sm relative overflow-hidden">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-slate-900/80 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/60 shadow-lg relative overflow-hidden">
       {/* Animated tech background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-cyan-500/5 animate-[pulse_3s_ease-in-out_infinite]"></div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-cyan-500/5 animate-[pulse_4s_ease-in-out_infinite]"></div>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent animate-[pulse_3s_ease-in-out_infinite]"></div>
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgba(59,130,246,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.1) 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+          }}
+        ></div>
       </div>
       <div className="container flex h-16 items-center relative z-10">
         <div className="flex items-center xl:hidden mr-2">
@@ -82,37 +90,65 @@ export function Header() {
         </div>
 
         <Link href="/" className="flex items-center space-x-2 group">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-cyan-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-            <div className="relative flex items-center space-x-2 bg-background/80 px-3 py-1.5 rounded-lg border border-primary/30">
-              <Zap className="w-5 h-5 text-primary animate-pulse" />
-              <span className="text-xl font-black tracking-tight bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
-                ElecNorme
-              </span>
-            </div>
+          <div className="relative flex items-center space-x-2">
+            <div className="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-[pulse_2s_ease-in-out_infinite]"></div>
+            <Zap className="relative w-5 h-5 text-primary animate-[pulse_1.5s_ease-in-out_infinite]" />
+            <span className="relative text-xl font-bold tracking-tight bg-gradient-to-r from-white via-primary to-cyan-400 bg-clip-text text-transparent group-hover:animate-[pulse_2s_ease-in-out_infinite]">
+              ElecNorme
+            </span>
           </div>
         </Link>
 
-        <nav className="ml-auto hidden xl:flex items-center space-x-2">
-          <div className="flex items-center space-x-1 mr-2 px-2 py-1 rounded-lg bg-muted/30 border border-white/5">
-            <Command className="w-3 h-3 text-muted-foreground" />
-            <span className="text-xs text-muted-foreground font-mono">K</span>
+        <nav className="ml-auto hidden xl:flex items-center space-x-1">
+          <div className="flex items-center space-x-1 mr-3 px-2.5 py-1.5 rounded-lg bg-primary/10 border border-primary/30 animate-[pulse_3s_ease-in-out_infinite]">
+            <Command className="w-3.5 h-3.5 text-primary" />
+            <span className="text-xs text-primary font-mono font-semibold">
+              K
+            </span>
           </div>
           <Link href="/recherche">
-            <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors">Recherche</Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              Recherche
+            </Button>
           </Link>
           <Link href="/domaines">
-            <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors">Domaines</Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              Domaines
+            </Button>
           </Link>
           <Link href="/calculateurs">
-            <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors">Calculateurs</Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              Calculateurs
+            </Button>
           </Link>
           <Link href="/favoris">
-            <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors">Favoris</Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              Favoris
+            </Button>
           </Link>
           <Link href="/login">
-            <Button variant="outline" size="sm" className="border-primary/30 hover:bg-primary/10 hover:border-primary transition-colors">
-              <Lock className="w-4 h-4 mr-1" /> Admin
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-sm border-primary/30 text-primary hover:bg-primary/20 hover:border-primary transition-all duration-300 hover:scale-105"
+            >
+              <Lock className="w-3.5 h-3.5 mr-1.5" /> Admin
             </Button>
           </Link>
         </nav>

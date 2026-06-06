@@ -53,7 +53,14 @@ export default function RootLayout({
       >
         <Providers>
           <CommandMenu />
-          <div className="fixed inset-0 z-[-1] bg-mesh pointer-events-none"></div>
+          <div className="fixed inset-0 z-[-1] pointer-events-none">
+            <div className="absolute inset-0 bg-mesh"></div>
+            {/* Tech grid pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: 'linear-gradient(to right, rgba(59,130,246,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.1) 1px, transparent 1px)',
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
           <Header />
           <div className="flex flex-1">
             <Sidebar />
