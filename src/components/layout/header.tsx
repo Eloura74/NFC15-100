@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/40 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20 shadow-sm">
       <div className="container flex h-16 items-center">
-        <div className="flex items-center max-2xl:mr-2 max-2xl:flex 2xl:hidden">
+        <div className="flex items-center xl:hidden mr-2">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -81,7 +81,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="ml-auto hidden 2xl:flex items-center space-x-4">
+        <nav className="ml-auto hidden xl:flex items-center space-x-4">
           <Link href="/recherche">
             <Button variant="ghost">Recherche</Button>
           </Link>
