@@ -109,7 +109,7 @@ export default function AdminFichesPage() {
         <Card>
           <CardContent className="py-12 text-center">
             <p className="text-muted-foreground">
-              Aucune fiche trouvée pour "{search}"
+              Aucune fiche trouvée pour &quot;{search}&quot;
             </p>
           </CardContent>
         </Card>

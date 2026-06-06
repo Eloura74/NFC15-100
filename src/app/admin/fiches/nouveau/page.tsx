@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Plus } from 'lucide-react';
+import { Plus, Check } from 'lucide-react';
 
 export default function NewSheetPage() {
   const router = useRouter();
@@ -191,7 +191,7 @@ export default function NewSheetPage() {
                 required
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Ce que l'électricien doit retenir en priorité
+                Ce que l&apos;électricien doit retenir en priorité
               </p>
             </div>
 
