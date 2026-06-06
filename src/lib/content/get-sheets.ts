@@ -10,6 +10,7 @@ import disjoncteurBranchementDetail from '@/data/fiches/alimentation/disjoncteur
 import branchementReseau from '@/data/fiches/alimentation/branchement-reseau.json';
 import tableauElectrique from '@/data/fiches/alimentation/tableau-electrique.json';
 import gaineTechniqueLogement from '@/data/fiches/alimentation/gaine-technique-logement.json';
+import comptageElectrique from '@/data/fiches/alimentation/comptage-electrique.json';
 import differentielTypeA from '@/data/fiches/protections/differentiel-type-a.json';
 import disjoncteurDivisionnaire from '@/data/fiches/protections/disjoncteur-divisionnaire.json';
 import liaisonEquipotentielle from '@/data/fiches/terre/liaison-equipotentielle-principale.json';
@@ -27,6 +28,9 @@ import circuitChauffage from '@/data/fiches/circuits/circuit-chauffage.json';
 import eclairageDcl from '@/data/fiches/circuits/eclairage-dcl.json';
 import prisesCommunicationRj45 from '@/data/fiches/reseau/prises-communication-rj45.json';
 import gtlEtel from '@/data/fiches/tableau/gaine-technique-logement.json';
+import piscineElectrique from '@/data/fiches/locaux-speciaux/piscine-electrique.json';
+import installationExterieure from '@/data/fiches/locaux-speciaux/installation-exterieure.json';
+import photovoltaiqueLogement from '@/data/fiches/energie/photovoltaique-logement.json';
 
 export function getAllSheets(): ContentSheet[] {
   return [
@@ -41,6 +45,7 @@ export function getAllSheets(): ContentSheet[] {
     branchementReseau as unknown as ContentSheet,
     tableauElectrique as unknown as ContentSheet,
     gaineTechniqueLogement as unknown as ContentSheet,
+    comptageElectrique as unknown as ContentSheet,
     differentielTypeA as unknown as ContentSheet,
     disjoncteurDivisionnaire as unknown as ContentSheet,
     liaisonEquipotentielle as unknown as ContentSheet,
@@ -58,6 +63,9 @@ export function getAllSheets(): ContentSheet[] {
     eclairageDcl as unknown as ContentSheet,
     prisesCommunicationRj45 as unknown as ContentSheet,
     gtlEtel as unknown as ContentSheet,
+    piscineElectrique as unknown as ContentSheet,
+    installationExterieure as unknown as ContentSheet,
+    photovoltaiqueLogement as unknown as ContentSheet,
   ];
 }
 

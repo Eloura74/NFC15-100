@@ -50,7 +50,7 @@ export function PowerCaliberDiagram() {
         ))}
 
         <text x="300" y="260" textAnchor="middle" className="fill-muted-foreground text-sm italic">
-          💡 6 kVA = configuration la plus courante en France
+          6 kVA = configuration la plus courante en France
         </text>
       </svg>
     </div>

@@ -1,4 +1,7 @@
-import { notFound } from 'next/navigation';
+import fs from 'fs';
+import path from 'path';
+
+// ... (imports will be sorted out below)
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
@@ -19,12 +22,46 @@ import { PowerCaliberDiagram } from '@/components/diagrams/power-caliber-diagram
 import { GTLDiagram } from '@/components/diagrams/gtl-diagram';
 import { EarthDiagram } from '@/components/diagrams/earth-diagram';
 import { DiffDiagram } from '@/components/diagrams/diff-diagram';
+import { ImageWithFallback } from '@/components/ui/image-with-fallback';
+import { notFound } from 'next/navigation';
+import { 
+  ArrowLeft, 
+  Info, 
+  CheckCircle2, 
+  AlertOctagon, 
+  Settings, 
+  Zap, 
+  Search, 
+  Layers, 
+  FileText, 
+  Image as ImageIcon,
+  Ruler, 
+  Activity, 
+  ShieldCheck, 
+  Cable, 
+  Home, 
+  Wifi, 
+  Droplets,
+  Network,
+  Power,
+  Battery,
+  Shield,
+  Waves,
+  Globe,
+  Pin, 
+  ClipboardList, 
+  AlertTriangle, 
+  ShieldAlert, 
+  BookOpen, 
+  Link as LinkIcon,
+  Eye
+} from 'lucide-react';
 
 export default function SheetPage({ params }: { params: { id: string } }) {
   const sheet = getSheetById(params.id);
 
   if (!sheet) {
-    notFound();
+    return notFound();
   }
 
   // Sélection dynamique du schéma
@@ -45,8 +82,21 @@ export default function SheetPage({ params }: { params: { id: string } }) {
       case 'diff-30ma-logement':
       case 'differentiel-type-a':
         return <DiffDiagram />;
-      default:
+      default: {
+        const imagePath = path.join(process.cwd(), 'public', 'images', 'fiches', `${sheet.id}.png`);
+        if (fs.existsSync(imagePath)) {
+          return (
+            <div className="w-full max-w-3xl mx-auto rounded-xl border border-border/50 shadow-xl overflow-hidden bg-muted/20">
+              <img 
+                src={`/images/fiches/${sheet.id}.png`}
+                alt={`Illustration ${sheet.title}`}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          );
+        }
         return null;
+      }
     }
   };
 
@@ -64,84 +114,97 @@ export default function SheetPage({ params }: { params: { id: string } }) {
   return (
     <div className="container py-8 max-w-4xl space-y-8">
       <AnimatedSection>
-        {/* Navigation Breadcrumb */}
-        <nav
-          className="flex text-sm text-muted-foreground mb-6 bg-muted/30 p-3 rounded-lg border border-border/50"
-          aria-label="Breadcrumb"
-        >
-          <ol className="inline-flex items-center space-x-1 md:space-x-3">
-            <li className="inline-flex items-center">
-              <Link
-                href="/"
-                className="hover:text-primary transition-colors flex items-center gap-2"
-              >
-                <span>🏠</span> Accueil
-              </Link>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <span className="mx-2 opacity-50">/</span>
-                <Link
-                  href="/domaines"
-                  className="hover:text-primary transition-colors"
-                >
-                  Domaines
-                </Link>
-              </div>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <span className="mx-2 opacity-50">/</span>
-                <Link
-                  href={`/domaines/${sheet.domain}`}
-                  className="hover:text-primary transition-colors capitalize"
-                >
-                  {sheet.domain.replace('-', ' ')}
-                </Link>
-              </div>
-            </li>
-            <li aria-current="page">
-              <div className="flex items-center">
-                <span className="mx-2 opacity-50">/</span>
-                <span className="text-foreground font-medium truncate max-w-[200px] md:max-w-none">
-                  {sheet.title}
-                </span>
-              </div>
-            </li>
-          </ol>
-        </nav>
-
-        <div className="text-center space-y-4 mt-8">
-          <div className="flex items-center justify-center gap-2 flex-wrap">
-            <Badge
-              variant="outline"
-              className="border-primary/30 text-primary bg-primary/5"
-            >
-              {sheet.domain}
-            </Badge>
-            {sheet.subDomain && (
-              <Badge variant="outline">{sheet.subDomain}</Badge>
-            )}
-            <Badge
-              variant={
-                sheet.criticality === 'critique' ||
-                sheet.criticality === 'danger_immediat'
-                  ? 'destructive'
-                  : sheet.criticality === 'attention'
-                    ? 'warning'
-                    : 'secondary'
-              }
-              className="uppercase tracking-widest text-xs font-bold"
-            >
-              {sheet.criticality}
-            </Badge>
+        <div className="relative rounded-3xl overflow-hidden mb-8 border border-white/10 shadow-2xl glass-card">
+          <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50 z-10"></div>
+            <ImageWithFallback 
+              src={`/images/domains/${sheet.domain}.png`} 
+              alt={sheet.domain}
+              title={sheet.title}
+              className="w-full h-full object-cover opacity-30 mix-blend-screen"
+            />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-balance bg-gradient-to-br from-foreground to-foreground/80 bg-clip-text text-transparent">
-            {sheet.title}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            {sheet.summary}
-          </p>
+          <div className="p-8">
+            {/* Navigation Breadcrumb */}
+            <nav
+              className="flex text-sm text-muted-foreground mb-6 bg-background/40 backdrop-blur-md p-3 rounded-xl border border-white/10"
+              aria-label="Breadcrumb"
+            >
+              <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                <li className="inline-flex items-center">
+                  <Link
+                    href="/"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <Home className="w-4 h-4" /> Accueil
+                  </Link>
+                </li>
+                <li>
+                  <div className="flex items-center">
+                    <span className="mx-2 opacity-50">/</span>
+                    <Link
+                      href="/domaines"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Domaines
+                    </Link>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center">
+                    <span className="mx-2 opacity-50">/</span>
+                    <Link
+                      href={`/domaines/${sheet.domain}`}
+                      className="hover:text-primary transition-colors capitalize"
+                    >
+                      {sheet.domain.replace('-', ' ')}
+                    </Link>
+                  </div>
+                </li>
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <span className="mx-2 opacity-50">/</span>
+                    <span className="text-foreground font-medium truncate max-w-[200px] md:max-w-none">
+                      {sheet.title}
+                    </span>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+
+            <div className="text-center space-y-4 mt-8 relative z-10">
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                <Badge
+                  variant="outline"
+                  className="border-primary/30 text-primary bg-primary/10 backdrop-blur-md"
+                >
+                  {sheet.domain}
+                </Badge>
+                {sheet.subDomain && (
+                  <Badge variant="outline" className="backdrop-blur-md bg-background/50 border-white/10">{sheet.subDomain}</Badge>
+                )}
+                <Badge
+                  variant={
+                    sheet.criticality === 'critique' ||
+                    sheet.criticality === 'danger_immediat'
+                      ? 'destructive'
+                      : sheet.criticality === 'attention'
+                        ? 'warning'
+                        : 'secondary'
+                  }
+                  className="uppercase tracking-widest text-xs font-bold shadow-lg"
+                >
+                  {sheet.criticality}
+                </Badge>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-black tracking-tight text-balance text-white drop-shadow-lg glow-text">
+                {sheet.title}
+              </h1>
+              <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto text-balance">
+                {sheet.summary}
+              </p>
+            </div>
+          </div>
         </div>
       </AnimatedSection>
 
@@ -150,7 +213,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
           <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
           <CardHeader className="pb-4">
             <CardTitle className="text-xl flex items-center gap-2 text-primary">
-              <span className="text-2xl">⚡</span>
+              <Zap className="w-6 h-6 text-primary" />
               L&apos;essentiel en 3 secondes
             </CardTitle>
           </CardHeader>
@@ -159,7 +222,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
               <ul className="space-y-3">
                 {immediateAnswers.map((answer, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-primary mt-1">✓</span>
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-lg font-medium leading-relaxed">
                       {answer}
                     </span>
@@ -179,7 +242,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         <AnimatedSection delay={200}>
           <div className="mt-8 mb-4">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
-              <span className="text-primary">�️</span>
+              <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]"><Eye className="w-6 h-6" /></span>
               Aperçu visuel
             </h2>
             {diagram}
@@ -191,7 +254,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         <AnimatedSection delay={300}>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold flex items-center gap-2">
-              <span className="text-primary">📌</span>
+              <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]"><Pin className="w-6 h-6" /></span>
               Valeurs normatives
             </h2>
 
@@ -242,7 +305,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
               <Card className="h-full border-border/50 shadow-sm">
                 <CardHeader className="bg-muted/30">
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <span className="text-primary">📋</span>
+                    <ClipboardList className="w-6 h-6 text-primary" />
                     Règles d&apos;installation
                   </CardTitle>
                 </CardHeader>
@@ -272,7 +335,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
                   <div className="absolute top-0 left-0 w-1 h-full bg-warning" />
                   <CardHeader className="bg-warning/5 pb-3">
                     <CardTitle className="flex items-center gap-2 text-warning text-lg">
-                      <span>⚠️</span>À ne surtout pas faire
+                      <AlertTriangle className="w-6 h-6" /> À ne surtout pas faire
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-4">
@@ -300,7 +363,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
                 <div className="absolute top-0 left-0 w-1 h-full bg-destructive" />
                 <CardHeader className="bg-destructive/5 pb-3">
                   <CardTitle className="flex items-center gap-2 text-destructive text-lg">
-                    <span>🚨</span>
+                    <ShieldAlert className="w-6 h-6" />
                     Risques encourus
                   </CardTitle>
                 </CardHeader>
@@ -341,7 +404,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         <Card className="bg-muted/50 border-border/50 mt-8">
           <CardContent className="p-6 text-center space-y-3">
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-              <span className="text-lg">📚</span>
+              <BookOpen className="w-5 h-5" />
               Source officielle :{' '}
               <strong className="text-foreground">
                 {sheet.sources[0]?.title}
@@ -364,7 +427,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         <AnimatedSection delay={800}>
           <div className="mt-8">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
-              <span className="text-primary">🔗</span>
+              <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]"><LinkIcon className="w-6 h-6" /></span>
               Fiches connexes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

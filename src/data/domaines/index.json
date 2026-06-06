@@ -4,7 +4,7 @@
     "name": "Alimentation et distribution",
     "description": "Branchement, comptage, tableaux et distribution principale",
     "icon": "zap",
-    "sheetCount": 5,
+    "sheetCount": 6,
     "subDomains": [
       {
         "id": "branchement",
@@ -16,7 +16,7 @@
         "id": "comptage",
         "name": "Comptage",
         "description": "Installation et protection du compteur",
-        "sheetCount": 0
+        "sheetCount": 1
       },
       {
         "id": "tableaux",
@@ -106,7 +106,7 @@
     "name": "Locaux spéciaux",
     "description": "Salles d'eau, piscines, extérieur et locaux à risques",
     "icon": "droplet",
-    "sheetCount": 1,
+    "sheetCount": 3,
     "subDomains": [
       {
         "id": "salle-eau",
@@ -118,13 +118,13 @@
         "id": "piscine",
         "name": "Piscines et bassins",
         "description": "Installations pour piscines",
-        "sheetCount": 0
+        "sheetCount": 1
       },
       {
         "id": "exterieur",
         "name": "Installations extérieures",
         "description": "Éclairage, prises et équipements extérieurs",
-        "sheetCount": 0
+        "sheetCount": 1
       }
     ]
   },
@@ -133,7 +133,7 @@
     "name": "Énergies renouvelables",
     "description": "IRVE, photovoltaïque et stockage",
     "icon": "battery-charging",
-    "sheetCount": 1,
+    "sheetCount": 2,
     "subDomains": [
       {
         "id": "irve",
@@ -145,7 +145,7 @@
         "id": "photovoltaique",
         "name": "Photovoltaïque",
         "description": "Installations solaires photovoltaïques",
-        "sheetCount": 0
+        "sheetCount": 1
       }
     ]
   },

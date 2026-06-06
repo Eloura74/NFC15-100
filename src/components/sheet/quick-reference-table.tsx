@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { BarChart3 } from 'lucide-react';
 
 interface TableRow {
   cols: string[];
@@ -22,7 +23,7 @@ export function QuickReferenceTable({
     <Card className="overflow-hidden border-border/50 shadow-sm">
       <CardHeader className="bg-muted/30 py-4">
         <CardTitle className="text-lg flex items-center gap-2">
-          <span className="text-primary text-xl">📊</span>
+          <BarChart3 className="w-5 h-5 text-primary" />
           {title}
         </CardTitle>
       </CardHeader>

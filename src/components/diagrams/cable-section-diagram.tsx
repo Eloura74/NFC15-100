@@ -51,7 +51,7 @@ export function CableSectionDiagram() {
         </g>
 
         <g transform="translate(50, 200)">
-          <text x="0" y="0" className="fill-foreground font-semibold text-sm">⚠️ Chute de tension :</text>
+          <text x="0" y="0" className="fill-foreground font-semibold text-sm">Attention - Chute de tension :</text>
           <rect x="0" y="10" width="700" height="40" rx="4" className="fill-destructive/10 stroke-destructive" strokeWidth="1" />
           <text x="350" y="35" textAnchor="middle" className="fill-foreground text-sm">
             Éclairage : max 3% | Autres usages : max 5%

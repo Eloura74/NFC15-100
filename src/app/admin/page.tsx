@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Lock, BookOpen, Settings, Zap, Plus, Eye, Target, FileText, Calculator, Shield, Sliders } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { signOut } from 'next-auth/react';
 
@@ -41,7 +42,7 @@ export default function AdminDashboard() {
     <div className="container py-8">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2">🔐 Administration</h1>
+          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3"><Lock className="w-8 h-8 text-primary" /> Administration</h1>
           <p className="text-muted-foreground">
             Bienvenue {session.user?.email}
           </p>
@@ -65,67 +66,53 @@ export default function AdminDashboard() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card>
+        <Card className="border-border/50 shadow-sm">
           <CardHeader>
-            <CardTitle>📚 Gestion du contenu</CardTitle>
+            <CardTitle className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /> Gestion du contenu</CardTitle>
             <CardDescription>
               Gérez les domaines, fiches et calculateurs
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <Link href="/admin/domaines">
-              <Button variant="outline" className="w-full justify-start">
-                🎯 Gérer les domaines
-              </Button>
+            <Link href="/admin/domaines" className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-accent rounded-md">
+              <Target className="w-4 h-4 mr-2" /> Gérer les domaines
             </Link>
-            <Link href="/admin/fiches">
-              <Button variant="outline" className="w-full justify-start">
-                📄 Gérer les fiches techniques
-              </Button>
+            <Link href="/admin/fiches" className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-accent rounded-md">
+              <FileText className="w-4 h-4 mr-2" /> Gérer les fiches techniques
             </Link>
-            <Link href="/admin/calculateurs">
-              <Button variant="outline" className="w-full justify-start">
-                🧮 Gérer les calculateurs
-              </Button>
+            <Link href="/admin/calculateurs" className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-accent rounded-md">
+              <Calculator className="w-4 h-4 mr-2" /> Gérer les calculateurs
             </Link>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="border-border/50 shadow-sm">
           <CardHeader>
-            <CardTitle>⚙️ Configuration</CardTitle>
+            <CardTitle className="flex items-center gap-2"><Settings className="w-5 h-5 text-primary" /> Configuration</CardTitle>
             <CardDescription>
               Paramètres et versions de la norme
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <Link href="/admin/versions">
-              <Button variant="outline" className="w-full justify-start">
-                📋 Gérer les versions
-              </Button>
+            <Link href="/admin/versions" className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-accent rounded-md">
+              <Shield className="w-4 h-4 mr-2" /> Gérer les versions
             </Link>
-            <Link href="/admin/settings">
-              <Button variant="outline" className="w-full justify-start">
-                ⚙️ Paramètres du site
-              </Button>
+            <Link href="/admin/parametres" className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-accent rounded-md">
+              <Sliders className="w-4 h-4 mr-2" /> Paramètres du site
             </Link>
           </CardContent>
         </Card>
       </div>
 
-      <Card className="mt-8">
+      <Card className="mt-8 border-border/50 shadow-sm">
         <CardHeader>
-          <CardTitle>💡 Actions rapides</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Zap className="w-5 h-5 text-primary" /> Actions rapides</CardTitle>
         </CardHeader>
-        <CardContent className="flex gap-2 flex-wrap">
-          <Link href="/admin/fiches/nouveau">
-            <Button>➕ Nouvelle fiche</Button>
-          </Link>
-          <Link href="/admin/domaines/nouveau">
-            <Button variant="outline">➕ Nouveau domaine</Button>
-          </Link>
+        <CardContent className="flex flex-wrap gap-4">
+          <Button><Plus className="w-4 h-4 mr-2" /> Nouvelle fiche</Button>
+          <Button variant="outline"><Plus className="w-4 h-4 mr-2" /> Nouveau domaine</Button>
           <Link href="/">
-            <Button variant="outline">👁️ Voir le site</Button>
+            <Button variant="outline"><Eye className="w-4 h-4 mr-2" /> Voir le site</Button>
           </Link>
         </CardContent>
       </Card>

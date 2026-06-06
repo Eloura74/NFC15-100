@@ -1,0 +1,93 @@
+{
+  "id": "comptage-electrique",
+  "title": "Comptage électrique",
+  "summary": "Installation et protection du compteur électrique selon la norme NFC 15-100",
+  "immediateAnswer": "Le compteur doit être installé dans l'ETEL | Protection par disjoncteur de branchement | Accessibilité : 0.90m à 1.30m du sol | Emplacement réservé : minimum 30cm de large",
+  "domain": "alimentation",
+  "subDomain": "comptage",
+  "keywords": ["compteur", "comptage", "enedis", "etel", "disjoncteur branchement"],
+  "synonyms": ["compteur edf", "compteur energie"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation du compteur électrique dans le logement",
+    "requirements": [
+      "Le compteur doit être situé dans l'ETEL (Espace Technique Électrique du Logement)",
+      "Le compteur doit être protégé par un disjoncteur de branchement",
+      "Hauteur de lecture : entre 0.90m et 1.30m du sol",
+      "Emplacement réservé : minimum 30cm de large pour le compteur",
+      "Le compteur doit être accessible pour intervention et relève"
+    ],
+    "values": [
+      {
+        "label": "Hauteur de lecture",
+        "parameter": "Standard",
+        "value": "0.90-1.30",
+        "unit": "m",
+        "context": "Du sol fini"
+      },
+      {
+        "label": "Emplacement réservé",
+        "parameter": "Largeur",
+        "value": "30",
+        "unit": "cm",
+        "context": "Minimum pour le compteur"
+      },
+      {
+        "label": "Protection",
+        "parameter": "Disjoncteur",
+        "value": "DB",
+        "unit": "",
+        "context": "Disjoncteur de branchement obligatoire"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les logements PMR, le compteur doit être accessible entre 0.90m et 1.30m",
+      "Le compteur peut être installé à l'extérieur dans un coffret adapté si l'ETEL n'est pas possible"
+    ],
+    "commonErrors": [
+      "Placer le compteur trop haut (> 1.30m)",
+      "Ne pas prévoir assez d'espace autour du compteur",
+      "Oublier le disjoncteur de branchement"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc14100",
+      "type": "normative",
+      "title": "NF C 14-100",
+      "reference": "NF C 14-100",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "branchement-reseau",
+    "tableau-electrique"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "comptage",
+    "alimentation"
+  ]
+}

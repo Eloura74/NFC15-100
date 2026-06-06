@@ -1,0 +1,102 @@
+{
+  "id": "photovoltaique-logement",
+  "title": "Installation photovoltaïque",
+  "summary": "Règles d'installation des panneaux solaires photovoltaïques selon la norme NFC 15-100",
+  "immediateAnswer": "Protection DC : DDR 30mA type A ou B obligatoire | Section câbles DC : selon courant et distance | Onduleur : installé dans l'ETEL ou local technique | Sectionnement : obligatoire côté DC et AC",
+  "domain": "energie",
+  "subDomain": "photovoltaique",
+  "keywords": ["photovoltaique", "solaire", "panneaux", "onduleur", "dc", "ac"],
+  "synonyms": ["solaire", "panneaux solaires", "pv"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Photovoltaïque",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation de panneaux solaires photovoltaïques",
+    "requirements": [
+      "Protection DC par DDR 30mA type A ou B obligatoire",
+      "Section câbles DC selon courant et distance (chute de tension < 3%)",
+      "Onduleur installé dans l'ETEL ou local technique",
+      "Sectionnement obligatoire côté DC et AC",
+      "Câbles DC de type adapté (PV1-F ou équivalent)",
+      "Protection contre les surtensions (parafoudre DC et AC)"
+    ],
+    "values": [
+      {
+        "label": "Protection DC",
+        "parameter": "DDR",
+        "value": "30mA",
+        "unit": "",
+        "context": "Type A ou B obligatoire"
+      },
+      {
+        "label": "Chute de tension",
+        "parameter": "DC",
+        "value": "3",
+        "unit": "%",
+        "context": "Maximum"
+      },
+      {
+        "label": "Sectionnement",
+        "parameter": "DC",
+        "value": "Obligatoire",
+        "unit": "",
+        "context": "Côté panneaux"
+      },
+      {
+        "label": "Sectionnement",
+        "parameter": "AC",
+        "value": "Obligatoire",
+        "unit": "",
+        "context": "Côté réseau"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les installations < 3kWc, certaines simplifications sont possibles",
+      "Les câbles DC doivent être protégés contre les UV",
+      "L'onduleur doit être accessible pour maintenance"
+    ],
+    "commonErrors": [
+      "Oublier le DDR 30mA type A ou B côté DC",
+      "Sous-dimensionner la section des câbles DC",
+      "Ne pas prévoir de sectionnement DC"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "irve-logement",
+    "parafoudre-obligation"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "photovoltaique",
+    "energie"
+  ]
+}

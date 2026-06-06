@@ -1,0 +1,102 @@
+{
+  "id": "installation-exterieure",
+  "title": "Installation électrique extérieure",
+  "summary": "Règles d'installation électrique pour les installations extérieures selon la norme NFC 15-100",
+  "immediateAnswer": "IP minimum : IPX3 pour abrité, IPX4 pour exposé | Câbles : U1000R2V ou équivalent | Protection DDR 30mA type A obligatoire | Hauteur prises : minimum 1m du sol",
+  "domain": "locaux-speciaux",
+  "subDomain": "exterieur",
+  "keywords": ["exterieur", "jardin", "ip", "u1000r2v", "prise exterieure"],
+  "synonyms": ["jardin", "terrasse", "installation exterieure"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Extérieur",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation électrique à l'extérieur (jardin, terrasse, etc.)",
+    "requirements": [
+      "IP minimum IPX3 pour installations abritées",
+      "IP minimum IPX4 pour installations exposées aux pluies",
+      "Câbles : U1000R2V ou équivalent résistant aux UV",
+      "Protection DDR 30mA type A obligatoire",
+      "Hauteur des prises : minimum 1m du sol fini",
+      "Câbles passés en goulotte technique ou enterrés si accessibles"
+    ],
+    "values": [
+      {
+        "label": "IP minimum",
+        "parameter": "Abrité",
+        "value": "IPX3",
+        "unit": "",
+        "context": "Installations protégées"
+      },
+      {
+        "label": "IP minimum",
+        "parameter": "Exposé",
+        "value": "IPX4",
+        "unit": "",
+        "context": "Installations exposées aux pluies"
+      },
+      {
+        "label": "Câble",
+        "parameter": "Type",
+        "value": "U1000R2V",
+        "unit": "",
+        "context": "Résistant aux UV"
+      },
+      {
+        "label": "Hauteur prises",
+        "parameter": "Minimum",
+        "value": "1",
+        "unit": "m",
+        "context": "Du sol fini"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les éclairages de jardin, utiliser des transformateurs TBTS si possible",
+      "Les câbles enterrés doivent être à une profondeur de 50cm minimum",
+      "Les coffrets extérieurs doivent être IP55 minimum"
+    ],
+    "commonErrors": [
+      "Utiliser des câbles non résistants aux UV",
+      "Installer des prises trop basses (< 1m)",
+      "Oublier le DDR 30mA type A"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 704",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "differentiel-30ma",
+    "eclairage-logement"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "exterieur",
+    "locaux-speciaux"
+  ]
+}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { FileText, Plus, Eye, Edit } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -35,7 +36,7 @@ export default function AdminFichesPage() {
     <div className="container py-8">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2">📄 Gestion des fiches</h1>
+          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3"><FileText className="w-8 h-8 text-primary" /> Gestion des fiches</h1>
           <p className="text-muted-foreground">
             {sheets.length} fiches techniques disponibles
           </p>
@@ -45,14 +46,14 @@ export default function AdminFichesPage() {
             <Button variant="outline">← Retour</Button>
           </Link>
           <Link href="/admin/fiches/nouveau">
-            <Button>➕ Nouvelle fiche</Button>
+            <Button><Plus className="w-4 h-4 mr-2" /> Nouvelle fiche</Button>
           </Link>
         </div>
       </div>
 
       <div className="mb-6">
         <Input
-          placeholder="🔍 Rechercher une fiche..."
+          placeholder="Rechercher une fiche..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="max-w-md"
@@ -85,11 +86,11 @@ export default function AdminFichesPage() {
                 <div className="flex gap-2">
                   <Link href={`/fiches/${sheet.id}`}>
                     <Button variant="outline" size="sm">
-                      👁️ Voir
+                      <Eye className="w-4 h-4 mr-1" /> Voir
                     </Button>
                   </Link>
                   <Link href={`/admin/fiches/${sheet.id}`}>
-                    <Button size="sm">✏️ Éditer</Button>
+                    <Button size="sm"><Edit className="w-4 h-4 mr-1" /> Éditer</Button>
                   </Link>
                 </div>
               </div>

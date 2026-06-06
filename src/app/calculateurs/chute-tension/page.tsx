@@ -34,10 +34,10 @@ export default function ChuteTensionCalculatorPage() {
 
     const status =
       pourcentage <= 3
-        ? '✅ Conforme'
+        ? 'Conforme'
         : pourcentage <= 5
-          ? '⚠️ Limite'
-          : '❌ Non conforme';
+          ? 'Limite'
+          : 'Non conforme';
 
     setResult(
       `Chute de tension : ${chute.toFixed(2)} V (${pourcentage.toFixed(2)}%) ${status}`

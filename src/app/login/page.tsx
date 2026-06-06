@@ -5,6 +5,8 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Lock, Info } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function LoginPage() {
@@ -42,8 +44,10 @@ export default function LoginPage() {
   return (
     <div className="container flex items-center justify-center min-h-screen py-8">
       <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl">🔐 Administration</CardTitle>
+        <CardHeader className="space-y-1 text-center">
+          <CardTitle className="text-3xl flex items-center justify-center gap-3">
+            <Lock className="w-8 h-8 text-primary" /> Administration
+          </CardTitle>
           <CardDescription>
             Connectez-vous pour gérer le contenu du site
           </CardDescription>
@@ -51,7 +55,7 @@ export default function LoginPage() {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-sm font-medium mb-2 block">Email</label>
+              <Label className="mb-2 block">Email</Label>
               <Input
                 type="email"
                 placeholder="faber.quentin@gmail.com"
@@ -62,9 +66,9 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium mb-2 block">
+              <Label className="mb-2 block">
                 Mot de passe
-              </label>
+              </Label>
               <Input
                 type="password"
                 placeholder="••••••••"
@@ -85,8 +89,10 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          <div className="mt-6 p-4 bg-muted rounded text-sm">
-            <p className="font-semibold mb-2">💡 Informations de connexion :</p>
+          <div className="bg-muted p-4 rounded-lg text-sm text-muted-foreground mt-4 border border-border/50">
+            <p className="font-semibold mb-2 flex items-center gap-2">
+              <Info className="w-4 h-4 text-primary" /> Informations de connexion :
+            </p>
             <p className="text-muted-foreground">
               Email : faber.quentin@gmail.com
             </p>

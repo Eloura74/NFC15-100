@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Plus } from 'lucide-react';
 
 export default function NewSheetPage() {
   const router = useRouter();
@@ -106,7 +107,7 @@ export default function NewSheetPage() {
     <div className="container py-8 max-w-4xl">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2">➕ Nouvelle fiche technique</h1>
+          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3"><Plus className="w-8 h-8 text-primary" /> Nouvelle fiche technique</h1>
           <p className="text-muted-foreground">
             Créez une nouvelle fiche conforme NFC 15-100
           </p>
@@ -306,7 +307,7 @@ export default function NewSheetPage() {
 
         <div className="flex gap-4">
           <Button type="submit" size="lg" className="flex-1">
-            ✅ Créer la fiche
+            <Check className="w-4 h-4 mr-2" /> Créer la fiche
           </Button>
           <Button
             type="button"

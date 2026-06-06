@@ -1,0 +1,100 @@
+{
+  "id": "liaison-equipotentielle",
+  "title": "Liaison équipotentielle",
+  "summary": "Règles d'installation des liaisons équipotentielles selon la norme NFC 15-100",
+  "immediateAnswer": "LEP (Liaison Équipotentielle Principale) obligatoire dans le tableau | LES (Liaison Équipotentielle Supplémentaire) dans les salles d'eau | Section minimale : 6mm² cuivre | Raccordement à la prise de terre",
+  "domain": "terre",
+  "subDomain": "liaisons",
+  "keywords": ["lep", "les", "liaison equipotentielle", "equipotentielle", "salle d'eau"],
+  "synonyms": ["equipotentielle", "liaison equipotentielle principale"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation des liaisons équipotentielles dans le logement",
+    "requirements": [
+      "LEP obligatoire dans le tableau électrique principal",
+      "LES obligatoire dans les salles d'eau (volumes 1, 2 et 3)",
+      "Section minimale : 6mm² cuivre ou équivalent",
+      "Raccordement à la barrette de terre principale",
+      "Connexion de tous les éléments conducteurs (canalisations, structures métalliques)"
+    ],
+    "values": [
+      {
+        "label": "Section LEP",
+        "parameter": "Minimum",
+        "value": "6",
+        "unit": "mm²",
+        "context": "Cuivre"
+      },
+      {
+        "label": "Section LES",
+        "parameter": "Minimum",
+        "value": "6",
+        "unit": "mm²",
+        "context": "Cuivre"
+      },
+      {
+        "label": "Raccordement",
+        "parameter": "LEP",
+        "value": "Tableau",
+        "unit": "",
+        "context": "Barrette de terre"
+      },
+      {
+        "label": "Raccordement",
+        "parameter": "LES",
+        "value": "Salle d'eau",
+        "unit": "",
+        "context": "Volumes 1, 2, 3"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les canalisations plastiques, aucune liaison équipotentielle n'est nécessaire",
+      "La section peut être réduite à 2.5mm² pour la LES si protégée mécaniquement"
+    ],
+    "commonErrors": [
+      "Oublier la LEP dans le tableau",
+      "Ne pas connecter toutes les canalisations métalliques",
+      "Utiliser une section insuffisante"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 411.3.1.2",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "prise-terre-valeur",
+    "volumes-salle-eau"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "liaison",
+    "terre"
+  ]
+}

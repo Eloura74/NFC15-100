@@ -1,0 +1,102 @@
+{
+  "id": "piscine-electrique",
+  "title": "Installation électrique piscine",
+  "summary": "Règles d'installation électrique pour piscines et bassins selon la norme NFC 15-100",
+  "immediateAnswer": "Volume 0 : interdit (dans l'eau) | Volume 1 : TBTS 12V max obligatoire | Volume 2 : TBTS 12V ou 230V avec protection 30mA type A | Volume 3 : 230V avec protection 30mA type A | Prises interdites dans volumes 0, 1 et 2",
+  "domain": "locaux-speciaux",
+  "subDomain": "piscine",
+  "keywords": ["piscine", "bassin", "volume", "tbts", "30ma"],
+  "synonyms": ["bassin", "piscine electrique"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Piscine",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation électrique dans ou autour d'une piscine",
+    "requirements": [
+      "Volume 0 (dans l'eau) : tout appareil interdit",
+      "Volume 1 (0-2m du bord) : TBTS 12V max obligatoire",
+      "Volume 2 (2-2.5m du bord) : TBTS 12V ou 230V avec DDR 30mA type A",
+      "Volume 3 (2.5m et plus) : 230V avec DDR 30mA type A",
+      "Prises de courant interdites dans volumes 0, 1 et 2",
+      "Appareils d'éclairage étanches IPX5 minimum"
+    ],
+    "values": [
+      {
+        "label": "Volume 0",
+        "parameter": "Tension",
+        "value": "Interdit",
+        "unit": "",
+        "context": "Dans l'eau"
+      },
+      {
+        "label": "Volume 1",
+        "parameter": "Tension",
+        "value": "12",
+        "unit": "V",
+        "context": "TBTS max"
+      },
+      {
+        "label": "Volume 2",
+        "parameter": "Tension",
+        "value": "12/230",
+        "unit": "V",
+        "context": "TBTS ou 230V avec DDR 30mA type A"
+      },
+      {
+        "label": "Volume 3",
+        "parameter": "Tension",
+        "value": "230",
+        "unit": "V",
+        "context": "Avec DDR 30mA type A"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Les transformateurs TBTS doivent être situés hors du volume 2",
+      "Les câbles doivent être protégés mécaniquement",
+      "Les projecteurs immergés doivent être alimentés en TBTS"
+    ],
+    "commonErrors": [
+      "Installer des prises dans le volume 2",
+      "Utiliser du 230V dans le volume 1",
+      "Oublier le DDR 30mA type A"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 702",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "volumes-salle-eau",
+    "differentiel-30ma"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "piscine",
+    "locaux-speciaux"
+  ]
+}
