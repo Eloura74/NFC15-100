@@ -69,7 +69,7 @@ export function Sidebar({ className }: { className?: string }) {
   return (
     <aside
       className={cn(
-        className ? '' : 'hidden xl:block',
+        className ? '' : 'hidden 2xl:block',
         'w-72 border-r border-white/5 bg-background/40 backdrop-blur-xl',
         className ? 'h-auto' : 'sticky top-16 h-[calc(100vh-4rem)]',
         'overflow-y-auto',
