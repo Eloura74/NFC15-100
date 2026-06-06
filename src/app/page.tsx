@@ -14,6 +14,7 @@ import { getCurrentVersion } from '@/lib/content/get-versions';
 import { getAllSheets } from '@/lib/content/get-sheets';
 import { ImageWithFallback } from '@/components/ui/image-with-fallback';
 import { AnimatedSection } from '@/components/sheet/animated-section';
+import { Disclaimer } from '@/components/ui/disclaimer';
 import {
   Power,
   Shield,
@@ -166,6 +167,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      </AnimatedSection>
+
+      <AnimatedSection delay={150}>
+        <Disclaimer className="mb-8" />
       </AnimatedSection>
 
       <AnimatedSection delay={200}>

@@ -1,0 +1,215 @@
+{
+  "id": "diff-type-b-f",
+  "title": "Différentiels type B et F - Quand sont-ils obligatoires ?",
+  "summary": "Guide complet sur les différentiels type B et F : obligations, applications et différences avec les types A et AC",
+  "immediateAnswer": "Type F recommandé pour continuité de service (congélateur, alarme) | Type B OBLIGATOIRE pour : photovoltaïque > 3kVA, IRVE triphasée, variateurs de vitesse, onduleurs | Type B détecte courants DC et AC",
+  "domain": "protections",
+  "subDomain": "differentiel",
+  "keywords": [
+    "différentiel type B",
+    "différentiel type F",
+    "photovoltaïque",
+    "IRVE",
+    "borne de recharge",
+    "courant continu",
+    "DC",
+    "continuité de service"
+  ],
+  "synonyms": [
+    "DDR type B",
+    "DDR type F",
+    "inter diff type B",
+    "protection DC"
+  ],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement avec photovoltaïque",
+      "required": true
+    },
+    {
+      "type": "installation",
+      "value": "Logement avec IRVE",
+      "required": true
+    },
+    {
+      "type": "installation",
+      "value": "Installation avec variateurs",
+      "required": false
+    }
+  ],
+  "version": "nfc15100-2020-A5",
+  "lastVerified": "2026-06-01",
+  "status": "published",
+  "criticality": "important",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Les différentiels type B et F sont requis dans des cas spécifiques où les types A et AC sont insuffisants. Le type B est OBLIGATOIRE pour certaines installations (photovoltaïque, IRVE). Le type F est RECOMMANDÉ pour améliorer la continuité de service.",
+    "requirements": [
+      "Type B obligatoire si installation photovoltaïque > 3 kVA",
+      "Type B obligatoire pour IRVE triphasée",
+      "Type B obligatoire pour variateurs de vitesse > 10 A",
+      "Type F recommandé pour circuits critiques (congélateur, alarme, informatique)"
+    ],
+    "values": [
+      {
+        "label": "Type B - Photovoltaïque",
+        "parameter": "Puissance installation",
+        "value": "> 3 kVA",
+        "unit": "",
+        "context": "Obligatoire pour détecter courants DC"
+      },
+      {
+        "label": "Type B - IRVE",
+        "parameter": "Configuration",
+        "value": "Triphasé",
+        "unit": "",
+        "context": "Obligatoire pour bornes de recharge triphasées"
+      },
+      {
+        "label": "Type F - Temporisation",
+        "parameter": "Retard au déclenchement",
+        "value": "10-40 ms",
+        "unit": "",
+        "context": "Évite déclenchements intempestifs"
+      },
+      {
+        "label": "Type F - Immunité",
+        "parameter": "Fréquences parasites",
+        "value": "Jusqu'à 1 kHz",
+        "unit": "",
+        "context": "Résiste aux harmoniques"
+      }
+    ],
+    "exceptions": [
+      "Photovoltaïque ≤ 3 kVA : type A suffit",
+      "IRVE monophasée : type A suffit (mais type F recommandé)",
+      "Certains onduleurs avec isolation galvanique : type A possible"
+    ],
+    "specialCases": [
+      "Type B : détecte courants AC, DC pulsés et DC lisses",
+      "Type F : type A amélioré avec temporisation et immunité",
+      "Type B coûte 3-5x plus cher qu'un type A",
+      "Un type B peut remplacer un type A ou F",
+      "Un type F peut remplacer un type A"
+    ],
+    "commonErrors": [
+      "Installer un type A pour une installation photovoltaïque > 3 kVA",
+      "Ne pas prévoir de type B pour une IRVE triphasée",
+      "Confondre type F et type B",
+      "Installer un type B partout (surcoût inutile)",
+      "Ne pas vérifier la compatibilité avec l'onduleur photovoltaïque"
+    ],
+    "risks": [
+      {
+        "description": "Type A sur installation photovoltaïque : non-détection de défaut DC",
+        "level": "critique",
+        "consequences": [
+          "Risque d'incendie",
+          "Électrocution possible",
+          "Non-conformité NFC 15-100",
+          "Refus CONSUEL"
+        ]
+      },
+      {
+        "description": "Déclenchements intempestifs sans type F",
+        "level": "faible",
+        "consequences": [
+          "Perte de congélation",
+          "Alarme désactivée",
+          "Inconfort"
+        ]
+      }
+    ],
+    "controls": [
+      "Vérifier la puissance de l'installation photovoltaïque",
+      "Vérifier la configuration de l'IRVE (mono/tri)",
+      "Contrôler le marquage du différentiel (B, F, A, AC)",
+      "Vérifier la notice de l'onduleur photovoltaïque",
+      "Tester le déclenchement"
+    ],
+    "checklist": [
+      "Type B installé si photovoltaïque > 3 kVA",
+      "Type B installé si IRVE triphasée",
+      "Type F envisagé pour circuits critiques",
+      "Compatibilité vérifiée avec équipements",
+      "Repérage clair du type de différentiel"
+    ],
+    "comparison": {
+      "title": "Comparaison des types de différentiels",
+      "items": [
+        {
+          "type": "AC",
+          "detection": "Courants AC sinusoïdaux uniquement",
+          "usage": "Circuits basiques (éclairage, prises standards)",
+          "price": "€",
+          "obsolete": "Remplacé progressivement par type A"
+        },
+        {
+          "type": "A",
+          "detection": "AC + DC pulsés",
+          "usage": "Plaques, lave-linge, variateurs simples",
+          "price": "€€",
+          "obligatoire": "Au moins 1 par logement"
+        },
+        {
+          "type": "F",
+          "detection": "Comme A + immunité harmoniques",
+          "usage": "Circuits critiques, informatique, congélateur",
+          "price": "€€€",
+          "avantage": "Continuité de service"
+        },
+        {
+          "type": "B",
+          "detection": "AC + DC pulsés + DC lisses",
+          "usage": "Photovoltaïque, IRVE tri, variateurs puissants",
+          "price": "€€€€€",
+          "obligatoire": "Selon installation"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "nfc15100-771-531",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100",
+      "article": "§ 771.531.2.1",
+      "date": "2020-11",
+      "amendment": "A5 (2021)"
+    },
+    {
+      "id": "guide-ute-c15-712-1",
+      "type": "guide",
+      "title": "Guide UTE C 15-712-1",
+      "reference": "Photovoltaïque raccordé au réseau",
+      "date": "2021"
+    }
+  ],
+  "relatedSheets": [
+    "diff-30ma-logement",
+    "diff-type-a-ac",
+    "photovoltaique-logement",
+    "irve-logement"
+  ],
+  "author": "Équipe éditoriale",
+  "verifier": "Expert technique",
+  "history": [
+    {
+      "date": "2026-06-01",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche type B/F suite à demandes utilisateurs"
+    }
+  ],
+  "tags": [
+    "protection",
+    "différentiel",
+    "type B",
+    "type F",
+    "photovoltaïque",
+    "IRVE",
+    "obligatoire"
+  ]
+}
