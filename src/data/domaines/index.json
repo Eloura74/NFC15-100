@@ -79,7 +79,7 @@
     "name": "Circuits terminaux",
     "description": "Éclairage, prises, chauffage et circuits spécialisés",
     "icon": "cable",
-    "sheetCount": 8,
+    "sheetCount": 9,
     "subDomains": [
       {
         "id": "eclairage",
@@ -98,6 +98,12 @@
         "name": "Chauffage et eau chaude",
         "description": "Circuits de chauffage électrique",
         "sheetCount": 2
+      },
+      {
+        "id": "reperage",
+        "name": "Repérage et identification",
+        "description": "Code couleur et identification des circuits",
+        "sheetCount": 1
       }
     ]
   },

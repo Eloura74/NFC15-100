@@ -3,8 +3,8 @@
   "title": "Repérage par scotch de couleur",
   "summary": "Code couleur pour le repérage des circuits électriques par scotch",
   "immediateAnswer": "Orange = Alimentation | Vert = Extérieur | Gris = Communication | Bleu = Éclairage | Rouge = Prises",
-  "domain": "Circuits",
-  "subDomain": "repérage",
+  "domain": "circuits",
+  "subDomain": "reperage",
   "keywords": [
     "scotch",
     "couleur",
