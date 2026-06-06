@@ -16,17 +16,26 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/domaines" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/domaines"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   Domaines
                 </Link>
               </li>
               <li>
-                <Link href="/versions" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/versions"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   Versions
                 </Link>
               </li>
               <li>
-                <Link href="/calculateurs" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/calculateurs"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   Calculateurs
                 </Link>
               </li>
@@ -37,12 +46,18 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Informations</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/a-propos" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/a-propos"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   À propos
                 </Link>
               </li>
               <li>
-                <Link href="/mentions-legales" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/mentions-legales"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   Mentions légales
                 </Link>
               </li>
@@ -52,7 +67,9 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
-            Cette application est une aide à la consultation. Elle ne remplace pas les textes officiels ni l'intervention d'un professionnel habilité.
+            Cette application est une aide à la consultation. Elle ne remplace
+            pas les textes officiels ni l&#39;intervention d&#39;un
+            professionnel habilité.
           </p>
           <p className="mt-2">© 2026 ElecNorme - Tous droits réservés</p>
         </div>
