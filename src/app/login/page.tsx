@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Lock, Info } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -66,9 +72,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <Label className="mb-2 block">
-                Mot de passe
-              </Label>
+              <Label className="mb-2 block">Mot de passe</Label>
               <Input
                 type="password"
                 placeholder="••••••••"
@@ -91,7 +95,8 @@ export default function LoginPage() {
 
           <div className="bg-muted p-4 rounded-lg text-sm text-muted-foreground mt-4 border border-border/50">
             <p className="font-semibold mb-2 flex items-center gap-2">
-              <Info className="w-4 h-4 text-primary" /> Informations de connexion :
+              <Info className="w-4 h-4 text-primary" /> Informations de
+              connexion :
             </p>
             <p className="text-muted-foreground">
               Email : faber.quentin@gmail.com

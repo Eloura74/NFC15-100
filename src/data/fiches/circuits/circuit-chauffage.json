@@ -85,9 +85,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "calibre-disjoncteur"
-  ],
+  "relatedSheets": ["calibre-disjoncteur"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -98,8 +96,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "chauffage",
-    "circuit"
-  ]
+  "tags": ["chauffage", "circuit"]
 }

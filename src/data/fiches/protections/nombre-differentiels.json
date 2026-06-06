@@ -5,7 +5,13 @@
   "immediateAnswer": "Minimum 2 DDR 30mA pour toute installation. Maximum 8 circuits ou 40A par DDR.",
   "domain": "Protections",
   "subDomain": "differentiel",
-  "keywords": ["différentiel", "30mA", "nombre", "DDR", "interrupteur différentiel"],
+  "keywords": [
+    "différentiel",
+    "30mA",
+    "nombre",
+    "DDR",
+    "interrupteur différentiel"
+  ],
   "synonyms": ["DDR", "ID", "interrupteur différentiel"],
   "applicableContexts": [
     {
@@ -119,7 +125,11 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": ["differentiel-type-a", "differentiel-type-f", "repartition-circuits"],
+  "relatedSheets": [
+    "differentiel-type-a",
+    "differentiel-type-f",
+    "repartition-circuits"
+  ],
   "author": "ElecNorme",
   "verifier": "ElecNorme",
   "history": [

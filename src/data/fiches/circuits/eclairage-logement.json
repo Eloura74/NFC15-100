@@ -5,10 +5,17 @@
   "immediateAnswer": "Maximum 8 points d'éclairage par circuit 16A ou 2 points par circuit 10A. Protection différentielle 30mA obligatoire.",
   "domain": "circuits",
   "subDomain": "eclairage",
-  "keywords": ["éclairage", "points lumineux", "circuit", "disjoncteur", "16A", "10A"],
+  "keywords": [
+    "éclairage",
+    "points lumineux",
+    "circuit",
+    "disjoncteur",
+    "16A",
+    "10A"
+  ],
   "synonyms": ["lumière", "lampes", "spots"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true}
+    { "type": "installation", "value": "Logement", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,9 +33,25 @@
       "Disjoncteur adapté à la section"
     ],
     "values": [
-      {"label": "Points max (16A)", "value": 8, "conditions": ["Circuit 1,5mm²"], "source": "NF C 15-100"},
-      {"label": "Points max (10A)", "value": 2, "conditions": ["Circuit 1,5mm²"], "source": "NF C 15-100"},
-      {"label": "Section minimale", "value": 1.5, "unit": "mm²", "conditions": ["Cuivre"], "source": "NF C 15-100"}
+      {
+        "label": "Points max (16A)",
+        "value": 8,
+        "conditions": ["Circuit 1,5mm²"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Points max (10A)",
+        "value": 2,
+        "conditions": ["Circuit 1,5mm²"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Section minimale",
+        "value": 1.5,
+        "unit": "mm²",
+        "conditions": ["Cuivre"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Spots LED basse consommation : possibilité de plus de 8 points si puissance totale < 2300W"
@@ -60,13 +83,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.314.2.2", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771.314.2.2",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["diff-30ma-logement", "prises-cuisine"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["éclairage", "circuits", "points lumineux", "16A", "10A"]
 }

@@ -92,9 +92,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "tableau-logement"
-  ],
+  "relatedSheets": ["tableau-logement"],
   "author": "Expert technique",
   "verifier": "Comité",
   "history": [
@@ -105,9 +103,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "gtl",
-    "etel",
-    "tableau"
-  ]
+  "tags": ["gtl", "etel", "tableau"]
 }

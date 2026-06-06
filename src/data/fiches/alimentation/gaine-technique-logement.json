@@ -8,8 +8,8 @@
   "keywords": ["GTL", "gaine technique", "tableau", "dimensions", "logement"],
   "synonyms": ["gaine technique", "espace technique"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true},
-    {"type": "work", "value": "Neuf", "required": false}
+    { "type": "installation", "value": "Logement", "required": true },
+    { "type": "work", "value": "Neuf", "required": false }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -27,9 +27,26 @@
       "Contient DB, tableau, communication"
     ],
     "values": [
-      {"label": "Largeur minimale", "value": 600, "unit": "mm", "conditions": ["Standard"], "source": "NF C 15-100"},
-      {"label": "Profondeur minimale", "value": 250, "unit": "mm", "conditions": ["Standard"], "source": "NF C 15-100"},
-      {"label": "Hauteur", "value": "Sol au plafond", "conditions": ["Obligatoire"], "source": "NF C 15-100"}
+      {
+        "label": "Largeur minimale",
+        "value": 600,
+        "unit": "mm",
+        "conditions": ["Standard"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Profondeur minimale",
+        "value": 250,
+        "unit": "mm",
+        "conditions": ["Standard"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Hauteur",
+        "value": "Sol au plafond",
+        "conditions": ["Obligatoire"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Logements existants : GTL non obligatoire sauf rénovation totale"
@@ -62,13 +79,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.559", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771.559",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["disjoncteur-branchement"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["GTL", "gaine technique", "tableau", "dimensions", "logement"]
 }

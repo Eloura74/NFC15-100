@@ -5,7 +5,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FileText, Plus, Eye, Edit } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { getAllSheets } from '@/lib/content/get-sheets';
 
@@ -36,7 +42,9 @@ export default function AdminFichesPage() {
     <div className="container py-8">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3"><FileText className="w-8 h-8 text-primary" /> Gestion des fiches</h1>
+          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+            <FileText className="w-8 h-8 text-primary" /> Gestion des fiches
+          </h1>
           <p className="text-muted-foreground">
             {sheets.length} fiches techniques disponibles
           </p>
@@ -46,7 +54,9 @@ export default function AdminFichesPage() {
             <Button variant="outline">← Retour</Button>
           </Link>
           <Link href="/admin/fiches/nouveau">
-            <Button><Plus className="w-4 h-4 mr-2" /> Nouvelle fiche</Button>
+            <Button>
+              <Plus className="w-4 h-4 mr-2" /> Nouvelle fiche
+            </Button>
           </Link>
         </div>
       </div>
@@ -90,7 +100,9 @@ export default function AdminFichesPage() {
                     </Button>
                   </Link>
                   <Link href={`/admin/fiches/${sheet.id}`}>
-                    <Button size="sm"><Edit className="w-4 h-4 mr-1" /> Éditer</Button>
+                    <Button size="sm">
+                      <Edit className="w-4 h-4 mr-1" /> Éditer
+                    </Button>
                   </Link>
                 </div>
               </div>

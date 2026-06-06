@@ -4,7 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SearchEngine } from '@/lib/search/search-engine';
 import { getAllSheets } from '@/lib/content/get-sheets';
@@ -20,7 +26,7 @@ export default function RecherchePage() {
     const sheets = getAllSheets();
     const searchEngine = new SearchEngine(sheets);
     const searchResults = searchEngine.search({ query, limit: 20 });
-    
+
     setResults(searchResults);
     setHasSearched(true);
   };
@@ -57,13 +63,17 @@ export default function RecherchePage() {
         {hasSearched && (
           <div>
             <p className="text-sm text-muted-foreground mb-4">
-              {results.length} résultat{results.length > 1 ? 's' : ''} trouvé{results.length > 1 ? 's' : ''}
+              {results.length} résultat{results.length > 1 ? 's' : ''} trouvé
+              {results.length > 1 ? 's' : ''}
             </p>
 
             {results.length > 0 ? (
               <div className="space-y-4">
                 {results.map((result) => (
-                  <Link key={result.sheet.id} href={`/fiches/${result.sheet.id}`}>
+                  <Link
+                    key={result.sheet.id}
+                    href={`/fiches/${result.sheet.id}`}
+                  >
                     <Card className="hover:bg-accent transition-colors cursor-pointer">
                       <CardHeader>
                         <div className="flex items-start justify-between gap-4">
@@ -95,7 +105,9 @@ export default function RecherchePage() {
                         <div className="flex gap-2">
                           <Badge variant="outline">{result.sheet.domain}</Badge>
                           {result.sheet.subDomain && (
-                            <Badge variant="outline">{result.sheet.subDomain}</Badge>
+                            <Badge variant="outline">
+                              {result.sheet.subDomain}
+                            </Badge>
                           )}
                         </div>
                       </CardContent>
@@ -110,7 +122,8 @@ export default function RecherchePage() {
                     Aucun résultat trouvé pour &quot;{query}&quot;
                   </p>
                   <p className="text-center text-sm text-muted-foreground mt-2">
-                    Essayez avec d&apos;autres mots-clés ou parcourez les domaines
+                    Essayez avec d&apos;autres mots-clés ou parcourez les
+                    domaines
                   </p>
                   <div className="flex justify-center mt-4">
                     <Link href="/domaines">
@@ -135,7 +148,7 @@ export default function RecherchePage() {
                   'tableau électrique',
                   'prise de terre',
                   'protection',
-                  'salle d\'eau',
+                  "salle d'eau",
                   'cuisine',
                 ].map((suggestion) => (
                   <Button

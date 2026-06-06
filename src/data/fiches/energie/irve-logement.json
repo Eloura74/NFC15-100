@@ -5,10 +5,16 @@
   "immediateAnswer": "Circuit dédié 32A minimum, protection différentielle type F ou B, délesteur recommandé si puissance limitée. Pré-équipement obligatoire en neuf.",
   "domain": "energie",
   "subDomain": "irve",
-  "keywords": ["IRVE", "borne recharge", "véhicule électrique", "wallbox", "VE"],
+  "keywords": [
+    "IRVE",
+    "borne recharge",
+    "véhicule électrique",
+    "wallbox",
+    "VE"
+  ],
   "synonyms": ["borne de recharge", "wallbox", "point de charge"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement individuel", "required": true}
+    { "type": "installation", "value": "Logement individuel", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,9 +32,27 @@
       "Pré-équipement en neuf"
     ],
     "values": [
-      {"label": "Intensité minimale", "value": 32, "unit": "A", "conditions": ["Monophasé"], "source": "NF C 15-100"},
-      {"label": "Puissance typique", "value": "7.4", "unit": "kW", "conditions": ["230V 32A"], "source": "Calcul"},
-      {"label": "Section câble 32A", "value": 6, "unit": "mm²", "conditions": ["Cuivre, < 30m"], "source": "NF C 15-100"}
+      {
+        "label": "Intensité minimale",
+        "value": 32,
+        "unit": "A",
+        "conditions": ["Monophasé"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Puissance typique",
+        "value": "7.4",
+        "unit": "kW",
+        "conditions": ["230V 32A"],
+        "source": "Calcul"
+      },
+      {
+        "label": "Section câble 32A",
+        "value": 6,
+        "unit": "mm²",
+        "conditions": ["Cuivre, < 30m"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Prise renforcée 16A possible (charge lente)",
@@ -51,7 +75,11 @@
       {
         "description": "Surcharge de l'installation",
         "level": "moyen",
-        "consequences": ["Déclenchements", "Échauffement", "Disjonction générale"]
+        "consequences": [
+          "Déclenchements",
+          "Échauffement",
+          "Disjonction générale"
+        ]
       }
     ],
     "controls": [
@@ -64,13 +92,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 722", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 722",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["diff-type-a-ac", "circuits-specialises"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["IRVE", "borne", "recharge", "véhicule électrique", "wallbox"]
 }

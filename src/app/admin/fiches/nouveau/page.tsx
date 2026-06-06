@@ -5,9 +5,21 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Plus, Check } from 'lucide-react';
 
 export default function NewSheetPage() {
@@ -40,7 +52,7 @@ export default function NewSheetPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Créer l'objet JSON de la fiche
     const sheet = {
       id: formData.id,
@@ -49,9 +61,11 @@ export default function NewSheetPage() {
       immediateAnswer: formData.immediateAnswer,
       domain: formData.domain,
       subDomain: formData.subDomain,
-      keywords: formData.keywords.split(',').map(k => k.trim()),
+      keywords: formData.keywords.split(',').map((k) => k.trim()),
       synonyms: [],
-      applicableContexts: [{ type: 'installation', value: 'Toute installation', required: true }],
+      applicableContexts: [
+        { type: 'installation', value: 'Toute installation', required: true },
+      ],
       excludedContexts: [],
       version: 'nfc15100-2020',
       lastVerified: new Date().toISOString().split('T')[0],
@@ -60,29 +74,43 @@ export default function NewSheetPage() {
       confidence: 'source_normative',
       content: {
         whenApplies: formData.summary,
-        requirements: formData.requirements.split('\n').filter(r => r.trim()),
+        requirements: formData.requirements.split('\n').filter((r) => r.trim()),
         values: [],
         exceptions: [],
-        specialCases: formData.examples.split('\n').filter(e => e.trim()),
-        commonErrors: formData.errors.split('\n').filter(e => e.trim()),
-        risks: formData.risks.split('\n').map(r => ({
-          description: r.trim(),
-          level: formData.criticality,
-          consequences: [],
-        })).filter(r => r.description),
-        controls: formData.controls.split('\n').filter(c => c.trim()),
+        specialCases: formData.examples.split('\n').filter((e) => e.trim()),
+        commonErrors: formData.errors.split('\n').filter((e) => e.trim()),
+        risks: formData.risks
+          .split('\n')
+          .map((r) => ({
+            description: r.trim(),
+            level: formData.criticality,
+            consequences: [],
+          }))
+          .filter((r) => r.description),
+        controls: formData.controls.split('\n').filter((c) => c.trim()),
         checklist: [],
       },
       sources: [
-        { id: 'nfc15100', type: 'normative', title: 'NF C 15-100', reference: 'NF C 15-100', date: '2020' },
+        {
+          id: 'nfc15100',
+          type: 'normative',
+          title: 'NF C 15-100',
+          reference: 'NF C 15-100',
+          date: '2020',
+        },
       ],
       relatedSheets: [],
       author: 'Admin',
       verifier: 'Admin',
       history: [
-        { date: new Date().toISOString().split('T')[0], author: 'Admin', action: 'created', description: 'Création de la fiche' },
+        {
+          date: new Date().toISOString().split('T')[0],
+          author: 'Admin',
+          action: 'created',
+          description: 'Création de la fiche',
+        },
       ],
-      tags: formData.keywords.split(',').map(k => k.trim()),
+      tags: formData.keywords.split(',').map((k) => k.trim()),
     };
 
     // Afficher le JSON dans la console
@@ -92,11 +120,11 @@ export default function NewSheetPage() {
     // Afficher une alerte avec les instructions
     alert(
       `Fiche créée avec succès !\n\n` +
-      `Pour l'ajouter au site :\n\n` +
-      `1. Créez le fichier : src/data/fiches/${formData.domain}/${formData.id}.json\n` +
-      `2. Copiez le JSON affiché dans la console\n` +
-      `3. Ajoutez l'import dans src/lib/content/get-sheets.ts\n\n` +
-      `ID de la fiche : ${formData.id}`
+        `Pour l'ajouter au site :\n\n` +
+        `1. Créez le fichier : src/data/fiches/${formData.domain}/${formData.id}.json\n` +
+        `2. Copiez le JSON affiché dans la console\n` +
+        `3. Ajoutez l'import dans src/lib/content/get-sheets.ts\n\n` +
+        `ID de la fiche : ${formData.id}`
     );
 
     // Rediriger vers la liste
@@ -107,7 +135,9 @@ export default function NewSheetPage() {
     <div className="container py-8 max-w-4xl">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3"><Plus className="w-8 h-8 text-primary" /> Nouvelle fiche technique</h1>
+          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+            <Plus className="w-8 h-8 text-primary" /> Nouvelle fiche technique
+          </h1>
           <p className="text-muted-foreground">
             Créez une nouvelle fiche conforme NFC 15-100
           </p>
@@ -121,7 +151,9 @@ export default function NewSheetPage() {
         <Card>
           <CardHeader>
             <CardTitle>Informations générales</CardTitle>
-            <CardDescription>Identité et classification de la fiche</CardDescription>
+            <CardDescription>
+              Identité et classification de la fiche
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -131,7 +163,9 @@ export default function NewSheetPage() {
                   id="id"
                   placeholder="ex: disjoncteur-divisionnaire"
                   value={formData.id}
-                  onChange={(e) => setFormData({ ...formData, id: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, id: e.target.value })
+                  }
                   required
                 />
                 <p className="text-xs text-muted-foreground mt-1">
@@ -143,7 +177,9 @@ export default function NewSheetPage() {
                 <Label htmlFor="criticality">Criticité *</Label>
                 <Select
                   value={formData.criticality}
-                  onValueChange={(value) => setFormData({ ...formData, criticality: value })}
+                  onValueChange={(value) =>
+                    setFormData({ ...formData, criticality: value })
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -152,7 +188,9 @@ export default function NewSheetPage() {
                     <SelectItem value="normale">Normale</SelectItem>
                     <SelectItem value="attention">Attention</SelectItem>
                     <SelectItem value="critique">Critique</SelectItem>
-                    <SelectItem value="danger_immediat">Danger immédiat</SelectItem>
+                    <SelectItem value="danger_immediat">
+                      Danger immédiat
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -164,7 +202,9 @@ export default function NewSheetPage() {
                 id="title"
                 placeholder="ex: Disjoncteurs divisionnaires - Calibres et sections"
                 value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
                 required
               />
             </div>
@@ -175,7 +215,9 @@ export default function NewSheetPage() {
                 id="summary"
                 placeholder="ex: Correspondance entre calibre du disjoncteur et section de câble"
                 value={formData.summary}
-                onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, summary: e.target.value })
+                }
                 required
               />
             </div>
@@ -186,7 +228,9 @@ export default function NewSheetPage() {
                 id="immediateAnswer"
                 placeholder="ex: Disjoncteur 10A → 1,5mm² | 16A → 1,5mm² | 20A → 2,5mm² | 32A → 6mm²"
                 value={formData.immediateAnswer}
-                onChange={(e) => setFormData({ ...formData, immediateAnswer: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, immediateAnswer: e.target.value })
+                }
                 rows={2}
                 required
               />
@@ -200,7 +244,9 @@ export default function NewSheetPage() {
                 <Label htmlFor="domain">Domaine *</Label>
                 <Select
                   value={formData.domain}
-                  onValueChange={(value) => setFormData({ ...formData, domain: value })}
+                  onValueChange={(value) =>
+                    setFormData({ ...formData, domain: value })
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Sélectionnez un domaine" />
@@ -221,7 +267,9 @@ export default function NewSheetPage() {
                   id="subDomain"
                   placeholder="ex: surintensites"
                   value={formData.subDomain}
-                  onChange={(e) => setFormData({ ...formData, subDomain: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subDomain: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -232,7 +280,9 @@ export default function NewSheetPage() {
                 id="keywords"
                 placeholder="ex: disjoncteur, calibre, section, câble, protection"
                 value={formData.keywords}
-                onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, keywords: e.target.value })
+                }
                 required
               />
               <p className="text-xs text-muted-foreground mt-1">
@@ -254,18 +304,24 @@ export default function NewSheetPage() {
                 id="requirements"
                 placeholder="Une exigence par ligne&#10;ex: Calibre adapté à la section&#10;Courbe C pour usage domestique&#10;Pouvoir de coupure suffisant"
                 value={formData.requirements}
-                onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, requirements: e.target.value })
+                }
                 rows={5}
               />
             </div>
 
             <div>
-              <Label htmlFor="examples">Exemples concrets (5 minimum recommandés)</Label>
+              <Label htmlFor="examples">
+                Exemples concrets (5 minimum recommandés)
+              </Label>
               <Textarea
                 id="examples"
                 placeholder="Un exemple par ligne&#10;ex: Circuit prises 16A avec câble 1,5mm² → OK&#10;Circuit 20A avec câble 1,5mm² → DANGER !"
                 value={formData.examples}
-                onChange={(e) => setFormData({ ...formData, examples: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, examples: e.target.value })
+                }
                 rows={6}
               />
             </div>
@@ -276,7 +332,9 @@ export default function NewSheetPage() {
                 id="errors"
                 placeholder="Une erreur par ligne&#10;ex: Calibre trop élevé pour la section&#10;Section insuffisante pour le calibre"
                 value={formData.errors}
-                onChange={(e) => setFormData({ ...formData, errors: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, errors: e.target.value })
+                }
                 rows={4}
               />
             </div>
@@ -287,7 +345,9 @@ export default function NewSheetPage() {
                 id="risks"
                 placeholder="Un risque par ligne&#10;ex: Échauffement du câble si calibre trop élevé&#10;Incendie possible"
                 value={formData.risks}
-                onChange={(e) => setFormData({ ...formData, risks: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, risks: e.target.value })
+                }
                 rows={4}
               />
             </div>
@@ -298,7 +358,9 @@ export default function NewSheetPage() {
                 id="controls"
                 placeholder="Un contrôle par ligne&#10;ex: Vérifier la section du câble&#10;Vérifier le calibre du disjoncteur"
                 value={formData.controls}
-                onChange={(e) => setFormData({ ...formData, controls: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, controls: e.target.value })
+                }
                 rows={4}
               />
             </div>

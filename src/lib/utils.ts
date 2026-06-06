@@ -30,11 +30,14 @@ export function formatRelativeTime(date: string | Date): string {
   const now = new Date();
   const diffInSeconds = Math.floor((now.getTime() - d.getTime()) / 1000);
 
-  if (diffInSeconds < 60) return 'À l\'instant';
-  if (diffInSeconds < 3600) return `Il y a ${Math.floor(diffInSeconds / 60)} min`;
-  if (diffInSeconds < 86400) return `Il y a ${Math.floor(diffInSeconds / 3600)} h`;
-  if (diffInSeconds < 604800) return `Il y a ${Math.floor(diffInSeconds / 86400)} j`;
-  
+  if (diffInSeconds < 60) return "À l'instant";
+  if (diffInSeconds < 3600)
+    return `Il y a ${Math.floor(diffInSeconds / 60)} min`;
+  if (diffInSeconds < 86400)
+    return `Il y a ${Math.floor(diffInSeconds / 3600)} h`;
+  if (diffInSeconds < 604800)
+    return `Il y a ${Math.floor(diffInSeconds / 86400)} j`;
+
   return formatDate(d);
 }
 
@@ -61,13 +64,13 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null;
-  
+
   return function executedFunction(...args: Parameters<T>) {
     const later = () => {
       timeout = null;
       func(...args);
     };
-    
+
     if (timeout) clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
@@ -80,10 +83,13 @@ export function isOnline(): boolean {
 
 export function getStorageSize(): number {
   if (typeof navigator === 'undefined' || !navigator.storage) return 0;
-  
-  return navigator.storage.estimate().then((estimate) => {
-    return estimate.usage || 0;
-  }).catch(() => 0) as any;
+
+  return navigator.storage
+    .estimate()
+    .then((estimate) => {
+      return estimate.usage || 0;
+    })
+    .catch(() => 0) as any;
 }
 
 export function formatBytes(bytes: number, decimals = 2): string {
@@ -108,7 +114,7 @@ export function normalizeText(text: string): string {
 
 export function highlightText(text: string, query: string): string {
   if (!query) return text;
-  
+
   const regex = new RegExp(`(${query})`, 'gi');
   return text.replace(regex, '<mark>$1</mark>');
 }

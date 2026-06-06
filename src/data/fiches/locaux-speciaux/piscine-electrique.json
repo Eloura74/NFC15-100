@@ -81,10 +81,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "volumes-salle-eau",
-    "differentiel-30ma"
-  ],
+  "relatedSheets": ["volumes-salle-eau", "differentiel-30ma"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -95,8 +92,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "piscine",
-    "locaux-speciaux"
-  ]
+  "tags": ["piscine", "locaux-speciaux"]
 }

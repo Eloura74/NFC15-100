@@ -81,10 +81,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "differentiel-30ma",
-    "eclairage-logement"
-  ],
+  "relatedSheets": ["differentiel-30ma", "eclairage-logement"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -95,8 +92,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "exterieur",
-    "locaux-speciaux"
-  ]
+  "tags": ["exterieur", "locaux-speciaux"]
 }

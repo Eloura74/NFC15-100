@@ -5,10 +5,17 @@
   "immediateAnswer": "Éclairage = 16A max (câble 1.5mm²) | Prises classiques (max 8) = 16A max (câble 1.5mm²) | Prises classiques (max 12) = 20A max (câble 2.5mm²) | Lave-linge, Four = 20A max (câble 2.5mm²) | Plaques de cuisson = 32A max (câble 6mm²)",
   "domain": "protections",
   "subDomain": "surintensites",
-  "keywords": ["disjoncteur", "calibre", "section", "câble", "protection", "surintensité"],
+  "keywords": [
+    "disjoncteur",
+    "calibre",
+    "section",
+    "câble",
+    "protection",
+    "surintensité"
+  ],
   "synonyms": ["disjoncteur modulaire", "protection circuit"],
   "applicableContexts": [
-    {"type": "installation", "value": "Toute installation", "required": true}
+    { "type": "installation", "value": "Toute installation", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -98,13 +105,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 433", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 433",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["disjoncteur-branchement", "prises-cuisine"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["disjoncteur", "calibre", "section", "protection", "surintensité"]
 }

@@ -84,10 +84,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "differentiel-30ma",
-    "differentiel-type-a"
-  ],
+  "relatedSheets": ["differentiel-30ma", "differentiel-type-a"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -98,8 +95,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "differentiel",
-    "type"
-  ]
+  "tags": ["differentiel", "type"]
 }

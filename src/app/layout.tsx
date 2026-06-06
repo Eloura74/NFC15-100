@@ -46,13 +46,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="dark" suppressHydrationWarning>
-      <body className={`min-h-screen antialiased flex flex-col ${inter.className}`}>
+      <body
+        className={`min-h-screen antialiased flex flex-col ${inter.className}`}
+      >
         <Providers>
           <div className="fixed inset-0 z-[-1] bg-mesh pointer-events-none"></div>
           <Header />
           <div className="flex flex-1">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto relative">{children}</main>
+            <main className="flex-1 md:ml-72 overflow-y-auto relative">
+              {children}
+            </main>
           </div>
           <Footer />
         </Providers>

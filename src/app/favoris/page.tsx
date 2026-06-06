@@ -16,10 +16,12 @@ export default function FavorisPage() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            Parcourez les fiches et ajoutez-les à vos favoris pour un accès rapide.
+            Parcourez les fiches et ajoutez-les à vos favoris pour un accès
+            rapide.
           </p>
           <p className="text-sm text-muted-foreground mt-4">
-            Les favoris seront sauvegardés localement sur votre appareil et disponibles hors ligne.
+            Les favoris seront sauvegardés localement sur votre appareil et
+            disponibles hors ligne.
           </p>
         </CardContent>
       </Card>

@@ -81,10 +81,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "irve-logement",
-    "parafoudre-obligation"
-  ],
+  "relatedSheets": ["irve-logement", "parafoudre-obligation"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -95,8 +92,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "photovoltaique",
-    "energie"
-  ]
+  "tags": ["photovoltaique", "energie"]
 }

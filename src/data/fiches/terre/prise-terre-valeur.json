@@ -8,7 +8,7 @@
   "keywords": ["prise de terre", "résistance", "ohm", "mesure", "terre"],
   "synonyms": ["résistance de terre", "valeur de terre"],
   "applicableContexts": [
-    {"type": "installation", "value": "Toute installation", "required": true}
+    { "type": "installation", "value": "Toute installation", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -25,9 +25,26 @@
       "Liaison équipotentielle principale"
     ],
     "values": [
-      {"label": "Valeur générale", "value": 100, "unit": "Ω", "conditions": ["Recommandé"], "source": "NF C 15-100"},
-      {"label": "Avec DDR 30mA", "value": "Pas de max", "conditions": ["Protection 30mA"], "source": "NF C 15-100"},
-      {"label": "Tension de contact", "value": 50, "unit": "V", "conditions": ["Limite sécurité"], "source": "NF C 15-100"}
+      {
+        "label": "Valeur générale",
+        "value": 100,
+        "unit": "Ω",
+        "conditions": ["Recommandé"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Avec DDR 30mA",
+        "value": "Pas de max",
+        "conditions": ["Protection 30mA"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Tension de contact",
+        "value": 50,
+        "unit": "V",
+        "conditions": ["Limite sécurité"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Avec protection différentielle 30mA : pas de valeur maximale imposée",
@@ -49,7 +66,11 @@
       {
         "description": "Électrocution en cas de défaut d'isolement",
         "level": "critique",
-        "consequences": ["Danger mortel", "Protection inefficace", "Non-conformité"]
+        "consequences": [
+          "Danger mortel",
+          "Protection inefficace",
+          "Non-conformité"
+        ]
       }
     ],
     "controls": [
@@ -62,13 +83,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 542", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 542",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["diff-30ma-logement", "liaisons-equipotentielles"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["terre", "résistance", "mesure", "sécurité", "protection"]
 }

@@ -5,7 +5,14 @@
   "immediateAnswer": "10A/1,5mm² max 64m | 16A/1,5mm² max 40m | 20A/2,5mm² max 50m | 32A/6mm² max 50m | Chute tension max 3% éclairage, 5% autres",
   "domain": "Circuits",
   "subDomain": "dimensionnement",
-  "keywords": ["section", "câble", "intensité", "longueur", "chute tension", "mm²"],
+  "keywords": [
+    "section",
+    "câble",
+    "intensité",
+    "longueur",
+    "chute tension",
+    "mm²"
+  ],
   "synonyms": ["section de conducteur", "dimensionnement câble"],
   "applicableContexts": [
     {
@@ -97,7 +104,10 @@
       {
         "description": "Chute de tension excessive",
         "level": "attention",
-        "consequences": ["Mauvais fonctionnement appareils", "Scintillement éclairage"]
+        "consequences": [
+          "Mauvais fonctionnement appareils",
+          "Scintillement éclairage"
+        ]
       },
       {
         "description": "Non-conformité CONSUEL",

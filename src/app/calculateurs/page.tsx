@@ -1,10 +1,15 @@
 import Link from 'next/link';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 const calculators = [
   {
     id: 'ohm',
-    name: 'Loi d\'Ohm',
+    name: "Loi d'Ohm",
     description: 'Calculer tension, intensité ou résistance',
   },
   {

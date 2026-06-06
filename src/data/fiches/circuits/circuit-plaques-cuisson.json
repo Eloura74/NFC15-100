@@ -6,7 +6,11 @@
   "domain": "Circuits",
   "subDomain": "specialises",
   "keywords": ["plaques cuisson", "cuisinière", "32A", "6mm²", "type A"],
-  "synonyms": ["table de cuisson", "cuisinière électrique", "plaques électriques"],
+  "synonyms": [
+    "table de cuisson",
+    "cuisinière électrique",
+    "plaques électriques"
+  ],
   "applicableContexts": [
     {
       "type": "installation",
@@ -125,7 +129,11 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": ["differentiel-type-a", "circuit-four", "disjoncteur-divisionnaire"],
+  "relatedSheets": [
+    "differentiel-type-a",
+    "circuit-four",
+    "disjoncteur-divisionnaire"
+  ],
   "author": "ElecNorme",
   "verifier": "ElecNorme",
   "history": [

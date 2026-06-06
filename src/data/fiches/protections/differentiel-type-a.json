@@ -5,10 +5,17 @@
   "immediateAnswer": "Type A obligatoire pour : plaque de cuisson, lave-linge, prise recharge VE, circuits avec variateurs. Le type A détecte les courants continus pulsés.",
   "domain": "protections",
   "subDomain": "differentiel",
-  "keywords": ["différentiel", "type A", "type AC", "plaque cuisson", "lave-linge", "variateur"],
+  "keywords": [
+    "différentiel",
+    "type A",
+    "type AC",
+    "plaque cuisson",
+    "lave-linge",
+    "variateur"
+  ],
   "synonyms": ["DDR type A", "interrupteur différentiel type A"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true}
+    { "type": "installation", "value": "Logement", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,8 +33,19 @@
       "Calibre 30mA en logement"
     ],
     "values": [
-      {"label": "Sensibilité", "value": 30, "unit": "mA", "conditions": ["Logement"], "source": "NF C 15-100"},
-      {"label": "Circuits type A", "value": "4 minimum", "conditions": ["Plaque, lave-linge, VE, variateurs"], "source": "NF C 15-100"}
+      {
+        "label": "Sensibilité",
+        "value": 30,
+        "unit": "mA",
+        "conditions": ["Logement"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Circuits type A",
+        "value": "4 minimum",
+        "conditions": ["Plaque, lave-linge, VE, variateurs"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Si pas de plaque cuisson ni lave-linge : type AC possible (mais type A recommandé)"
@@ -61,13 +79,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 531.2.1.3", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 531.2.1.3",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["differentiel-30ma", "irve-logement"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["différentiel", "type A", "protection", "plaque", "lave-linge"]
 }

@@ -15,7 +15,12 @@ export function PowerCaliberDiagram() {
         className="w-full h-auto"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <text x="300" y="30" textAnchor="middle" className="fill-foreground text-xl font-bold">
+        <text
+          x="300"
+          y="30"
+          textAnchor="middle"
+          className="fill-foreground text-xl font-bold"
+        >
           Puissance souscrite → Calibre DB
         </text>
 
@@ -31,25 +36,58 @@ export function PowerCaliberDiagram() {
               strokeWidth="2"
               style={{ fill: `${item.color}20`, stroke: item.color }}
             />
-            
-            <circle cx="60" cy="40" r="25" style={{ fill: item.color }} opacity="0.3" />
-            <text x="60" y="48" textAnchor="middle" className="fill-foreground text-2xl font-bold">
+
+            <circle
+              cx="60"
+              cy="40"
+              r="25"
+              style={{ fill: item.color }}
+              opacity="0.3"
+            />
+            <text
+              x="60"
+              y="48"
+              textAnchor="middle"
+              className="fill-foreground text-2xl font-bold"
+            >
               {item.power}
             </text>
-            
-            <line x1="20" y1="80" x2="100" y2="80" className="stroke-muted-foreground" strokeWidth="2" />
-            
-            <text x="60" y="110" textAnchor="middle" className="fill-foreground text-3xl font-bold">
+
+            <line
+              x1="20"
+              y1="80"
+              x2="100"
+              y2="80"
+              className="stroke-muted-foreground"
+              strokeWidth="2"
+            />
+
+            <text
+              x="60"
+              y="110"
+              textAnchor="middle"
+              className="fill-foreground text-3xl font-bold"
+            >
               {item.caliber}
             </text>
-            
-            <text x="60" y="130" textAnchor="middle" className="fill-muted-foreground text-xs">
+
+            <text
+              x="60"
+              y="130"
+              textAnchor="middle"
+              className="fill-muted-foreground text-xs"
+            >
               Disjoncteur
             </text>
           </g>
         ))}
 
-        <text x="300" y="260" textAnchor="middle" className="fill-muted-foreground text-sm italic">
+        <text
+          x="300"
+          y="260"
+          textAnchor="middle"
+          className="fill-muted-foreground text-sm italic"
+        >
           6 kVA = configuration la plus courante en France
         </text>
       </svg>

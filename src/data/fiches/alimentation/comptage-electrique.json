@@ -5,7 +5,13 @@
   "immediateAnswer": "Le compteur doit être installé dans l'ETEL | Protection par disjoncteur de branchement | Accessibilité : 0.90m à 1.30m du sol | Emplacement réservé : minimum 30cm de large",
   "domain": "alimentation",
   "subDomain": "comptage",
-  "keywords": ["compteur", "comptage", "enedis", "etel", "disjoncteur branchement"],
+  "keywords": [
+    "compteur",
+    "comptage",
+    "enedis",
+    "etel",
+    "disjoncteur branchement"
+  ],
   "synonyms": ["compteur edf", "compteur energie"],
   "applicableContexts": [
     {
@@ -72,10 +78,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "branchement-reseau",
-    "tableau-electrique"
-  ],
+  "relatedSheets": ["branchement-reseau", "tableau-electrique"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -86,8 +89,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "comptage",
-    "alimentation"
-  ]
+  "tags": ["comptage", "alimentation"]
 }

@@ -86,10 +86,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "gaine-technique-logement",
-    "nombre-differentiels"
-  ],
+  "relatedSheets": ["gaine-technique-logement", "nombre-differentiels"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -100,8 +97,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "tableau",
-    "alimentation"
-  ]
+  "tags": ["tableau", "alimentation"]
 }

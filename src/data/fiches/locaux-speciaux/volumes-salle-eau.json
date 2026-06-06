@@ -5,11 +5,19 @@
   "immediateAnswer": "Volume 0 : baignoire/douche. Volume 1 : jusqu'à 2,25m au-dessus. Volume 2 : jusqu'à 60cm autour du volume 1. Matériel IPX4 minimum en volume 1.",
   "domain": "locaux-speciaux",
   "subDomain": "salle-eau",
-  "keywords": ["volumes", "salle d'eau", "salle de bain", "IPX", "protection", "douche", "baignoire"],
+  "keywords": [
+    "volumes",
+    "salle d'eau",
+    "salle de bain",
+    "IPX",
+    "protection",
+    "douche",
+    "baignoire"
+  ],
   "synonyms": ["zones salle de bain", "volumes de protection"],
   "applicableContexts": [
-    {"type": "local", "value": "Salle d'eau", "required": true},
-    {"type": "local", "value": "Salle de bain", "required": true}
+    { "type": "local", "value": "Salle d'eau", "required": true },
+    { "type": "local", "value": "Salle de bain", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -76,7 +84,11 @@
       {
         "description": "Électrocution par contact avec l'eau",
         "level": "critique",
-        "consequences": ["Danger mortel", "Électrocution", "Non-conformité CONSUEL"]
+        "consequences": [
+          "Danger mortel",
+          "Électrocution",
+          "Non-conformité CONSUEL"
+        ]
       }
     ],
     "controls": [
@@ -89,13 +101,32 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100-701", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 701", "date": "2020"}
+    {
+      "id": "nfc15100-701",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 701",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["diff-30ma-logement", "liaisons-equipotentielles"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
-  "tags": ["volumes", "salle d'eau", "IPX", "protection", "baignoire", "douche", "sécurité"]
+  "tags": [
+    "volumes",
+    "salle d'eau",
+    "IPX",
+    "protection",
+    "baignoire",
+    "douche",
+    "sécurité"
+  ]
 }

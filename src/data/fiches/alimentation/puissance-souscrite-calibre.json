@@ -5,7 +5,14 @@
   "immediateAnswer": "3 kVA → 15A | 6 kVA → 30A | 9 kVA → 45A | 12 kVA → 60A | 15 kVA → 75A | 18 kVA → 90A",
   "domain": "Alimentation",
   "subDomain": "branchement",
-  "keywords": ["puissance", "calibre", "disjoncteur branchement", "DB", "kVA", "ampères"],
+  "keywords": [
+    "puissance",
+    "calibre",
+    "disjoncteur branchement",
+    "DB",
+    "kVA",
+    "ampères"
+  ],
   "synonyms": ["DB", "disjoncteur d'abonné", "AGCP"],
   "applicableContexts": [
     {

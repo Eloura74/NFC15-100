@@ -5,7 +5,13 @@
   "immediateAnswer": "LEP (Liaison Équipotentielle Principale) obligatoire dans le tableau | LES (Liaison Équipotentielle Supplémentaire) dans les salles d'eau | Section minimale : 6mm² cuivre | Raccordement à la prise de terre",
   "domain": "terre",
   "subDomain": "liaisons",
-  "keywords": ["lep", "les", "liaison equipotentielle", "equipotentielle", "salle d'eau"],
+  "keywords": [
+    "lep",
+    "les",
+    "liaison equipotentielle",
+    "equipotentielle",
+    "salle d'eau"
+  ],
   "synonyms": ["equipotentielle", "liaison equipotentielle principale"],
   "applicableContexts": [
     {
@@ -79,10 +85,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "prise-terre-valeur",
-    "volumes-salle-eau"
-  ],
+  "relatedSheets": ["prise-terre-valeur", "volumes-salle-eau"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -93,8 +96,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "liaison",
-    "terre"
-  ]
+  "tags": ["liaison", "terre"]
 }

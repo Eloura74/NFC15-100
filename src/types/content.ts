@@ -50,7 +50,12 @@ export interface Risk {
 
 export interface Source {
   id: string;
-  type: 'reglementaire' | 'normative' | 'institutionnelle' | 'fabricant' | 'autre';
+  type:
+    | 'reglementaire'
+    | 'normative'
+    | 'institutionnelle'
+    | 'fabricant'
+    | 'autre';
   title: string;
   reference: string;
   article?: string;
@@ -82,7 +87,7 @@ export interface ContentSheet {
   status: ContentStatus;
   criticality: Criticality;
   confidence: ConfidenceLevel;
-  
+
   content: {
     whenApplies: string;
     requirements: string[];
@@ -94,11 +99,11 @@ export interface ContentSheet {
     controls: string[];
     checklist?: string[];
   };
-  
+
   sources: Source[];
   relatedSheets: string[];
   illustrations?: string[];
-  
+
   author: string;
   verifier?: string;
   history: HistoryEntry[];

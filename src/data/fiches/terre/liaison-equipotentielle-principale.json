@@ -5,10 +5,17 @@
   "immediateAnswer": "La LEP relie à la terre : huisseries métalliques, canalisations eau/gaz, charpente métallique. Section minimale 6mm² en cuivre.",
   "domain": "terre",
   "subDomain": "liaisons-equipotentielles",
-  "keywords": ["liaison équipotentielle", "LEP", "terre", "masse", "potentiel", "6mm²"],
+  "keywords": [
+    "liaison équipotentielle",
+    "LEP",
+    "terre",
+    "masse",
+    "potentiel",
+    "6mm²"
+  ],
   "synonyms": ["LEP", "mise à la terre des masses"],
   "applicableContexts": [
-    {"type": "installation", "value": "Toute installation", "required": true}
+    { "type": "installation", "value": "Toute installation", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,8 +33,19 @@
       "Accessibilité pour contrôle"
     ],
     "values": [
-      {"label": "Section minimale", "value": 6, "unit": "mm²", "conditions": ["Cuivre"], "source": "NF C 15-100"},
-      {"label": "Section si > 25mm²", "value": "Moitié de la section", "conditions": ["Conducteur principal"], "source": "NF C 15-100"}
+      {
+        "label": "Section minimale",
+        "value": 6,
+        "unit": "mm²",
+        "conditions": ["Cuivre"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Section si > 25mm²",
+        "value": "Moitié de la section",
+        "conditions": ["Conducteur principal"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [],
     "specialCases": [
@@ -60,13 +78,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 542.4", "date": "2020"}
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 542.4",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["prise-terre-valeur", "volumes-salle-eau"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["liaison équipotentielle", "LEP", "terre", "masse", "sécurité"]
 }

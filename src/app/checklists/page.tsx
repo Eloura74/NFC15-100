@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const checklistTemplates = [
@@ -11,13 +17,13 @@ const checklistTemplates = [
   {
     id: 'tableau',
     name: 'Tableau électrique',
-    description: 'Contrôle d\'un tableau électrique',
+    description: "Contrôle d'un tableau électrique",
     itemCount: 15,
   },
   {
     id: 'salle-eau',
-    name: 'Salle d\'eau',
-    description: 'Vérifications pour une salle d\'eau',
+    name: "Salle d'eau",
+    description: "Vérifications pour une salle d'eau",
     itemCount: 12,
   },
 ];

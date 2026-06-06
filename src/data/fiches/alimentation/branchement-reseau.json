@@ -5,7 +5,13 @@
   "immediateAnswer": "Le branchement se fait via un disjoncteur de branchement (DB) fourni par le fournisseur | Calibre : 15/45A, 30/60A ou 60/90A selon la puissance souscrite | Le DB doit être accessible et situé dans l'ETEL | Câble d'alimentation : section selon la distance et le calibre.",
   "domain": "alimentation",
   "subDomain": "branchement",
-  "keywords": ["branchement", "reseau", "disjoncteur branchement", "edf", "enedis"],
+  "keywords": [
+    "branchement",
+    "reseau",
+    "disjoncteur branchement",
+    "edf",
+    "enedis"
+  ],
   "synonyms": ["raccordement", "liaison reseau"],
   "applicableContexts": [
     {
@@ -84,10 +90,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "disjoncteur-branchement",
-    "puissance-souscrite-calibre"
-  ],
+  "relatedSheets": ["disjoncteur-branchement", "puissance-souscrite-calibre"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -98,8 +101,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "branchement",
-    "alimentation"
-  ]
+  "tags": ["branchement", "alimentation"]
 }

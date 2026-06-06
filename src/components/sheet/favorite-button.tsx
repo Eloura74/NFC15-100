@@ -18,7 +18,7 @@ export function FavoriteButton({ sheetId }: FavoriteButtonProps) {
 
   const toggleFavorite = () => {
     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-    
+
     if (isFavorite) {
       const newFavorites = favorites.filter((id: string) => id !== sheetId);
       localStorage.setItem('favorites', JSON.stringify(newFavorites));

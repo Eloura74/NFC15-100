@@ -116,7 +116,11 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": ["realisation-prise-terre", "barrette-mesure", "liaison-equipotentielle-principale"],
+  "relatedSheets": [
+    "realisation-prise-terre",
+    "barrette-mesure",
+    "liaison-equipotentielle-principale"
+  ],
   "author": "ElecNorme",
   "verifier": "ElecNorme",
   "history": [

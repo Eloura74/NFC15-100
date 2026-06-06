@@ -5,11 +5,19 @@
   "immediateAnswer": "Le disjoncteur de branchement doit être calibré selon la puissance souscrite : 15/45A pour 9kVA, 30/60A pour 12kVA, 60/90A pour 18kVA.",
   "domain": "protections",
   "subDomain": "surintensites",
-  "keywords": ["disjoncteur", "branchement", "AGCP", "calibre", "puissance", "kVA", "ampères"],
+  "keywords": [
+    "disjoncteur",
+    "branchement",
+    "AGCP",
+    "calibre",
+    "puissance",
+    "kVA",
+    "ampères"
+  ],
   "synonyms": ["DB", "AGCP", "appareil général de commande et protection"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true},
-    {"type": "work", "value": "Neuf", "required": false}
+    { "type": "installation", "value": "Logement", "required": true },
+    { "type": "work", "value": "Neuf", "required": false }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,10 +34,34 @@
       "Sélectivité avec les protections aval"
     ],
     "values": [
-      {"label": "9 kVA", "value": "15/45", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
-      {"label": "12 kVA", "value": "30/60", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
-      {"label": "18 kVA", "value": "60/90", "unit": "A", "conditions": ["Monophasé"], "source": "NF C 14-100"},
-      {"label": "36 kVA", "value": "60", "unit": "A", "conditions": ["Triphasé"], "source": "NF C 14-100"}
+      {
+        "label": "9 kVA",
+        "value": "15/45",
+        "unit": "A",
+        "conditions": ["Monophasé"],
+        "source": "NF C 14-100"
+      },
+      {
+        "label": "12 kVA",
+        "value": "30/60",
+        "unit": "A",
+        "conditions": ["Monophasé"],
+        "source": "NF C 14-100"
+      },
+      {
+        "label": "18 kVA",
+        "value": "60/90",
+        "unit": "A",
+        "conditions": ["Monophasé"],
+        "source": "NF C 14-100"
+      },
+      {
+        "label": "36 kVA",
+        "value": "60",
+        "unit": "A",
+        "conditions": ["Triphasé"],
+        "source": "NF C 14-100"
+      }
     ],
     "exceptions": [],
     "specialCases": [
@@ -59,13 +91,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc14100", "type": "normative", "title": "NF C 14-100", "reference": "NF C 14-100", "date": "2020"}
+    {
+      "id": "nfc14100",
+      "type": "normative",
+      "title": "NF C 14-100",
+      "reference": "NF C 14-100",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["diff-30ma-logement", "tableau-logement"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["disjoncteur", "branchement", "AGCP", "protection", "calibre"]
 }

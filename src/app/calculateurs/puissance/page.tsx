@@ -35,7 +35,9 @@ export default function PuissanceCalculatorPage() {
       power = Math.sqrt(3) * v * i;
     }
 
-    setResult(`Puissance = ${power.toFixed(2)} W (${(power / 1000).toFixed(2)} kW)`);
+    setResult(
+      `Puissance = ${power.toFixed(2)} W (${(power / 1000).toFixed(2)} kW)`
+    );
   };
 
   const reset = () => {

@@ -5,10 +5,17 @@
   "immediateAnswer": "Le disjoncteur de branchement doit être installé entre 0,90m et 1,80m de hauteur, accessible depuis l'intérieur du logement, avec calibre adapté à la puissance souscrite.",
   "domain": "alimentation",
   "subDomain": "branchement",
-  "keywords": ["disjoncteur", "branchement", "AGCP", "hauteur", "accessibilité", "installation"],
+  "keywords": [
+    "disjoncteur",
+    "branchement",
+    "AGCP",
+    "hauteur",
+    "accessibilité",
+    "installation"
+  ],
   "synonyms": ["DB", "AGCP", "appareil général"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true}
+    { "type": "installation", "value": "Logement", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,9 +33,27 @@
       "Calibre adapté à la puissance"
     ],
     "values": [
-      {"label": "Hauteur minimale", "value": 0.90, "unit": "m", "conditions": ["Du sol fini"], "source": "NF C 14-100"},
-      {"label": "Hauteur maximale", "value": 1.80, "unit": "m", "conditions": ["Du sol fini"], "source": "NF C 14-100"},
-      {"label": "Hauteur recommandée", "value": 1.50, "unit": "m", "conditions": ["Confort d'usage"], "source": "Guide pratique"}
+      {
+        "label": "Hauteur minimale",
+        "value": 0.9,
+        "unit": "m",
+        "conditions": ["Du sol fini"],
+        "source": "NF C 14-100"
+      },
+      {
+        "label": "Hauteur maximale",
+        "value": 1.8,
+        "unit": "m",
+        "conditions": ["Du sol fini"],
+        "source": "NF C 14-100"
+      },
+      {
+        "label": "Hauteur recommandée",
+        "value": 1.5,
+        "unit": "m",
+        "conditions": ["Confort d'usage"],
+        "source": "Guide pratique"
+      }
     ],
     "exceptions": [],
     "specialCases": [
@@ -60,13 +85,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc14100", "type": "normative", "title": "NF C 14-100", "reference": "NF C 14-100 § 10.2", "date": "2020"}
+    {
+      "id": "nfc14100",
+      "type": "normative",
+      "title": "NF C 14-100",
+      "reference": "NF C 14-100 § 10.2",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["disjoncteur-branchement"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["disjoncteur", "branchement", "AGCP", "installation", "hauteur"]
 }

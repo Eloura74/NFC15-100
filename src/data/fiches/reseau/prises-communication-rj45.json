@@ -5,7 +5,14 @@
   "immediateAnswer": "T1 / T2 = 2 prises RJ45 min | T3 = 3 prises RJ45 min | T4 et + = 4 prises RJ45 min. | Les prises doivent être câblées en étoile depuis le coffret de communication (jamais chaînées). | Câble minimum requis : Grade 2 TV ou Grade 3 TV.",
   "domain": "reseau",
   "subDomain": "communication",
-  "keywords": ["rj45", "communication", "internet", "grade 2", "grade 3", "vdi"],
+  "keywords": [
+    "rj45",
+    "communication",
+    "internet",
+    "grade 2",
+    "grade 3",
+    "vdi"
+  ],
   "synonyms": ["prises réseau", "prises internet"],
   "applicableContexts": [
     {
@@ -91,9 +98,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "gaine-technique-logement"
-  ],
+  "relatedSheets": ["gaine-technique-logement"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -104,9 +109,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "rj45",
-    "reseau",
-    "internet"
-  ]
+  "tags": ["rj45", "reseau", "internet"]
 }

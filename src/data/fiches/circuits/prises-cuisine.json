@@ -5,11 +5,17 @@
   "immediateAnswer": "Minimum 6 prises en cuisine dont 4 au-dessus du plan de travail. Circuits spécialisés obligatoires pour four, plaques, lave-vaisselle.",
   "domain": "circuits",
   "subDomain": "prises",
-  "keywords": ["prises", "cuisine", "plan de travail", "circuits spécialisés", "électroménager"],
+  "keywords": [
+    "prises",
+    "cuisine",
+    "plan de travail",
+    "circuits spécialisés",
+    "électroménager"
+  ],
   "synonyms": ["socles de prise", "PC cuisine"],
   "applicableContexts": [
-    {"type": "installation", "value": "Logement", "required": true},
-    {"type": "local", "value": "Cuisine", "required": true}
+    { "type": "installation", "value": "Logement", "required": true },
+    { "type": "local", "value": "Cuisine", "required": true }
   ],
   "excludedContexts": [],
   "version": "nfc15100-2020",
@@ -26,9 +32,25 @@
       "Protection différentielle 30mA"
     ],
     "values": [
-      {"label": "Nombre minimal de prises", "value": 6, "conditions": ["Cuisine"], "source": "NF C 15-100 § 771.314.2.3"},
-      {"label": "Prises plan de travail", "value": 4, "conditions": ["Au-dessus du plan"], "source": "NF C 15-100"},
-      {"label": "Hauteur prises plan", "value": "8-25", "unit": "cm", "conditions": ["Au-dessus du plan"], "source": "NF C 15-100"}
+      {
+        "label": "Nombre minimal de prises",
+        "value": 6,
+        "conditions": ["Cuisine"],
+        "source": "NF C 15-100 § 771.314.2.3"
+      },
+      {
+        "label": "Prises plan de travail",
+        "value": 4,
+        "conditions": ["Au-dessus du plan"],
+        "source": "NF C 15-100"
+      },
+      {
+        "label": "Hauteur prises plan",
+        "value": "8-25",
+        "unit": "cm",
+        "conditions": ["Au-dessus du plan"],
+        "source": "NF C 15-100"
+      }
     ],
     "exceptions": [
       "Les prises peuvent être réparties sur plusieurs circuits",
@@ -64,13 +86,24 @@
     "checklist": []
   },
   "sources": [
-    {"id": "nfc15100-771", "type": "normative", "title": "NF C 15-100", "reference": "NF C 15-100 § 771.314.2.3", "date": "2020"}
+    {
+      "id": "nfc15100-771",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771.314.2.3",
+      "date": "2020"
+    }
   ],
   "relatedSheets": ["circuits-specialises", "diff-30ma-logement"],
   "author": "Équipe éditoriale",
   "verifier": "Expert technique",
   "history": [
-    {"date": "2026-06-05", "author": "Équipe éditoriale", "action": "created", "description": "Création de la fiche"}
+    {
+      "date": "2026-06-05",
+      "author": "Équipe éditoriale",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
   ],
   "tags": ["prises", "cuisine", "circuits", "plan de travail", "électroménager"]
 }

@@ -83,9 +83,7 @@
       "date": "2020"
     }
   ],
-  "relatedSheets": [
-    "sections-cables-courant"
-  ],
+  "relatedSheets": ["sections-cables-courant"],
   "author": "Expert",
   "verifier": "Comité",
   "history": [
@@ -96,8 +94,5 @@
       "description": "Création"
     }
   ],
-  "tags": [
-    "dcl",
-    "eclairage"
-  ]
+  "tags": ["dcl", "eclairage"]
 }
