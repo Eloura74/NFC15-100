@@ -1,0 +1,134 @@
+{
+  "id": "nombre-differentiels",
+  "title": "Nombre minimum de différentiels 30mA",
+  "summary": "Nombre de dispositifs différentiels 30mA obligatoires selon la surface et le type d'installation",
+  "immediateAnswer": "Minimum 2 DDR 30mA pour toute installation. Maximum 8 circuits ou 40A par DDR.",
+  "domain": "Protections",
+  "subDomain": "differentiel",
+  "keywords": ["différentiel", "30mA", "nombre", "DDR", "interrupteur différentiel"],
+  "synonyms": ["DDR", "ID", "interrupteur différentiel"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation domestique",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Toute installation électrique domestique doit comporter au minimum 2 dispositifs différentiels 30mA.",
+    "requirements": [
+      "Minimum 2 DDR 30mA obligatoires",
+      "Maximum 8 circuits par DDR",
+      "Maximum 40A par DDR (somme des calibres)",
+      "Au moins 1 DDR de type A obligatoire",
+      "Répartition équilibrée des circuits"
+    ],
+    "values": [
+      {
+        "parameter": "Nombre minimum de DDR",
+        "value": "2",
+        "unit": "dispositifs",
+        "context": "Toute installation"
+      },
+      {
+        "parameter": "Circuits max par DDR",
+        "value": "8",
+        "unit": "circuits",
+        "context": "Limitation NFC 15-100"
+      },
+      {
+        "parameter": "Courant max par DDR",
+        "value": "40",
+        "unit": "ampères",
+        "context": "Somme des calibres"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Logement ≤ 35m² : 1 seul DDR autorisé si ≤ 8 circuits",
+      "Installation avec IRVE : prévoir DDR type F ou B dédié",
+      "Circuits extérieurs : peuvent nécessiter un DDR supplémentaire",
+      "Congélateur : prévoir DDR type F pour éviter déclenchements intempestifs"
+    ],
+    "commonErrors": [
+      "Installer un seul DDR pour toute l'installation",
+      "Dépasser 8 circuits sur un DDR",
+      "Dépasser 40A de somme de calibres",
+      "Ne pas installer de DDR type A",
+      "Mettre tous les gros consommateurs sur le même DDR"
+    ],
+    "risks": [
+      {
+        "description": "Perte totale de l'installation si un seul DDR",
+        "level": "critique",
+        "consequences": ["Pas de redondance", "Inconfort majeur"]
+      },
+      {
+        "description": "Déclenchements intempestifs si trop de circuits",
+        "level": "attention",
+        "consequences": ["Disjonctions fréquentes", "Usure prématurée"]
+      },
+      {
+        "description": "Non-conformité CONSUEL",
+        "level": "critique",
+        "consequences": ["Refus de mise en service", "Travaux à refaire"]
+      }
+    ],
+    "controls": [
+      "Compter le nombre de DDR au tableau",
+      "Vérifier qu'il y a au moins 1 type A",
+      "Compter les circuits par DDR (max 8)",
+      "Additionner les calibres par DDR (max 40A)",
+      "Tester mensuellement les DDR (bouton T)"
+    ],
+    "checklist": [
+      {
+        "item": "Minimum 2 DDR 30mA installés",
+        "mandatory": true
+      },
+      {
+        "item": "Au moins 1 DDR de type A",
+        "mandatory": true
+      },
+      {
+        "item": "Maximum 8 circuits par DDR",
+        "mandatory": true
+      },
+      {
+        "item": "Maximum 40A par DDR",
+        "mandatory": true
+      },
+      {
+        "item": "Répartition équilibrée des circuits",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Section 771.531.2",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["differentiel-type-a", "differentiel-type-f", "repartition-circuits"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["différentiel", "30mA", "nombre", "DDR", "protection"]
+}

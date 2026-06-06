@@ -1,0 +1,133 @@
+{
+  "id": "parafoudre-obligation",
+  "title": "Parafoudre - Obligation d'installation",
+  "summary": "Cas où l'installation d'un parafoudre est obligatoire selon la NFC 15-100",
+  "immediateAnswer": "Obligatoire si : bâtiment avec paratonnerre OU alimentation aérienne en zone AK1 (densité de foudroiement > 25)",
+  "domain": "Protections",
+  "subDomain": "parafoudre",
+  "keywords": ["parafoudre", "foudre", "obligation", "AK1", "paratonnerre"],
+  "synonyms": ["parasurtenseur", "protection foudre"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Selon zone et type d'alimentation",
+      "required": false
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Le parafoudre est obligatoire dans certains cas définis par la NFC 15-100.",
+    "requirements": [
+      "Obligatoire si bâtiment équipé d'un paratonnerre",
+      "Obligatoire si alimentation aérienne en zone AK1",
+      "Installation en tête de l'installation électrique",
+      "Coordination avec les DDR",
+      "Raccordement à la terre"
+    ],
+    "values": [
+      {
+        "parameter": "Zone AK1",
+        "value": "> 25",
+        "unit": "jours d'orage par an",
+        "context": "Densité de foudroiement élevée"
+      },
+      {
+        "parameter": "Type de parafoudre",
+        "value": "Type 1 ou Type 2",
+        "unit": "",
+        "context": "Selon présence paratonnerre"
+      },
+      {
+        "parameter": "Calibre minimum",
+        "value": "20 kA",
+        "unit": "8/20µs",
+        "context": "Parafoudre type 2"
+      }
+    ],
+    "exceptions": [
+      "Non obligatoire si alimentation entièrement souterraine en zone AK1",
+      "Non obligatoire en zone AK2 (< 25 jours d'orage/an) sans paratonnerre"
+    ],
+    "specialCases": [
+      "Paratonnerre présent : parafoudre Type 1 obligatoire",
+      "Alimentation aérienne partielle : parafoudre obligatoire",
+      "Installation sensible (informatique) : parafoudre recommandé même si non obligatoire",
+      "Zones montagneuses : souvent en AK1"
+    ],
+    "commonErrors": [
+      "Ne pas installer de parafoudre alors qu'obligatoire",
+      "Installer un Type 2 au lieu d'un Type 1 avec paratonnerre",
+      "Mauvais raccordement à la terre",
+      "Oublier la coordination avec les DDR",
+      "Ne pas vérifier la zone de foudroiement"
+    ],
+    "risks": [
+      {
+        "description": "Non-conformité CONSUEL",
+        "level": "critique",
+        "consequences": ["Refus de mise en service"]
+      },
+      {
+        "description": "Destruction d'équipements par surtension",
+        "level": "critique",
+        "consequences": ["Dommages matériels", "Coûts de remplacement"]
+      },
+      {
+        "description": "Risque d'incendie",
+        "level": "danger_immediat",
+        "consequences": ["Incendie", "Danger pour les personnes"]
+      }
+    ],
+    "controls": [
+      "Vérifier la zone de foudroiement (carte Météo France)",
+      "Vérifier présence d'un paratonnerre",
+      "Vérifier type d'alimentation (aérienne/souterraine)",
+      "Contrôler le type de parafoudre installé",
+      "Vérifier le raccordement à la terre"
+    ],
+    "checklist": [
+      {
+        "item": "Zone de foudroiement identifiée",
+        "mandatory": true
+      },
+      {
+        "item": "Parafoudre installé si obligatoire",
+        "mandatory": true
+      },
+      {
+        "item": "Type de parafoudre adapté",
+        "mandatory": true
+      },
+      {
+        "item": "Raccordement terre correct",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Section 443",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["parafoudre-types"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["parafoudre", "foudre", "obligation", "protection", "surtension"]
+}

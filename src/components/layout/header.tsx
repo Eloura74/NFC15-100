@@ -24,6 +24,9 @@ export function Header() {
           <Link href="/favoris">
             <Button variant="ghost">Favoris</Button>
           </Link>
+          <Link href="/login">
+            <Button variant="outline" size="sm">🔐 Admin</Button>
+          </Link>
         </nav>
       </div>
     </header>

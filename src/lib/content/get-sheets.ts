@@ -11,6 +11,13 @@ import gaineTechniqueLogement from '@/data/fiches/alimentation/gaine-technique-l
 import differentielTypeA from '@/data/fiches/protections/differentiel-type-a.json';
 import disjoncteurDivisionnaire from '@/data/fiches/protections/disjoncteur-divisionnaire.json';
 import liaisonEquipotentielle from '@/data/fiches/terre/liaison-equipotentielle-principale.json';
+import puissanceSouscriteCalibre from '@/data/fiches/alimentation/puissance-souscrite-calibre.json';
+import nombreDifferentiels from '@/data/fiches/protections/nombre-differentiels.json';
+import nombrePrisesLogement from '@/data/fiches/circuits/nombre-prises-logement.json';
+import hauteurPrisesInterrupteurs from '@/data/fiches/circuits/hauteur-prises-interrupteurs.json';
+import parafoudreObligation from '@/data/fiches/protections/parafoudre-obligation.json';
+import mesureResistanceTerre from '@/data/fiches/terre/mesure-resistance-terre.json';
+import circuitPlaquesCuisson from '@/data/fiches/circuits/circuit-plaques-cuisson.json';
 
 export function getAllSheets(): ContentSheet[] {
   return [
@@ -26,6 +33,13 @@ export function getAllSheets(): ContentSheet[] {
     differentielTypeA as ContentSheet,
     disjoncteurDivisionnaire as ContentSheet,
     liaisonEquipotentielle as ContentSheet,
+    puissanceSouscriteCalibre as ContentSheet,
+    nombreDifferentiels as ContentSheet,
+    nombrePrisesLogement as ContentSheet,
+    hauteurPrisesInterrupteurs as ContentSheet,
+    parafoudreObligation as ContentSheet,
+    mesureResistanceTerre as ContentSheet,
+    circuitPlaquesCuisson as ContentSheet,
   ];
 }
 

@@ -1,0 +1,153 @@
+{
+  "id": "nombre-prises-logement",
+  "title": "Nombre minimum de prises par pièce",
+  "summary": "Nombre de prises de courant 16A obligatoires selon le type et la surface de la pièce",
+  "immediateAnswer": "Séjour ≤ 28m² = 5 prises min | Séjour > 28m² = 7 prises min | Chambre = 3 prises min | Cuisine = 6 prises min (dont 4 au-dessus du plan de travail) | Autres pièces = 1 prise min.",
+  "domain": "Circuits",
+  "subDomain": "prises",
+  "keywords": ["prises", "nombre", "16A", "socles", "pièce", "logement"],
+  "synonyms": ["socles de prise", "prises 16A", "PC"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Nombre minimum de prises 16A 2P+T à installer dans chaque pièce d'un logement selon la NFC 15-100.",
+    "requirements": [
+      "Respecter le nombre minimum par type de pièce",
+      "Prises 16A 2P+T avec éclipses (protection enfant) obligatoires",
+      "Une prise commandée compte comme une prise de courant",
+      "Répartition équilibrée dans la pièce"
+    ],
+    "values": [
+      {
+        "label": "Séjour ≤ 28m²",
+        "parameter": "Prises 16A",
+        "value": "5 prises min",
+        "unit": "",
+        "context": "Dont 1 prise commandée ou près d'un interrupteur"
+      },
+      {
+        "label": "Séjour > 28m²",
+        "parameter": "Prises 16A",
+        "value": "7 prises min",
+        "unit": "",
+        "context": "Dont 1 prise commandée ou près d'un interrupteur"
+      },
+      {
+        "label": "Chambre",
+        "parameter": "Prises 16A",
+        "value": "3 prises min",
+        "unit": "",
+        "context": "Réparties sur la périphérie"
+      },
+      {
+        "label": "Cuisine",
+        "parameter": "Prises 16A",
+        "value": "6 prises min",
+        "unit": "",
+        "context": "Dont 4 au-dessus du plan de travail (si cuisine > 4m²)"
+      },
+      {
+        "label": "Couloir, bureau, WC",
+        "parameter": "Prises 16A",
+        "value": "1 prise min",
+        "unit": "",
+        "context": "Si surface > 4m²"
+      },
+      {
+        "label": "Extérieur / Garage",
+        "parameter": "Prises 16A",
+        "value": "1 prise min",
+        "unit": "",
+        "context": "Circuit dédié recommandé pour l'extérieur"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Séjour-cuisine : additionner les minimums séjour + cuisine",
+      "Prises commandées comptent dans le décompte",
+      "Prises spécialisées (lave-linge, etc.) en supplément",
+      "Garage : 1 prise minimum",
+      "Extérieur : 1 prise minimum"
+    ],
+    "commonErrors": [
+      "Ne pas installer assez de prises en cuisine",
+      "Oublier la prise près de l'interrupteur d'éclairage",
+      "Installer des prises trop hautes (>1,30m)",
+      "Ne pas prévoir de prise extérieure",
+      "Confondre prises normales et prises spécialisées"
+    ],
+    "risks": [
+      {
+        "description": "Non-conformité CONSUEL",
+        "level": "critique",
+        "consequences": ["Refus de mise en service", "Travaux supplémentaires"]
+      },
+      {
+        "description": "Utilisation de multiprises en cascade",
+        "level": "attention",
+        "consequences": ["Surcharge", "Risque d'incendie"]
+      }
+    ],
+    "controls": [
+      "Compter les prises par pièce",
+      "Vérifier la hauteur (5cm à 1,30m)",
+      "Vérifier la présence près des interrupteurs",
+      "Vérifier les prises en plan de travail cuisine",
+      "Vérifier prise extérieure et garage"
+    ],
+    "checklist": [
+      {
+        "item": "Nombre de prises conforme par pièce",
+        "mandatory": true
+      },
+      {
+        "item": "Hauteur entre 5cm et 1,30m",
+        "mandatory": true
+      },
+      {
+        "item": "Prise près de chaque interrupteur",
+        "mandatory": true
+      },
+      {
+        "item": "4 prises en plan de travail cuisine",
+        "mandatory": true
+      },
+      {
+        "item": "Prise extérieure présente",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Annexe C",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["hauteur-prises-interrupteurs", "circuit-prises"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["prises", "nombre", "logement", "pièce", "minimum"]
+}

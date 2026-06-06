@@ -1,0 +1,155 @@
+{
+  "id": "sections-cables-courant",
+  "title": "Sections de câbles selon l'intensité et la longueur",
+  "summary": "Tableau complet des sections de câbles en fonction de l'intensité, de la longueur et de la chute de tension admissible",
+  "immediateAnswer": "10A/1,5mm² max 64m | 16A/1,5mm² max 40m | 20A/2,5mm² max 50m | 32A/6mm² max 50m | Chute tension max 3% éclairage, 5% autres",
+  "domain": "Circuits",
+  "subDomain": "dimensionnement",
+  "keywords": ["section", "câble", "intensité", "longueur", "chute tension", "mm²"],
+  "synonyms": ["section de conducteur", "dimensionnement câble"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "La section des conducteurs doit être adaptée à l'intensité du circuit ET à la longueur pour limiter la chute de tension.",
+    "requirements": [
+      "Section minimale selon intensité du disjoncteur",
+      "Chute de tension ≤ 3% pour éclairage",
+      "Chute de tension ≤ 5% pour autres usages",
+      "Tenir compte de la longueur du circuit",
+      "Câble cuivre obligatoire (sauf cas particuliers)"
+    ],
+    "values": [
+      {
+        "label": "10A (Disjoncteur)",
+        "parameter": "Éclairage",
+        "value": "1.5 mm²",
+        "unit": "jusqu'à 64m",
+        "context": "Chute de tension ≤ 3%"
+      },
+      {
+        "label": "16A (Disjoncteur)",
+        "parameter": "Prises de courant",
+        "value": "1.5 mm²",
+        "unit": "jusqu'à 40m",
+        "context": "Chute de tension ≤ 5%"
+      },
+      {
+        "label": "20A (Disjoncteur)",
+        "parameter": "Circuits spécialisés",
+        "value": "2.5 mm²",
+        "unit": "jusqu'à 50m",
+        "context": "Chute de tension ≤ 5%"
+      },
+      {
+        "label": "32A (Disjoncteur)",
+        "parameter": "Plaques de cuisson",
+        "value": "6 mm²",
+        "unit": "jusqu'à 50m",
+        "context": "Obligatoire"
+      },
+      {
+        "label": "Éclairage",
+        "parameter": "Chute de tension maximale",
+        "value": "3%",
+        "unit": "",
+        "context": "Depuis le disjoncteur de branchement"
+      },
+      {
+        "label": "Autres usages",
+        "parameter": "Chute de tension maximale",
+        "value": "5%",
+        "unit": "",
+        "context": "Depuis le disjoncteur de branchement"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Au-delà de 100m : augmenter la section d'un cran",
+      "Câbles enterrés : coefficient de correction selon profondeur",
+      "Câbles groupés : coefficient de correction selon nombre",
+      "Température ambiante > 30°C : coefficient de correction",
+      "Triphasé : sections identiques mais répartition sur 3 phases"
+    ],
+    "commonErrors": [
+      "Ne pas tenir compte de la longueur du circuit",
+      "Utiliser 1,5mm² pour 16A sur plus de 40m",
+      "Oublier la chute de tension sur circuits longs",
+      "Ne pas appliquer les coefficients de correction",
+      "Confondre section phase et section neutre"
+    ],
+    "risks": [
+      {
+        "description": "Échauffement excessif si section insuffisante",
+        "level": "danger_immediat",
+        "consequences": ["Incendie", "Fusion isolant", "Danger mortel"]
+      },
+      {
+        "description": "Chute de tension excessive",
+        "level": "attention",
+        "consequences": ["Mauvais fonctionnement appareils", "Scintillement éclairage"]
+      },
+      {
+        "description": "Non-conformité CONSUEL",
+        "level": "critique",
+        "consequences": ["Refus mise en service"]
+      }
+    ],
+    "controls": [
+      "Mesurer la longueur réelle du circuit",
+      "Vérifier la section avec un pied à coulisse",
+      "Calculer la chute de tension si > 30m",
+      "Vérifier le marquage du câble",
+      "Contrôler l'échauffement en charge"
+    ],
+    "checklist": [
+      {
+        "item": "Section adaptée à l'intensité",
+        "mandatory": true
+      },
+      {
+        "item": "Longueur du circuit mesurée",
+        "mandatory": true
+      },
+      {
+        "item": "Chute de tension calculée si nécessaire",
+        "mandatory": true
+      },
+      {
+        "item": "Coefficients de correction appliqués",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Section 523",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["disjoncteur-divisionnaire", "chute-tension-calcul"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["section", "câble", "intensité", "longueur", "chute tension"]
+}

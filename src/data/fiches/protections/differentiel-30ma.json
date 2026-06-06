@@ -2,7 +2,7 @@
   "id": "diff-30ma-logement",
   "title": "Protection différentielle 30 mA en logement",
   "summary": "Obligation et règles d'installation des dispositifs différentiels 30 mA dans les installations domestiques",
-  "immediateAnswer": "Tous les circuits d'un logement doivent être protégés par au moins un dispositif différentiel 30 mA. Au minimum 2 DDR 30 mA de type A ou F sont requis.",
+  "immediateAnswer": "Sensibilité 30mA obligatoire pour TOUS les circuits du logement | Au minimum 2 interrupteurs différentiels 30mA par logement | Au moins un type A obligatoire (pour plaques, lave-linge, IRVE) | Les autres peuvent être de type AC.",
   "domain": "protections",
   "subDomain": "differentiel",
   "keywords": [
@@ -62,31 +62,53 @@
   "content": {
     "whenApplies": "Cette règle s'applique à toutes les installations électriques des logements neufs et en rénovation totale. Elle concerne la protection des personnes contre les contacts indirects et les défauts d'isolement.",
     "requirements": [
-      "Au minimum 2 dispositifs différentiels 30 mA",
-      "Au moins un DDR de type A ou F",
-      "Répartition équilibrée des circuits",
-      "Sélectivité avec le disjoncteur de branchement si différentiel",
-      "Accessibilité des dispositifs"
+      "Au minimum 2 dispositifs différentiels 30 mA (sauf si surface < 35m² : 1 seul suffit)",
+      "Au moins un DDR de type A obligatoire",
+      "Max 8 circuits par interrupteur différentiel",
+      "Répartition éclairage / prises sur des différentiels distincts"
     ],
     "values": [
       {
-        "label": "Sensibilité maximale",
-        "value": 30,
-        "unit": "mA",
-        "conditions": ["Protection des personnes"],
-        "source": "NF C 15-100 § 771.531.2.1"
+        "label": "Sensibilité",
+        "parameter": "Protection des personnes",
+        "value": "30 mA",
+        "unit": "maximum",
+        "context": "Obligatoire sur tous les circuits"
       },
       {
-        "label": "Nombre minimal de DDR",
-        "value": 2,
-        "conditions": ["Logement", "Surface > 35 m²"],
-        "source": "NF C 15-100 § 771.531.2.1"
+        "label": "Quantité (logement > 35m²)",
+        "parameter": "Interrupteurs Différentiels",
+        "value": "2 minimum",
+        "unit": "",
+        "context": "Répartition pour éviter la coupure totale"
       },
       {
-        "label": "Nombre minimal de type A ou F",
-        "value": 1,
-        "conditions": ["Circuits spécialisés"],
-        "source": "NF C 15-100 § 771.531.2.1"
+        "label": "Quantité (logement < 35m²)",
+        "parameter": "Interrupteurs Différentiels",
+        "value": "1 minimum",
+        "unit": "",
+        "context": "De type A obligatoirement"
+      },
+      {
+        "label": "Type A",
+        "parameter": "Type de protection",
+        "value": "1 minimum",
+        "unit": "",
+        "context": "Obligatoire pour Lave-linge, Plaques, IRVE"
+      },
+      {
+        "label": "Type AC",
+        "parameter": "Type de protection",
+        "value": "Standard",
+        "unit": "",
+        "context": "Pour l'éclairage et les prises classiques"
+      },
+      {
+        "label": "Circuits max par diff",
+        "parameter": "Règle de câblage",
+        "value": "8 circuits",
+        "unit": "maximum",
+        "context": "Par interrupteur différentiel"
       }
     ],
     "exceptions": [

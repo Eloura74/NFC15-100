@@ -33,7 +33,9 @@ export interface Context {
 }
 
 export interface Value {
-  label: string;
+  label?: string;
+  parameter?: string;
+  context?: string;
   value: string | number;
   unit?: string;
   conditions?: string[];

@@ -1,0 +1,146 @@
+{
+  "id": "hauteur-prises-interrupteurs",
+  "title": "Hauteur des prises et interrupteurs",
+  "summary": "Hauteurs réglementaires pour l'installation des prises de courant et des interrupteurs",
+  "immediateAnswer": "Prises 16A standard = minimum 5 cm du sol | Prises 32A (plaques) = minimum 12 cm du sol | Prises plan de travail = minimum 8 cm au-dessus du plan | Interrupteurs = entre 0.90 m et 1.30 m du sol | Logement PMR = prises max 1.30 m.",
+  "domain": "Circuits",
+  "subDomain": "installation",
+  "keywords": ["hauteur", "prises", "interrupteurs", "PMR", "accessibilité"],
+  "synonyms": ["hauteur d'installation", "hauteur de pose"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Hauteurs d'installation des appareillages électriques selon la NFC 15-100 et les règles d'accessibilité PMR.",
+    "requirements": [
+      "Toutes les hauteurs se mesurent par rapport au SOL FINI",
+      "Il s'agit de l'axe des alvéoles pour les prises",
+      "Il s'agit de l'axe de l'organe de manœuvre pour les interrupteurs"
+    ],
+    "values": [
+      {
+        "label": "Prises 16A classiques",
+        "parameter": "Hauteur minimale",
+        "value": "5 cm",
+        "unit": "du sol fini",
+        "context": "Cas général"
+      },
+      {
+        "label": "Prises 32A (Plaques)",
+        "parameter": "Hauteur minimale",
+        "value": "12 cm",
+        "unit": "du sol fini",
+        "context": "Cuisine"
+      },
+      {
+        "label": "Prises plan de travail",
+        "parameter": "Hauteur minimale",
+        "value": "8 cm",
+        "unit": "au-dessus du plan",
+        "context": "Interdit au-dessus de l'évier et des plaques"
+      },
+      {
+        "label": "Interrupteurs",
+        "parameter": "Hauteur autorisée",
+        "value": "0.90 m à 1.30 m",
+        "unit": "du sol fini",
+        "context": "Axe de la commande"
+      },
+      {
+        "label": "Prises en PMR",
+        "parameter": "Hauteur maximale",
+        "value": "1.30 m max",
+        "unit": "du sol fini",
+        "context": "Au moins une prise à côté de l'interrupteur"
+      },
+      {
+        "label": "Tableau électrique",
+        "parameter": "Hauteur autorisée",
+        "value": "1.00 m à 1.80 m",
+        "unit": "du sol fini",
+        "context": "GTL / ETEL"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Prises derrière meubles fixes : pas de contrainte de hauteur",
+      "Prises extérieures : minimum 1m du sol",
+      "Prises salle d'eau : selon volumes de sécurité",
+      "Interrupteur va-et-vient : même hauteur que l'interrupteur simple"
+    ],
+    "commonErrors": [
+      "Prises trop hautes (>1,30m) en logement standard",
+      "Prises trop basses (<5cm) risque d'inondation",
+      "Interrupteurs trop bas (<90cm) ou trop hauts (>1,30m)",
+      "Ne pas adapter pour PMR quand obligatoire",
+      "Oublier de mesurer depuis le sol FINI"
+    ],
+    "risks": [
+      {
+        "description": "Non-conformité accessibilité PMR",
+        "level": "critique",
+        "consequences": ["Refus de conformité", "Travaux à refaire"]
+      },
+      {
+        "description": "Inconfort d'utilisation",
+        "level": "normale",
+        "consequences": ["Difficultés d'accès", "Insatisfaction client"]
+      }
+    ],
+    "controls": [
+      "Mesurer la hauteur depuis le sol fini",
+      "Vérifier avec un mètre chaque appareillage",
+      "Contrôler l'accessibilité PMR si applicable",
+      "Vérifier cohérence des hauteurs dans chaque pièce"
+    ],
+    "checklist": [
+      {
+        "item": "Prises entre 5cm et 1,30m (ou 40cm PMR)",
+        "mandatory": true
+      },
+      {
+        "item": "Interrupteurs entre 90cm et 1,30m",
+        "mandatory": true
+      },
+      {
+        "item": "Mesures depuis sol fini",
+        "mandatory": true
+      },
+      {
+        "item": "Adaptation PMR si nécessaire",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Section 771.559",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["nombre-prises-logement"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["hauteur", "prises", "interrupteurs", "PMR", "accessibilité"]
+}

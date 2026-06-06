@@ -1,0 +1,140 @@
+{
+  "id": "circuit-plaques-cuisson",
+  "title": "Circuit plaques de cuisson",
+  "summary": "Protection et section de câble pour circuit plaques de cuisson électriques",
+  "immediateAnswer": "Monophasé : 32A max, câble 6mm² | Triphasé : 20A par phase, câble 2,5mm² | DDR type A obligatoire",
+  "domain": "Circuits",
+  "subDomain": "specialises",
+  "keywords": ["plaques cuisson", "cuisinière", "32A", "6mm²", "type A"],
+  "synonyms": ["table de cuisson", "cuisinière électrique", "plaques électriques"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement avec plaques électriques",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Circuit dédié obligatoire pour les plaques de cuisson électriques.",
+    "requirements": [
+      "Circuit spécialisé obligatoire",
+      "Protection différentielle type A obligatoire",
+      "Prise ou sortie de câble dédiée",
+      "Boîte de connexion si sortie de câble",
+      "Hauteur prise/sortie adaptée"
+    ],
+    "values": [
+      {
+        "parameter": "Monophasé puissance ≤ 7,4 kW",
+        "value": "32A - 6mm²",
+        "unit": "",
+        "context": "Configuration la plus courante"
+      },
+      {
+        "parameter": "Triphasé",
+        "value": "20A par phase - 2,5mm²",
+        "unit": "",
+        "context": "Plaques triphasées"
+      },
+      {
+        "parameter": "Type de DDR",
+        "value": "Type A obligatoire",
+        "unit": "",
+        "context": "Détection courants continus pulsés"
+      },
+      {
+        "parameter": "Hauteur prise/sortie",
+        "value": "12cm minimum",
+        "unit": "du sol fini",
+        "context": "Derrière les meubles"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Plaques induction forte puissance : prévoir DDR type F ou B",
+      "Puissance > 7,4 kW monophasé : passage en triphasé recommandé",
+      "Sortie de câble préférable à une prise",
+      "Plaques mixtes gaz/électrique : circuit électrique obligatoire"
+    ],
+    "commonErrors": [
+      "Utiliser un DDR type AC au lieu de type A",
+      "Section de câble insuffisante (1,5mm² ou 2,5mm²)",
+      "Calibre disjoncteur inadapté",
+      "Partager le circuit avec d'autres appareils",
+      "Prise trop basse ou mal positionnée"
+    ],
+    "risks": [
+      {
+        "description": "Échauffement du câble si sous-dimensionné",
+        "level": "danger_immediat",
+        "consequences": ["Incendie", "Fusion de l'isolant"]
+      },
+      {
+        "description": "DDR type AC ne détecte pas les défauts",
+        "level": "critique",
+        "consequences": ["Électrocution", "Non-conformité"]
+      },
+      {
+        "description": "Disjonctions fréquentes",
+        "level": "attention",
+        "consequences": ["Inconfort", "Usure du disjoncteur"]
+      }
+    ],
+    "controls": [
+      "Vérifier section câble 6mm² (mono) ou 2,5mm² (tri)",
+      "Vérifier calibre disjoncteur 32A (mono) ou 20A (tri)",
+      "Vérifier DDR type A minimum",
+      "Vérifier circuit dédié (pas d'autres appareils)",
+      "Vérifier hauteur et accessibilité prise/sortie"
+    ],
+    "checklist": [
+      {
+        "item": "Circuit spécialisé dédié",
+        "mandatory": true
+      },
+      {
+        "item": "Section 6mm² (mono) ou 2,5mm² (tri)",
+        "mandatory": true
+      },
+      {
+        "item": "Disjoncteur 32A (mono) ou 20A (tri)",
+        "mandatory": true
+      },
+      {
+        "item": "DDR type A minimum",
+        "mandatory": true
+      },
+      {
+        "item": "Prise ou sortie accessible",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Annexe C",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["differentiel-type-a", "circuit-four", "disjoncteur-divisionnaire"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["plaques cuisson", "circuit spécialisé", "32A", "6mm²", "type A"]
+}

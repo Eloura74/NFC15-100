@@ -26,10 +26,34 @@
       "Protection différentielle 30mA"
     ],
     "values": [
-      {"label": "Volume 0", "value": "Intérieur baignoire/douche", "conditions": ["IPX7"], "source": "NF C 15-100 § 701"},
-      {"label": "Volume 1 hauteur", "value": 2.25, "unit": "m", "conditions": ["Au-dessus du fond"], "source": "NF C 15-100 § 701"},
-      {"label": "Volume 2 distance", "value": 60, "unit": "cm", "conditions": ["Autour du volume 1"], "source": "NF C 15-100 § 701"},
-      {"label": "Protection minimale V1", "value": "IPX4", "conditions": ["Volume 1"], "source": "NF C 15-100 § 701"}
+      {
+        "label": "Volume 0",
+        "parameter": "Localisation",
+        "value": "Intérieur baignoire/douche",
+        "unit": "",
+        "context": "Rien d'autorisé sauf TBTS 12V (IPX7)"
+      },
+      {
+        "label": "Volume 1",
+        "parameter": "Localisation",
+        "value": "Jusqu'à 2.25m de hauteur",
+        "unit": "au-dessus du Volume 0",
+        "context": "IPX4 minimum (ex: chauffe-eau)"
+      },
+      {
+        "label": "Volume 2",
+        "parameter": "Localisation",
+        "value": "60 cm",
+        "unit": "autour du Volume 1",
+        "context": "IPX4 min (Prises 230V interdites sauf rasoir)"
+      },
+      {
+        "label": "Hors volume",
+        "parameter": "Localisation",
+        "value": "Au-delà du Volume 2",
+        "unit": "",
+        "context": "Prises 230V et interrupteurs autorisés"
+      }
     ],
     "exceptions": [
       "Douche sans receveur : volume 1 étendu à 1,20m du pommeau",

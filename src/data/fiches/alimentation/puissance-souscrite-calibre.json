@@ -1,0 +1,134 @@
+{
+  "id": "puissance-souscrite-calibre",
+  "title": "Puissance souscrite et calibre du disjoncteur de branchement",
+  "summary": "Correspondance entre la puissance souscrite et le calibre du disjoncteur de branchement (DB)",
+  "immediateAnswer": "3 kVA → 15A | 6 kVA → 30A | 9 kVA → 45A | 12 kVA → 60A | 15 kVA → 75A | 18 kVA → 90A",
+  "domain": "Alimentation",
+  "subDomain": "branchement",
+  "keywords": ["puissance", "calibre", "disjoncteur branchement", "DB", "kVA", "ampères"],
+  "synonyms": ["DB", "disjoncteur d'abonné", "AGCP"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation électrique",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Le calibre du disjoncteur de branchement doit être adapté à la puissance souscrite auprès du fournisseur d'électricité.",
+    "requirements": [
+      "Le calibre du DB doit correspondre à la puissance souscrite",
+      "Le DB est fourni et réglé par le distributeur d'énergie (Enedis)",
+      "Il assure la protection contre les surintensités",
+      "Il permet la coupure générale de l'installation"
+    ],
+    "values": [
+      {
+        "parameter": "3 kVA",
+        "value": "15 A",
+        "unit": "ampères",
+        "context": "Petit logement, studio"
+      },
+      {
+        "parameter": "6 kVA",
+        "value": "30 A",
+        "unit": "ampères",
+        "context": "Logement standard (le plus courant)"
+      },
+      {
+        "parameter": "9 kVA",
+        "value": "45 A",
+        "unit": "ampères",
+        "context": "Grand logement avec chauffage électrique"
+      },
+      {
+        "parameter": "12 kVA",
+        "value": "60 A",
+        "unit": "ampères",
+        "context": "Très grand logement, besoins importants"
+      },
+      {
+        "parameter": "15 kVA",
+        "value": "75 A",
+        "unit": "ampères",
+        "context": "Maison avec piscine, IRVE"
+      },
+      {
+        "parameter": "18 kVA",
+        "value": "90 A",
+        "unit": "ampères",
+        "context": "Installation triphasée, besoins très importants"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "En triphasé, la puissance est répartie sur les 3 phases",
+      "Pour une borne de recharge VE, prévoir minimum 9 kVA",
+      "Le passage de 6 à 9 kVA nécessite souvent un changement de DB"
+    ],
+    "commonErrors": [
+      "Souscrire une puissance insuffisante → disjonctions fréquentes",
+      "Confondre kVA et kW (1 kVA ≈ 1 kW en monophasé)",
+      "Ne pas anticiper l'ajout d'équipements (IRVE, piscine)"
+    ],
+    "risks": [
+      {
+        "description": "Disjonctions intempestives si puissance sous-dimensionnée",
+        "level": "attention",
+        "consequences": ["Inconfort", "Arrêt des équipements"]
+      },
+      {
+        "description": "Surcoût inutile si puissance surdimensionnée",
+        "level": "normale",
+        "consequences": ["Abonnement plus cher"]
+      }
+    ],
+    "controls": [
+      "Vérifier la puissance souscrite sur la facture d'électricité",
+      "Vérifier le calibre du DB (marquage sur l'appareil)",
+      "Calculer la puissance nécessaire avant souscription",
+      "Anticiper les besoins futurs (IRVE, extension)"
+    ],
+    "checklist": [
+      {
+        "item": "Puissance souscrite adaptée aux besoins",
+        "mandatory": true
+      },
+      {
+        "item": "Calibre du DB conforme à la puissance",
+        "mandatory": true
+      },
+      {
+        "item": "Marge pour évolutions futures",
+        "mandatory": false
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["tableau-dimensions", "reserve-tableau"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["puissance", "calibre", "DB", "branchement", "kVA"]
+}

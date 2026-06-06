@@ -1,0 +1,131 @@
+{
+  "id": "mesure-resistance-terre",
+  "title": "Mesure de la résistance de terre",
+  "summary": "Valeurs maximales de résistance de terre et méthode de mesure",
+  "immediateAnswer": "Résistance max : 100Ω (régime TT avec DDR 30mA). Mesure avec telluromètre, méthode des 3 piquets ou pince de terre.",
+  "domain": "Terre",
+  "subDomain": "mesure",
+  "keywords": ["terre", "résistance", "mesure", "telluromètre", "100 ohms"],
+  "synonyms": ["résistance de terre", "prise de terre", "mesure de terre"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "La résistance de la prise de terre doit être mesurée et conforme aux valeurs maximales selon le régime de neutre.",
+    "requirements": [
+      "Mesure obligatoire lors de la mise en service",
+      "Valeur maximale selon régime de neutre",
+      "Mesure avec appareil calibré (telluromètre)",
+      "Barrette de mesure obligatoire",
+      "Consignation de la valeur mesurée"
+    ],
+    "values": [
+      {
+        "parameter": "Régime TT avec DDR 30mA",
+        "value": "100",
+        "unit": "ohms maximum",
+        "context": "Installation domestique standard"
+      },
+      {
+        "parameter": "Régime TT avec DDR 300mA",
+        "value": "500",
+        "unit": "ohms maximum",
+        "context": "Cas particulier"
+      },
+      {
+        "parameter": "Régime TN",
+        "value": "Selon calcul",
+        "unit": "",
+        "context": "Installation industrielle"
+      },
+      {
+        "parameter": "Valeur recommandée",
+        "value": "< 30",
+        "unit": "ohms",
+        "context": "Bonne terre, équipements sensibles"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Sol rocheux : difficile d'obtenir < 100Ω, multiplier les piquets",
+      "Sol humide : meilleure conductivité, valeurs plus basses",
+      "Période sèche : résistance plus élevée, mesurer en été",
+      "Boucle à fond de fouille : généralement excellente valeur"
+    ],
+    "commonErrors": [
+      "Ne pas mesurer la résistance de terre",
+      "Mesurer sans déconnecter la barrette",
+      "Utiliser un multimètre au lieu d'un telluromètre",
+      "Piquets de mesure trop proches",
+      "Ne pas consigner la valeur mesurée"
+    ],
+    "risks": [
+      {
+        "description": "Résistance trop élevée → protection inefficace",
+        "level": "danger_immediat",
+        "consequences": ["Électrocution", "Incendie"]
+      },
+      {
+        "description": "Non-conformité CONSUEL",
+        "level": "critique",
+        "consequences": ["Refus de mise en service"]
+      }
+    ],
+    "controls": [
+      "Mesurer avec telluromètre calibré",
+      "Vérifier valeur < 100Ω (régime TT)",
+      "Contrôler présence barrette de mesure",
+      "Vérifier continuité des liaisons équipotentielles",
+      "Consigner la valeur dans le dossier technique"
+    ],
+    "checklist": [
+      {
+        "item": "Barrette de mesure installée",
+        "mandatory": true
+      },
+      {
+        "item": "Mesure effectuée au telluromètre",
+        "mandatory": true
+      },
+      {
+        "item": "Résistance ≤ 100Ω",
+        "mandatory": true
+      },
+      {
+        "item": "Valeur consignée",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 - Section 542.2",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": ["realisation-prise-terre", "barrette-mesure", "liaison-equipotentielle-principale"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["terre", "résistance", "mesure", "100 ohms", "telluromètre"]
+}
