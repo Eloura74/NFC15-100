@@ -67,20 +67,29 @@ export default function HomePage() {
   const popularSheets = sheets.slice(0, 6);
 
   return (
-    <div className="container py-8 space-y-12 max-w-7xl">
+    <div className="container py-8 space-y-12 max-w-7xl relative">
+      {/* Animated background particles */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}} />
+        <div className="absolute top-40 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s', animationDelay: '1s'}} />
+        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s', animationDelay: '2s'}} />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '7s', animationDelay: '0.5s'}} />
+      </div>
       <AnimatedSection>
         <section className="text-center space-y-6 py-16 relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl">
           <div className="absolute inset-0 -z-10">
             <img
               src="/images/hero_bg.png"
               alt="Hero Background"
-              className="w-full h-full object-cover opacity-40 mix-blend-screen"
+              className="w-full h-full object-cover opacity-40 mix-blend-screen animate-[pulse_8s_ease-in-out_infinite]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background"></div>
+            {/* Animated grid overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f0a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] animate-[pulse_4s_ease-in-out_infinite]"></div>
           </div>
           <div className="relative z-10 p-8">
-            <div className="inline-block">
-              <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white glow-text pb-2">
+            <div className="inline-block animate-[fadeIn_1s_ease-out]">
+              <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white glow-text pb-2 animate-[glow_3s_ease-in-out_infinite]">
                 ElecNorme
               </h1>
             </div>
