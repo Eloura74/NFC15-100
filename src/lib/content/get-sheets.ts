@@ -7,39 +7,57 @@ import priseTerreValeur from '@/data/fiches/terre/prise-terre-valeur.json';
 import irveLogement from '@/data/fiches/energie/irve-logement.json';
 import eclairageLogement from '@/data/fiches/circuits/eclairage-logement.json';
 import disjoncteurBranchementDetail from '@/data/fiches/alimentation/disjoncteur-branchement-detail.json';
+import branchementReseau from '@/data/fiches/alimentation/branchement-reseau.json';
+import tableauElectrique from '@/data/fiches/alimentation/tableau-electrique.json';
 import gaineTechniqueLogement from '@/data/fiches/alimentation/gaine-technique-logement.json';
 import differentielTypeA from '@/data/fiches/protections/differentiel-type-a.json';
 import disjoncteurDivisionnaire from '@/data/fiches/protections/disjoncteur-divisionnaire.json';
 import liaisonEquipotentielle from '@/data/fiches/terre/liaison-equipotentielle-principale.json';
+import sectionsCablesCourant from '@/data/fiches/circuits/sections-cables-courant.json';
 import puissanceSouscriteCalibre from '@/data/fiches/alimentation/puissance-souscrite-calibre.json';
 import nombreDifferentiels from '@/data/fiches/protections/nombre-differentiels.json';
+import calibreDisjoncteur from '@/data/fiches/protections/calibre-disjoncteur.json';
+import typeDifferentiel from '@/data/fiches/protections/type-differentiel.json';
 import nombrePrisesLogement from '@/data/fiches/circuits/nombre-prises-logement.json';
 import hauteurPrisesInterrupteurs from '@/data/fiches/circuits/hauteur-prises-interrupteurs.json';
 import parafoudreObligation from '@/data/fiches/protections/parafoudre-obligation.json';
 import mesureResistanceTerre from '@/data/fiches/terre/mesure-resistance-terre.json';
 import circuitPlaquesCuisson from '@/data/fiches/circuits/circuit-plaques-cuisson.json';
+import circuitChauffage from '@/data/fiches/circuits/circuit-chauffage.json';
+import eclairageDcl from '@/data/fiches/circuits/eclairage-dcl.json';
+import prisesCommunicationRj45 from '@/data/fiches/reseau/prises-communication-rj45.json';
+import gtlEtel from '@/data/fiches/tableau/gaine-technique-logement.json';
 
 export function getAllSheets(): ContentSheet[] {
   return [
-    differentiel30ma as ContentSheet,
-    disjoncteurBranchement as ContentSheet,
-    prisesCuisine as ContentSheet,
-    volumesSalleEau as ContentSheet,
-    priseTerreValeur as ContentSheet,
-    irveLogement as ContentSheet,
-    eclairageLogement as ContentSheet,
-    disjoncteurBranchementDetail as ContentSheet,
-    gaineTechniqueLogement as ContentSheet,
-    differentielTypeA as ContentSheet,
-    disjoncteurDivisionnaire as ContentSheet,
-    liaisonEquipotentielle as ContentSheet,
-    puissanceSouscriteCalibre as ContentSheet,
-    nombreDifferentiels as ContentSheet,
-    nombrePrisesLogement as ContentSheet,
-    hauteurPrisesInterrupteurs as ContentSheet,
-    parafoudreObligation as ContentSheet,
-    mesureResistanceTerre as ContentSheet,
-    circuitPlaquesCuisson as ContentSheet,
+    differentiel30ma as unknown as ContentSheet,
+    disjoncteurBranchement as unknown as ContentSheet,
+    prisesCuisine as unknown as ContentSheet,
+    volumesSalleEau as unknown as ContentSheet,
+    priseTerreValeur as unknown as ContentSheet,
+    irveLogement as unknown as ContentSheet,
+    eclairageLogement as unknown as ContentSheet,
+    disjoncteurBranchementDetail as unknown as ContentSheet,
+    branchementReseau as unknown as ContentSheet,
+    tableauElectrique as unknown as ContentSheet,
+    gaineTechniqueLogement as unknown as ContentSheet,
+    differentielTypeA as unknown as ContentSheet,
+    disjoncteurDivisionnaire as unknown as ContentSheet,
+    liaisonEquipotentielle as unknown as ContentSheet,
+    sectionsCablesCourant as unknown as ContentSheet,
+    puissanceSouscriteCalibre as unknown as ContentSheet,
+    nombreDifferentiels as unknown as ContentSheet,
+    calibreDisjoncteur as unknown as ContentSheet,
+    typeDifferentiel as unknown as ContentSheet,
+    nombrePrisesLogement as unknown as ContentSheet,
+    hauteurPrisesInterrupteurs as unknown as ContentSheet,
+    parafoudreObligation as unknown as ContentSheet,
+    mesureResistanceTerre as unknown as ContentSheet,
+    circuitPlaquesCuisson as unknown as ContentSheet,
+    circuitChauffage as unknown as ContentSheet,
+    eclairageDcl as unknown as ContentSheet,
+    prisesCommunicationRj45 as unknown as ContentSheet,
+    gtlEtel as unknown as ContentSheet,
   ];
 }
 

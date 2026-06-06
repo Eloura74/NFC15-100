@@ -1,0 +1,103 @@
+{
+  "id": "eclairage-dcl",
+  "title": "Éclairage et Boîtes DCL",
+  "summary": "Règles concernant les points d'éclairage et les boîtes de connexion DCL",
+  "immediateAnswer": "1 point d'éclairage minimum par pièce | Boîte DCL (Dispositif de Connexion Luminaire) obligatoire | Si DCL impossible, utiliser patère ou hublot. | Extérieur : éclairage obligatoire au-dessus de chaque entrée principale.",
+  "domain": "circuits",
+  "subDomain": "eclairage",
+  "keywords": ["dcl", "éclairage", "plafonnier", "applique", "lumière"],
+  "synonyms": ["point lumineux", "centre", "boite dcl"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation de tous les points d'éclairage intérieurs et extérieurs.",
+    "requirements": [
+      "Boîte DCL obligatoire pour tout centre ou applique",
+      "Un point d'éclairage central par pièce principale",
+      "Présence d'un socle DCL avec sa douille enfichable (test chantier)"
+    ],
+    "values": [
+      {
+        "label": "Séjour, Chambre, Cuisine",
+        "parameter": "Quantité",
+        "value": "1 centre",
+        "unit": "minimum",
+        "context": "Éclairage au plafond obligatoire"
+      },
+      {
+        "label": "Couloir, WC, Salle d'eau",
+        "parameter": "Quantité",
+        "value": "1 point",
+        "unit": "minimum",
+        "context": "Plafond ou applique"
+      },
+      {
+        "label": "Boîte DCL",
+        "parameter": "Matériel",
+        "value": "Obligatoire",
+        "unit": "",
+        "context": "Pour raccordement final"
+      },
+      {
+        "label": "Calibre protection",
+        "parameter": "Disjoncteur",
+        "value": "16A max",
+        "unit": "",
+        "context": "Généralement 10A utilisé"
+      },
+      {
+        "label": "Section câble",
+        "parameter": "Conducteur",
+        "value": "1.5 mm²",
+        "unit": "",
+        "context": "Minimum"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Si volume architectural (poutres, verrières) rend le centre impossible, 2 appliques commandées ou 2 prises commandées (sauf chambre) peuvent remplacer le centre"
+    ],
+    "commonErrors": [
+      "Laisser les fils nus sans boîte DCL",
+      "Oublier la connexion de terre sur la boîte DCL (obligatoire même si le luminaire est de classe II)"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "sections-cables-courant"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "dcl",
+    "eclairage"
+  ]
+}

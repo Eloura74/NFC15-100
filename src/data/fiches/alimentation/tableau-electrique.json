@@ -1,0 +1,107 @@
+{
+  "id": "tableau-electrique",
+  "title": "Tableau électrique",
+  "summary": "Règles d'installation et de dimensionnement du tableau électrique principal",
+  "immediateAnswer": "Le tableau doit être situé dans l'ETEL | Hauteur : 1.00m à 1.80m (1.00m à 1.30m pour PMR) | Réserve de 20% obligatoire | Protection différentielle : minimum 1x30mA type A + autres 30mA type AC | Disjoncteurs divisionnaires : un par circuit.",
+  "domain": "alimentation",
+  "subDomain": "tableaux",
+  "keywords": ["tableau", "telerupteur", "divisionnaire", "etel"],
+  "synonyms": ["coffret electrique", "tableau divisionnaire"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation du tableau électrique principal dans le logement",
+    "requirements": [
+      "Le tableau doit être situé dans l'ETEL (Espace Technique Électrique du Logement)",
+      "Une réserve de 20% des emplacements est obligatoire",
+      "Hauteur des manettes : 1.00m à 1.80m (1.00m à 1.30m pour PMR)",
+      "Un disjoncteur divisionnaire par circuit terminal",
+      "Minimum 1 différentiel 30mA type A + autres 30mA type AC"
+    ],
+    "values": [
+      {
+        "label": "Hauteur manettes",
+        "parameter": "Standard",
+        "value": "1.00-1.80",
+        "unit": "m",
+        "context": "Du sol fini"
+      },
+      {
+        "label": "Hauteur manettes",
+        "parameter": "PMR",
+        "value": "1.00-1.30",
+        "unit": "m",
+        "context": "Personne à mobilité réduite"
+      },
+      {
+        "label": "Réserve",
+        "parameter": "Emplacements",
+        "value": "20",
+        "unit": "%",
+        "context": "Obligatoire"
+      },
+      {
+        "label": "Différentiel type A",
+        "parameter": "Minimum",
+        "value": "1",
+        "unit": "x30mA",
+        "context": "Obligatoire"
+      },
+      {
+        "label": "Différentiel type AC",
+        "parameter": "Minimum",
+        "value": "1",
+        "unit": "x30mA",
+        "context": "Pour circuits classiques"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les logements PMR, toutes les commandes doivent être accessibles entre 0.90m et 1.30m",
+      "Les tableaux divisionnaires sont autorisés si le tableau principal est saturé"
+    ],
+    "commonErrors": [
+      "Ne pas prévoir la réserve de 20%",
+      "Placer le tableau trop haut (> 1.80m)",
+      "Oublier le différentiel de type A"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771.558",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "gaine-technique-logement",
+    "nombre-differentiels"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "tableau",
+    "alimentation"
+  ]
+}

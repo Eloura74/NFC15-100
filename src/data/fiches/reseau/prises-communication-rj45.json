@@ -1,0 +1,112 @@
+{
+  "id": "prises-communication-rj45",
+  "title": "Prises de communication RJ45",
+  "summary": "Nombre et type de prises RJ45 obligatoires dans un logement",
+  "immediateAnswer": "T1 / T2 = 2 prises RJ45 min | T3 = 3 prises RJ45 min | T4 et + = 4 prises RJ45 min. | Les prises doivent être câblées en étoile depuis le coffret de communication (jamais chaînées). | Câble minimum requis : Grade 2 TV ou Grade 3 TV.",
+  "domain": "reseau",
+  "subDomain": "communication",
+  "keywords": ["rj45", "communication", "internet", "grade 2", "grade 3", "vdi"],
+  "synonyms": ["prises réseau", "prises internet"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement neuf ou rénovation totale",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Obligatoire pour garantir l'accès aux réseaux de communication (Internet, Téléphone, TV) dans tout le logement.",
+    "requirements": [
+      "Câblage en étoile depuis le tableau de communication",
+      "Prise RJ45 juxtaposée ou répartie dans les pièces principales",
+      "Câbles de communication cheminant à distance des câbles de puissance (ou cloisonnés)"
+    ],
+    "values": [
+      {
+        "label": "Studio / T1",
+        "parameter": "Quantité",
+        "value": "2 prises",
+        "unit": "minimum",
+        "context": "Juxtaposées ou réparties"
+      },
+      {
+        "label": "T2",
+        "parameter": "Quantité",
+        "value": "2 prises",
+        "unit": "minimum",
+        "context": "Juxtaposées ou réparties"
+      },
+      {
+        "label": "T3",
+        "parameter": "Quantité",
+        "value": "3 prises",
+        "unit": "minimum",
+        "context": "Juxtaposées ou réparties"
+      },
+      {
+        "label": "T4 et plus",
+        "parameter": "Quantité",
+        "value": "4 prises",
+        "unit": "minimum",
+        "context": "Juxtaposées ou réparties"
+      },
+      {
+        "label": "Type de câble",
+        "parameter": "Matériel",
+        "value": "Grade 2 TV",
+        "unit": "minimum",
+        "context": "Grade 3 TV recommandé"
+      },
+      {
+        "label": "Proximité",
+        "parameter": "Installation",
+        "value": "Près d'une prise 16A",
+        "unit": "",
+        "context": "Obligatoire (pour box/TV)"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Si la TV est distribuée par câble coaxial, une prise RJ45 doit tout de même être présente dans la pièce principale"
+    ],
+    "commonErrors": [
+      "Chaîner les prises RJ45 (interdit, réseau en étoile obligatoire)",
+      "Utiliser du câble téléphonique simple (PTT298) à la place du câble réseau",
+      "Passer les câbles réseau dans la même gaine que le 230V sans séparation"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "gaine-technique-logement"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "rj45",
+    "reseau",
+    "internet"
+  ]
+}

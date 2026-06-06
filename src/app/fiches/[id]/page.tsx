@@ -16,6 +16,9 @@ import { VisualValueCard } from '@/components/sheet/visual-value-card';
 import { QuickReferenceTable } from '@/components/sheet/quick-reference-table';
 import { CableSectionDiagram } from '@/components/diagrams/cable-section-diagram';
 import { PowerCaliberDiagram } from '@/components/diagrams/power-caliber-diagram';
+import { GTLDiagram } from '@/components/diagrams/gtl-diagram';
+import { EarthDiagram } from '@/components/diagrams/earth-diagram';
+import { DiffDiagram } from '@/components/diagrams/diff-diagram';
 
 export default function SheetPage({ params }: { params: { id: string } }) {
   const sheet = getSheetById(params.id);
@@ -33,6 +36,15 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         return <CableSectionDiagram />;
       case 'puissance-souscrite-calibre':
         return <PowerCaliberDiagram />;
+      case 'gaine-technique-logement':
+        return <GTLDiagram />;
+      case 'prise-terre-valeur':
+      case 'mesure-resistance-terre':
+      case 'liaison-equipotentielle-principale':
+        return <EarthDiagram />;
+      case 'diff-30ma-logement':
+      case 'differentiel-type-a':
+        return <DiffDiagram />;
       default:
         return null;
     }
@@ -46,17 +58,60 @@ export default function SheetPage({ params }: { params: { id: string } }) {
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
 
-  const useTableForValues = sheet.content.values.length >= 4;
+  const useTableForValues =
+    sheet.content.values && sheet.content.values.length >= 4;
 
   return (
     <div className="container py-8 max-w-4xl space-y-8">
       <AnimatedSection>
-        <Link href={`/domaines/${sheet.domain}`}>
-          <Button variant="ghost" className="mb-4">
-            ← Retour au domaine
-          </Button>
-        </Link>
-        <div className="text-center space-y-4">
+        {/* Navigation Breadcrumb */}
+        <nav
+          className="flex text-sm text-muted-foreground mb-6 bg-muted/30 p-3 rounded-lg border border-border/50"
+          aria-label="Breadcrumb"
+        >
+          <ol className="inline-flex items-center space-x-1 md:space-x-3">
+            <li className="inline-flex items-center">
+              <Link
+                href="/"
+                className="hover:text-primary transition-colors flex items-center gap-2"
+              >
+                <span>🏠</span> Accueil
+              </Link>
+            </li>
+            <li>
+              <div className="flex items-center">
+                <span className="mx-2 opacity-50">/</span>
+                <Link
+                  href="/domaines"
+                  className="hover:text-primary transition-colors"
+                >
+                  Domaines
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div className="flex items-center">
+                <span className="mx-2 opacity-50">/</span>
+                <Link
+                  href={`/domaines/${sheet.domain}`}
+                  className="hover:text-primary transition-colors capitalize"
+                >
+                  {sheet.domain.replace('-', ' ')}
+                </Link>
+              </div>
+            </li>
+            <li aria-current="page">
+              <div className="flex items-center">
+                <span className="mx-2 opacity-50">/</span>
+                <span className="text-foreground font-medium truncate max-w-[200px] md:max-w-none">
+                  {sheet.title}
+                </span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
+        <div className="text-center space-y-4 mt-8">
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <Badge
               variant="outline"
@@ -132,7 +187,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         </AnimatedSection>
       )}
 
-      {sheet.content.values.length > 0 && (
+      {sheet.content.values && sheet.content.values.length > 0 && (
         <AnimatedSection delay={300}>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold flex items-center gap-2">
@@ -181,54 +236,26 @@ export default function SheetPage({ params }: { params: { id: string } }) {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        {sheet.content.requirements.length > 0 && (
-          <AnimatedSection delay={400}>
-            <Card className="h-full border-border/50 shadow-sm">
-              <CardHeader className="bg-muted/30">
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <span className="text-primary">📋</span>
-                  Règles d&apos;installation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <ul className="space-y-4">
-                  {sheet.content.requirements.map((req, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="mt-0.5 w-6 h-6 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm font-bold border border-primary/20">
-                        {i + 1}
-                      </div>
-                      <span className="leading-relaxed text-muted-foreground">
-                        {req}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
-        )}
-
-        <div className="space-y-6">
-          {sheet.content.commonErrors.length > 0 && (
-            <AnimatedSection delay={500}>
-              <Card className="border-warning/50 shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-warning" />
-                <CardHeader className="bg-warning/5 pb-3">
-                  <CardTitle className="flex items-center gap-2 text-warning text-lg">
-                    <span>⚠️</span>À ne surtout pas faire
+        {sheet.content.requirements &&
+          sheet.content.requirements.length > 0 && (
+            <AnimatedSection delay={400}>
+              <Card className="h-full border-border/50 shadow-sm">
+                <CardHeader className="bg-muted/30">
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <span className="text-primary">📋</span>
+                    Règles d&apos;installation
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="pt-4">
-                  <ul className="space-y-3">
-                    {sheet.content.commonErrors.map((error, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3 text-muted-foreground"
-                      >
-                        <span className="text-warning mt-1 font-bold text-lg leading-none">
-                          ×
+                <CardContent className="pt-6">
+                  <ul className="space-y-4">
+                    {sheet.content.requirements.map((req, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="mt-0.5 w-6 h-6 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm font-bold border border-primary/20">
+                          {i + 1}
+                        </div>
+                        <span className="leading-relaxed text-muted-foreground">
+                          {req}
                         </span>
-                        <span className="leading-relaxed">{error}</span>
                       </li>
                     ))}
                   </ul>
@@ -237,7 +264,37 @@ export default function SheetPage({ params }: { params: { id: string } }) {
             </AnimatedSection>
           )}
 
-          {sheet.content.risks.length > 0 && (
+        <div className="space-y-6">
+          {sheet.content.commonErrors &&
+            sheet.content.commonErrors.length > 0 && (
+              <AnimatedSection delay={500}>
+                <Card className="border-warning/50 shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-warning" />
+                  <CardHeader className="bg-warning/5 pb-3">
+                    <CardTitle className="flex items-center gap-2 text-warning text-lg">
+                      <span>⚠️</span>À ne surtout pas faire
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="space-y-3">
+                      {sheet.content.commonErrors.map((error, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-3 text-muted-foreground"
+                        >
+                          <span className="text-warning mt-1 font-bold text-lg leading-none">
+                            ×
+                          </span>
+                          <span className="leading-relaxed">{error}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            )}
+
+          {sheet.content.risks && sheet.content.risks.length > 0 && (
             <AnimatedSection delay={600}>
               <Card className="border-destructive/50 shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-destructive" />
@@ -302,6 +359,42 @@ export default function SheetPage({ params }: { params: { id: string } }) {
           </CardContent>
         </Card>
       </AnimatedSection>
+
+      {sheet.relatedSheets && sheet.relatedSheets.length > 0 && (
+        <AnimatedSection delay={800}>
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
+              <span className="text-primary">🔗</span>
+              Fiches connexes
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {sheet.relatedSheets.map((relatedId) => {
+                const relatedSheet = getSheetById(relatedId);
+                if (!relatedSheet) return null;
+                return (
+                  <Link key={relatedId} href={`/fiches/${relatedId}`}>
+                    <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-base group-hover:text-primary transition-colors">
+                          {relatedSheet.title}
+                        </CardTitle>
+                        <CardDescription className="text-sm line-clamp-2">
+                          {relatedSheet.summary}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <Badge variant="outline" className="text-xs">
+                          {relatedSheet.domain}
+                        </Badge>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </AnimatedSection>
+      )}
     </div>
   );
 }

@@ -1,0 +1,105 @@
+{
+  "id": "type-differentiel",
+  "title": "Types de différentiels",
+  "summary": "Différence entre les types A, AC, F et B de protection différentielle",
+  "immediateAnswer": "Type AC : appareils classiques (éclairage, prises) | Type A : appareils avec composantes continues (lave-linge, plaque induction) | Type F : équipements électroniques sensibles | Type B : installations spéciales (chargeurs véhicules).",
+  "domain": "protections",
+  "subDomain": "differentiel",
+  "keywords": ["type a", "type ac", "type f", "type b", "differentiel"],
+  "synonyms": ["différentiel type", "choix differentiel"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Choix du type de protection différentielle pour chaque circuit",
+    "requirements": [
+      "Au minimum 1 différentiel de type A obligatoire dans le logement",
+      "Les différentiels de type AC protègent les circuits classiques",
+      "Les différentiels de type A protègent les appareils avec composantes continues"
+    ],
+    "values": [
+      {
+        "label": "Type AC",
+        "parameter": "Usage",
+        "value": "Circuits classiques",
+        "unit": "",
+        "context": "Éclairage, prises standard, chauffage"
+      },
+      {
+        "label": "Type A",
+        "parameter": "Usage",
+        "value": "Appareils spéciaux",
+        "unit": "",
+        "context": "Lave-linge, plaque induction, cuisinière"
+      },
+      {
+        "label": "Type F",
+        "parameter": "Usage",
+        "value": "Équipements sensibles",
+        "unit": "",
+        "context": "Informatique, alarmes, systèmes électroniques"
+      },
+      {
+        "label": "Type B",
+        "parameter": "Usage",
+        "value": "Installations spéciales",
+        "unit": "",
+        "context": "Bornes de recharge véhicules, photovoltaïque"
+      },
+      {
+        "label": "Sensibilité",
+        "parameter": "Valeur",
+        "value": "30mA",
+        "unit": "",
+        "context": "Obligatoire pour la protection des personnes"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les installations avec IRVE, un différentiel de type B ou F est recommandé",
+      "Les différentiels de type Hi (haute immunité) sont recommandés en zones rurales"
+    ],
+    "commonErrors": [
+      "Ne pas installer de différentiel de type A (obligatoire minimum 1)",
+      "Confondre le type de différentiel avec le calibre (30mA vs 300mA)"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 531.2.1.3",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "differentiel-30ma",
+    "differentiel-type-a"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "differentiel",
+    "type"
+  ]
+}

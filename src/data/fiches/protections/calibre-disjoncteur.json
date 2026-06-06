@@ -1,0 +1,104 @@
+{
+  "id": "calibre-disjoncteur",
+  "title": "Calibre des disjoncteurs",
+  "summary": "Choix du calibre des disjoncteurs selon la section des câbles et le type de circuit",
+  "immediateAnswer": "Section 1.5mm² = 16A max | Section 2.5mm² = 20A max | Section 4mm² = 25A max | Section 6mm² = 32A max | Chauffage : calibre adapté à la puissance (ex: 20A pour 4500W).",
+  "domain": "protections",
+  "subDomain": "surintensites",
+  "keywords": ["calibre", "disjoncteur", "section", "ampère", "protection"],
+  "synonyms": ["dimensionnement disjoncteur", "choix calibre"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Choix du calibre de protection pour chaque circuit",
+    "requirements": [
+      "Le calibre du disjoncteur doit être inférieur ou égal au courant admissible du câble",
+      "Respecter les tableaux de correspondance section/calibre de la NF C 15-100",
+      "Adapter le calibre à la puissance des appareils (surtout pour le chauffage)"
+    ],
+    "values": [
+      {
+        "label": "Câble 1.5mm²",
+        "parameter": "Calibre max",
+        "value": "16A",
+        "unit": "",
+        "context": "Éclairage, prises 2P+T"
+      },
+      {
+        "label": "Câble 2.5mm²",
+        "parameter": "Calibre max",
+        "value": "20A",
+        "unit": "",
+        "context": "Prises, lave-linge, lave-vaisselle"
+      },
+      {
+        "label": "Câble 4mm²",
+        "parameter": "Calibre max",
+        "value": "25A",
+        "unit": "",
+        "context": "Plaques de cuisson, chauffage"
+      },
+      {
+        "label": "Câble 6mm²",
+        "parameter": "Calibre max",
+        "value": "32A",
+        "unit": "",
+        "context": "Cuisinière, circuits spécialisés"
+      },
+      {
+        "label": "Câble 10mm²",
+        "parameter": "Calibre max",
+        "value": "40A",
+        "unit": "",
+        "context": "Chauffage, gros appareils"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Pour les circuits de chauffage, le calibre peut être adapté à la puissance réelle (ex: 20A pour 4500W)",
+      "Les circuits de commande (éclairage) peuvent être protégés par 10A si la charge le permet"
+    ],
+    "commonErrors": [
+      "Surdimensionner le calibre par rapport à la section du câble",
+      "Utiliser un calibre trop faible qui provoque des disjonctions intempestives"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 433",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "sections-cables-courant"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "calibre",
+    "disjoncteur"
+  ]
+}

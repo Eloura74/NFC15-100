@@ -1,0 +1,113 @@
+{
+  "id": "gaine-technique-logement",
+  "title": "ETEL et GTL",
+  "summary": "Règles de dimensionnement de la Gaine Technique du Logement",
+  "immediateAnswer": "L'ETEL est un volume du sol au plafond dédié à l'électricité. | Largeur min = 60cm (ou largeur GTL + 10cm). | Profondeur min = 25cm. | La GTL intègre : compteur, disjoncteur général, tableau électrique et coffret de communication.",
+  "domain": "tableau",
+  "subDomain": "gtl",
+  "keywords": ["gtl", "etel", "gaine technique", "espace technique", "tableau"],
+  "synonyms": ["gaine technique", "espace electrique"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Création ou rénovation totale d'une installation électrique",
+    "requirements": [
+      "L'ETEL doit être exclusivement réservé aux équipements électriques",
+      "Aucune canalisation d'eau ou de gaz ne doit traverser l'ETEL",
+      "L'ETEL va impérativement du sol au plafond"
+    ],
+    "values": [
+      {
+        "label": "Largeur ETEL",
+        "parameter": "Dimensions",
+        "value": "60 cm",
+        "unit": "minimum",
+        "context": "Ou largeur de la GTL + 10cm"
+      },
+      {
+        "label": "Profondeur ETEL",
+        "parameter": "Dimensions",
+        "value": "25 cm",
+        "unit": "minimum",
+        "context": "Depuis le mur fini"
+      },
+      {
+        "label": "Disjoncteur EDF",
+        "parameter": "Accessibilité",
+        "value": "0.90m à 1.30m",
+        "unit": "du sol",
+        "context": "Axe de l'organe de manœuvre"
+      },
+      {
+        "label": "Tableau (Général)",
+        "parameter": "Accessibilité",
+        "value": "1.00m à 1.80m",
+        "unit": "du sol",
+        "context": "Manettes des disjoncteurs"
+      },
+      {
+        "label": "Tableau (PMR)",
+        "parameter": "Accessibilité",
+        "value": "1.00m à 1.30m",
+        "unit": "du sol",
+        "context": "Logement accessible PMR"
+      },
+      {
+        "label": "Coffret Com",
+        "parameter": "Accessibilité",
+        "value": "Min 5 cm",
+        "unit": "du sol",
+        "context": "Sous le tableau électrique"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Si logement < 35m², l'ETEL peut être réduit à 45cm de large",
+      "Rénovation : la GTL peut ne pas être matérialisée par une goulotte si les câbles sont encastrés"
+    ],
+    "commonErrors": [
+      "Faire passer un tuyau d'eau dans le volume de l'ETEL",
+      "Placer le tableau trop haut (> 1.80m)",
+      "Ne pas prévoir la réserve de 20% dans le tableau"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "§ 771.558",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "tableau-logement"
+  ],
+  "author": "Expert technique",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "gtl",
+    "etel",
+    "tableau"
+  ]
+}

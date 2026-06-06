@@ -1,0 +1,105 @@
+{
+  "id": "branchement-reseau",
+  "title": "Branchement au réseau",
+  "summary": "Règles pour le raccordement de l'installation au réseau de distribution",
+  "immediateAnswer": "Le branchement se fait via un disjoncteur de branchement (DB) fourni par le fournisseur | Calibre : 15/45A, 30/60A ou 60/90A selon la puissance souscrite | Le DB doit être accessible et situé dans l'ETEL | Câble d'alimentation : section selon la distance et le calibre.",
+  "domain": "alimentation",
+  "subDomain": "branchement",
+  "keywords": ["branchement", "reseau", "disjoncteur branchement", "edf", "enedis"],
+  "synonyms": ["raccordement", "liaison reseau"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "critique",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Raccordement d'une installation électrique au réseau de distribution public",
+    "requirements": [
+      "Le disjoncteur de branchement est fourni et installé par le gestionnaire du réseau",
+      "Le DB doit être situé dans l'ETEL (Espace Technique Électrique du Logement)",
+      "Le DB doit être accessible pour intervention (hauteur 0.90m à 1.30m)",
+      "Le câble d'alimentation doit être dimensionné selon la distance et le calibre"
+    ],
+    "values": [
+      {
+        "label": "Calibre DB",
+        "parameter": "Puissance",
+        "value": "15/45A",
+        "unit": "",
+        "context": "Pour 3kVA à 9kVA (3 à 12kVA monophasé)"
+      },
+      {
+        "label": "Calibre DB",
+        "parameter": "Puissance",
+        "value": "30/60A",
+        "unit": "",
+        "context": "Pour 6kVA à 15kVA monophasé"
+      },
+      {
+        "label": "Calibre DB",
+        "parameter": "Puissance",
+        "value": "60/90A",
+        "unit": "",
+        "context": "Pour 12kVA à 18kVA monophasé"
+      },
+      {
+        "label": "Distance < 30m",
+        "parameter": "Section câble",
+        "value": "16",
+        "unit": "mm²",
+        "context": "Pour calibre 45A max"
+      },
+      {
+        "label": "Distance 30-50m",
+        "parameter": "Section câble",
+        "value": "25",
+        "unit": "mm²",
+        "context": "Pour calibre 45A max"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "En triphasé, les sections de câble sont différentes",
+      "Pour les distances > 50m, consulter le tableau de chute de tension"
+    ],
+    "commonErrors": [
+      "Sous-dimensionner la section du câble d'alimentation",
+      "Ne pas prévoir assez de réserve dans le tableau après le DB"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nfc14100",
+      "type": "normative",
+      "title": "NF C 14-100",
+      "reference": "NF C 14-100",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "disjoncteur-branchement",
+    "puissance-souscrite-calibre"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "branchement",
+    "alimentation"
+  ]
+}

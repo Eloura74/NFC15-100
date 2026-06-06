@@ -1,0 +1,105 @@
+{
+  "id": "circuit-chauffage",
+  "title": "Circuits de chauffage",
+  "summary": "Règles pour les circuits de chauffage électrique et plancher chauffant",
+  "immediateAnswer": "Circuit par pièce ou par tranche de 5m² max | Section câble : 2.5mm² minimum (4mm² recommandé) | Calibre : adapté à la puissance (ex: 20A pour 4500W) | Plancher chauffant : règles spécifiques NF C 15-100 § 701.",
+  "domain": "circuits",
+  "subDomain": "chauffage",
+  "keywords": ["chauffage", "radiateur", "plancher chauffant", "convecteur"],
+  "synonyms": ["circuit chauffage", "radiateur électrique"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Logement avec chauffage électrique",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normale",
+  "confidence": "source_normative",
+  "content": {
+    "whenApplies": "Installation de chauffage électrique (radiateurs, plancher chauffant)",
+    "requirements": [
+      "Un circuit par pièce ou par tranche de 5m² maximum",
+      "Section minimale 2.5mm² (4mm² recommandé pour les puissances élevées)",
+      "Calibre adapté à la puissance totale du circuit",
+      "Plancher chauffant : dispositif de protection thermique obligatoire"
+    ],
+    "values": [
+      {
+        "label": "Section câble",
+        "parameter": "Dimension",
+        "value": "2.5",
+        "unit": "mm² minimum",
+        "context": "4mm² recommandé"
+      },
+      {
+        "label": "Calibre",
+        "parameter": "Protection",
+        "value": "20A",
+        "unit": "",
+        "context": "Pour 4500W max"
+      },
+      {
+        "label": "Calibre",
+        "parameter": "Protection",
+        "value": "25A",
+        "unit": "",
+        "context": "Pour 5750W max"
+      },
+      {
+        "label": "Nombre de points",
+        "parameter": "Circuit",
+        "value": "1",
+        "unit": "par pièce",
+        "context": "Ou par tranche de 5m²"
+      },
+      {
+        "label": "Plancher chauffant",
+        "parameter": "Section",
+        "value": "4",
+        "unit": "mm² minimum",
+        "context": "Câbles spécifiques"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Les planchers chauffants nécessitent un dispositif de protection thermique spécifique",
+      "Pour les grandes surfaces, plusieurs circuits peuvent être nécessaires"
+    ],
+    "commonErrors": [
+      "Sous-dimensionner la section du câble pour les puissances élevées",
+      "Ne pas prévoir assez de circuits pour la surface à chauffer"
+    ],
+    "risks": []
+  },
+  "sources": [
+    {
+      "id": "nfc15100",
+      "type": "normative",
+      "title": "NF C 15-100",
+      "reference": "NF C 15-100 § 771.314.2.3",
+      "date": "2020"
+    }
+  ],
+  "relatedSheets": [
+    "calibre-disjoncteur"
+  ],
+  "author": "Expert",
+  "verifier": "Comité",
+  "history": [
+    {
+      "date": "2026-06-06",
+      "author": "Expert",
+      "action": "created",
+      "description": "Création"
+    }
+  ],
+  "tags": [
+    "chauffage",
+    "circuit"
+  ]
+}

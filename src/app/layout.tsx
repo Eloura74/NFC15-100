@@ -33,6 +33,7 @@ export const viewport: Viewport = {
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { Sidebar } from '@/components/layout/sidebar';
 import { Providers } from './providers';
 
 export default function RootLayout({
@@ -45,7 +46,10 @@ export default function RootLayout({
       <body className="min-h-screen antialiased flex flex-col">
         <Providers>
           <Header />
-          <main className="flex-1">{children}</main>
+          <div className="flex flex-1">
+            <Sidebar />
+            <main className="flex-1 overflow-y-auto">{children}</main>
+          </div>
           <Footer />
         </Providers>
       </body>
