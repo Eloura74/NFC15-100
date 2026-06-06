@@ -58,6 +58,7 @@ export function ImageWithFallback({
         alt={alt}
         className={className}
         onError={() => setError(true)}
+        loading="lazy"
       />
     </div>
   );

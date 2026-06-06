@@ -34,6 +34,8 @@ export const viewport: Viewport = {
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Sidebar } from '@/components/layout/sidebar';
+import { Breadcrumbs } from '@/components/layout/breadcrumbs';
+import { CommandMenu } from '@/components/layout/command-menu';
 import { Providers } from './providers';
 import { Inter } from 'next/font/google';
 
@@ -50,11 +52,15 @@ export default function RootLayout({
         className={`min-h-screen antialiased flex flex-col ${inter.className}`}
       >
         <Providers>
+          <CommandMenu />
           <div className="fixed inset-0 z-[-1] bg-mesh pointer-events-none"></div>
           <Header />
           <div className="flex flex-1">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto relative">{children}</main>
+            <main className="flex-1 overflow-y-auto relative">
+              <Breadcrumbs />
+              {children}
+            </main>
           </div>
           <Footer />
         </Providers>

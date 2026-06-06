@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
   Card,
   CardContent,
   CardDescription,
@@ -14,16 +21,34 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { SearchEngine } from '@/lib/search/search-engine';
 import { getAllSheets } from '@/lib/content/get-sheets';
+import { getAllDomains } from '@/lib/content/get-domains';
 
 export default function RecherchePage() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [selectedDomain, setSelectedDomain] = useState<string>('all');
+  const [selectedCriticality, setSelectedCriticality] = useState<string>('all');
+
+  const domains = getAllDomains();
 
   const handleSearch = () => {
     if (!query.trim()) return;
 
-    const sheets = getAllSheets();
+    let sheets = getAllSheets();
+
+    // Apply domain filter
+    if (selectedDomain !== 'all') {
+      sheets = sheets.filter((sheet) => sheet.domain === selectedDomain);
+    }
+
+    // Apply criticality filter
+    if (selectedCriticality !== 'all') {
+      sheets = sheets.filter(
+        (sheet) => sheet.criticality === selectedCriticality
+      );
+    }
+
     const searchEngine = new SearchEngine(sheets);
     const searchResults = searchEngine.search({ query, limit: 20 });
 
@@ -47,17 +72,51 @@ export default function RecherchePage() {
           </p>
         </div>
 
-        <div className="flex gap-2">
-          <Input
-            type="search"
-            placeholder="Différentiel 30mA, tableau électrique, prise de terre..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyPress={handleKeyPress}
-            className="flex-1"
-            autoFocus
-          />
-          <Button onClick={handleSearch}>Rechercher</Button>
+        <div className="space-y-4">
+          <div className="flex gap-2">
+            <Input
+              type="search"
+              placeholder="Différentiel 30mA, tableau électrique, prise de terre..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
+              className="flex-1"
+              autoFocus
+            />
+            <Button onClick={handleSearch}>Rechercher</Button>
+          </div>
+
+          <div className="flex gap-2">
+            <Select value={selectedDomain} onValueChange={setSelectedDomain}>
+              <SelectTrigger className="w-[200px]">
+                <SelectValue placeholder="Tous les domaines" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Tous les domaines</SelectItem>
+                {domains.map((domain) => (
+                  <SelectItem key={domain.id} value={domain.id}>
+                    {domain.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select
+              value={selectedCriticality}
+              onValueChange={setSelectedCriticality}
+            >
+              <SelectTrigger className="w-[200px]">
+                <SelectValue placeholder="Toutes criticités" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Toutes criticités</SelectItem>
+                <SelectItem value="danger_immediat">Danger immédiat</SelectItem>
+                <SelectItem value="critique">Critique</SelectItem>
+                <SelectItem value="attention">Attention</SelectItem>
+                <SelectItem value="normal">Normal</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         {hasSearched && (

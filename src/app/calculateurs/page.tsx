@@ -27,6 +27,11 @@ const calculators = [
     name: 'Section de câble',
     description: 'Calculer la section de câble selon puissance et distance',
   },
+  {
+    id: 'tableau-sections',
+    name: 'Tableaux comparatifs',
+    description: 'Sections de câbles vs intensité, puissance et chute de tension',
+  },
 ];
 
 export default function CalculateursPage() {
