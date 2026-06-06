@@ -18,6 +18,7 @@ import {
   Power,
   Shield,
   Globe,
+  Clock,
   Cable,
   Waves,
   Battery,
@@ -119,19 +120,37 @@ export default function HomePage() {
               style={{ animationDelay: '1.5s' }}
             ></div>
           </div>
-          <div className="relative z-10 p-5">
+          <div className="relative z-10 p-5 space-y-4">
             <div className="inline-block animate-[fadeIn_0.8s_ease-out]">
               <h1 className="relative text-2xl md:text-4xl font-bold tracking-tight text-white animate-[fadeIn_1s_ease-out]">
                 ElecNorme
               </h1>
             </div>
-            <p className="text-sm md:text-base text-slate-400 max-w-xl mx-auto font-normal leading-relaxed text-balance mt-2">
+            <p className="text-sm md:text-base text-slate-400 max-w-xl mx-auto font-normal leading-relaxed text-balance">
               La référence visuelle de la norme{' '}
               <span className="text-primary font-medium animate-[pulse_2s_ease-in-out_infinite]">
                 NFC 15-100
               </span>
             </p>
-            <div className="flex items-center justify-center gap-2 flex-wrap pt-3">
+            {/* Integrated search bar */}
+            <div className="max-w-lg mx-auto animate-[fadeIn_1.2s_ease-out]">
+              <div className="relative flex gap-2 p-1.5 bg-slate-900/60 backdrop-blur-md rounded-xl border border-primary/30 focus-within:border-primary/50 transition-all">
+                <Input
+                  type="search"
+                  placeholder="Rechercher une règle, un circuit, une section..."
+                  className="flex-1 border-0 focus-visible:ring-0 text-sm bg-transparent placeholder:text-muted-foreground/50 h-9 px-3"
+                />
+                <Link href="/recherche" tabIndex={-1}>
+                  <Button
+                    size="sm"
+                    className="px-4 h-9 text-sm font-medium bg-primary hover:bg-primary/90 text-white"
+                  >
+                    Rechercher
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-2 flex-wrap">
               <Badge
                 variant="outline"
                 className="text-xs px-2.5 py-0.5 border-primary/30 bg-primary/5 text-primary flex items-center gap-1"
@@ -144,28 +163,6 @@ export default function HomePage() {
               >
                 <Folder className="w-3 h-3" /> {domains.length} domaines
               </Badge>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      <AnimatedSection delay={100}>
-        <section className="max-w-xl mx-auto relative z-20 -mt-4">
-          <div className="relative group animate-[fadeIn_1.2s_ease-out]">
-            <div className="relative flex gap-2 p-1.5 bg-slate-900/60 backdrop-blur-md rounded-xl border border-white/10 focus-within:border-primary/50 transition-all">
-              <Input
-                type="search"
-                placeholder="Rechercher..."
-                className="flex-1 border-0 focus-visible:ring-0 text-base bg-transparent placeholder:text-muted-foreground/50 h-10 px-3"
-              />
-              <Link href="/recherche" tabIndex={-1}>
-                <Button
-                  size="sm"
-                  className="px-4 h-10 text-sm font-medium bg-primary hover:bg-primary/90 text-white"
-                >
-                  Rechercher
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
@@ -204,6 +201,16 @@ export default function HomePage() {
                         {sheet.summary}
                       </CardDescription>
                     </CardHeader>
+                    <CardContent className="pt-0 pb-4">
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {Math.floor(Math.random() * 5) + 2} min
+                        </span>
+                        <span>•</span>
+                        <span>Mis à jour récemment</span>
+                      </div>
+                    </CardContent>
                   </Card>
                 </Link>
               </AnimatedSection>

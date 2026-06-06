@@ -72,7 +72,7 @@ export default function DomainesPage() {
                     src={`/images/domains/${domain.id}.png`}
                     alt={`Illustration du domaine ${domain.name}`}
                     title={domain.name}
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 mix-blend-screen"
+                    className="w-full h-full object-cover opacity-12 group-hover:opacity-20 transition-opacity duration-500 mix-blend-screen"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/80 to-transparent"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent"></div>
@@ -108,7 +108,7 @@ export default function DomainesPage() {
                         Sous-domaines :
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {domain.subDomains.map((sub) => (
+                        {domain.subDomains.slice(0, 3).map((sub) => (
                           <Badge
                             key={sub.id}
                             variant="outline"
@@ -120,6 +120,14 @@ export default function DomainesPage() {
                             </span>
                           </Badge>
                         ))}
+                        {domain.subDomains.length > 3 && (
+                          <Badge
+                            variant="outline"
+                            className="bg-background/40 backdrop-blur-sm border-white/10 text-muted-foreground"
+                          >
+                            +{domain.subDomains.length - 3}
+                          </Badge>
+                        )}
                       </div>
                     </div>
                   </CardContent>

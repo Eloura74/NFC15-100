@@ -70,7 +70,7 @@ export function Sidebar({ className }: { className?: string }) {
     <aside
       className={cn(
         className ? '' : 'hidden xl:block',
-        'w-72 border-r border-white/5 bg-background/40 backdrop-blur-xl',
+        'w-64 border-r border-white/5 bg-background/40 backdrop-blur-xl',
         className ? 'h-auto' : 'sticky top-16 h-[calc(100vh-4rem)]',
         'overflow-y-auto',
         className
@@ -81,14 +81,14 @@ export function Sidebar({ className }: { className?: string }) {
           <Link
             href="/"
             className={cn(
-              'flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300',
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
               isActive('/')
-                ? 'bg-primary/15 text-primary font-semibold border border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                : 'hover:bg-primary/10 hover:text-primary text-muted-foreground'
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
             )}
           >
-            <Home className="w-5 h-5" />
-            <span className="font-medium">Accueil</span>
+            <Home className="w-4 h-4" />
+            <span className="text-sm font-medium">Accueil</span>
           </Link>
         </div>
 
@@ -101,13 +101,13 @@ export function Sidebar({ className }: { className?: string }) {
               <button
                 onClick={() => toggleDomain(domain.id)}
                 className={cn(
-                  'w-full flex items-center justify-between px-3 py-3 rounded-xl transition-all duration-300 text-left',
+                  'w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-all duration-300 text-left relative',
                   isActive(`/domaines/${domain.id}`)
-                    ? 'bg-primary/15 text-primary font-semibold border border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                    : 'hover:bg-primary/10 hover:text-primary text-muted-foreground'
+                    ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                    : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
                 )}
               >
-                <div className="flex items-center gap-3 max-w-[75%]">
+                <div className="flex items-center gap-3 max-w-[70%]">
                   <span
                     className={cn(
                       'shrink-0',
@@ -123,15 +123,15 @@ export function Sidebar({ className }: { className?: string }) {
                 <div className="flex items-center gap-2 shrink-0">
                   <Badge
                     variant="secondary"
-                    className="text-xs px-1.5 py-0.5 bg-background/50"
+                    className="text-[10px] px-1.5 py-0.5 bg-background/50"
                   >
                     {domain.sheetCount}
                   </Badge>
                   <span className="text-xs text-muted-foreground">
                     {expandedDomains.has(domain.id) ? (
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-3.5 h-3.5" />
                     ) : (
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-3.5 h-3.5" />
                     )}
                   </span>
                 </div>
@@ -176,38 +176,38 @@ export function Sidebar({ className }: { className?: string }) {
           <Link
             href="/recherche"
             className={cn(
-              'flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300',
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
               isActive('/recherche')
-                ? 'bg-primary/15 text-primary font-semibold border border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                : 'hover:bg-primary/10 hover:text-primary text-muted-foreground'
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
             )}
           >
-            <Search className="w-5 h-5" />
-            <span className="font-medium">Recherche</span>
+            <Search className="w-4 h-4" />
+            <span className="text-sm font-medium">Recherche</span>
           </Link>
           <Link
             href="/calculateurs"
             className={cn(
-              'flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300',
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
               isActive('/calculateurs')
-                ? 'bg-primary/15 text-primary font-semibold border border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                : 'hover:bg-primary/10 hover:text-primary text-muted-foreground'
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
             )}
           >
-            <Calculator className="w-5 h-5" />
-            <span className="font-medium">Calculateurs</span>
+            <Calculator className="w-4 h-4" />
+            <span className="text-sm font-medium">Calculateurs</span>
           </Link>
           <Link
             href="/favoris"
             className={cn(
-              'flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300',
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
               isActive('/favoris')
-                ? 'bg-primary/15 text-primary font-semibold border border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                : 'hover:bg-primary/10 hover:text-primary text-muted-foreground'
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
             )}
           >
-            <Star className="w-5 h-5" />
-            <span className="font-medium">Favoris</span>
+            <Star className="w-4 h-4" />
+            <span className="text-sm font-medium">Favoris</span>
           </Link>
         </div>
       </div>
