@@ -62,6 +62,32 @@
       "Lave-vaisselle : circuit spécialisé 20A",
       "Lave-linge : circuit spécialisé 20A (si en cuisine)"
     ],
+    "colorCoding": {
+      "scotchColor": {
+        "color": "Rouge",
+        "usage": "Repérage des circuits de prises"
+      },
+      "cableColors": {
+        "title": "Couleurs des conducteurs pour prises",
+        "monophase": {
+          "title": "Monophasé alternatif",
+          "colors": [
+            {
+              "wire": "Phase",
+              "color": "Marron"
+            },
+            {
+              "wire": "Neutre",
+              "color": "Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        }
+      }
+    },
     "commonErrors": [
       "Moins de 6 prises au total",
       "Moins de 4 prises au plan de travail",

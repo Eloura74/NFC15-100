@@ -31,6 +31,7 @@ import gtlEtel from '@/data/fiches/tableau/gaine-technique-logement.json';
 import piscineElectrique from '@/data/fiches/locaux-speciaux/piscine-electrique.json';
 import installationExterieure from '@/data/fiches/locaux-speciaux/installation-exterieure.json';
 import photovoltaiqueLogement from '@/data/fiches/energie/photovoltaique-logement.json';
+import couleursScotch from '@/data/fiches/circuits/couleurs-scotch.json';
 
 export function getAllSheets(): ContentSheet[] {
   return [
@@ -66,6 +67,7 @@ export function getAllSheets(): ContentSheet[] {
     piscineElectrique as unknown as ContentSheet,
     installationExterieure as unknown as ContentSheet,
     photovoltaiqueLogement as unknown as ContentSheet,
+    couleursScotch as unknown as ContentSheet,
   ];
 }
 

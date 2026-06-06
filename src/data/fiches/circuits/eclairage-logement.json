@@ -61,6 +61,32 @@
       "Exemple 2 : Couloir avec 3 spots = 3 points → OK sur circuit 10A ou 16A",
       "Exemple 3 : Chambre avec 1 plafonnier + 2 appliques = 3 points → OK"
     ],
+    "colorCoding": {
+      "scotchColor": {
+        "color": "Bleu",
+        "usage": "Repérage des circuits d'éclairage"
+      },
+      "cableColors": {
+        "title": "Couleurs des conducteurs pour éclairage",
+        "monophase": {
+          "title": "Monophasé alternatif",
+          "colors": [
+            {
+              "wire": "Phase",
+              "color": "Marron"
+            },
+            {
+              "wire": "Neutre",
+              "color": "Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        }
+      }
+    },
     "commonErrors": [
       "Plus de 8 points sur un circuit 16A",
       "Section inférieure à 1,5mm²",

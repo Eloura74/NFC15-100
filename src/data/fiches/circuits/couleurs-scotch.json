@@ -1,0 +1,134 @@
+{
+  "id": "couleurs-scotch",
+  "title": "Repérage par scotch de couleur",
+  "summary": "Code couleur pour le repérage des circuits électriques par scotch",
+  "immediateAnswer": "Orange = Alimentation | Vert = Extérieur | Gris = Communication | Bleu = Éclairage | Rouge = Prises",
+  "domain": "Circuits",
+  "subDomain": "repérage",
+  "keywords": [
+    "scotch",
+    "couleur",
+    "repérage",
+    "circuit",
+    "identification"
+  ],
+  "synonyms": ["marquage", "étiquetage", "code couleur"],
+  "applicableContexts": [
+    {
+      "type": "installation",
+      "value": "Toute installation",
+      "required": true
+    }
+  ],
+  "excludedContexts": [],
+  "version": "nfc15100-2020",
+  "lastVerified": "2024-01-15",
+  "status": "published",
+  "criticality": "normal",
+  "confidence": "pratique_professionnelle",
+  "content": {
+    "whenApplies": "Le repérage par scotch de couleur permet d'identifier rapidement chaque circuit électrique dans le tableau et sur les câbles.",
+    "requirements": [
+      "Utiliser des scotchs de couleur standardisés",
+      "Appliquer sur les conducteurs au niveau du tableau",
+      "Appliquer sur les câbles aux points de raccordement",
+      "Respecter le code couleur de l'entreprise"
+    ],
+    "values": [
+      {
+        "label": "Orange",
+        "parameter": "Alimentation",
+        "value": "Circuits principaux d'alimentation",
+        "unit": "",
+        "context": "Arrivée EDF, tableau principal"
+      },
+      {
+        "label": "Vert",
+        "parameter": "Extérieur",
+        "value": "Circuits extérieurs",
+        "unit": "",
+        "context": "Jardin, terrasse, éclairage extérieur"
+      },
+      {
+        "label": "Gris",
+        "parameter": "Communication",
+        "value": "Circuits de communication",
+        "unit": "",
+        "context": "RJ45, TV, téléphone"
+      },
+      {
+        "label": "Bleu",
+        "parameter": "Éclairage",
+        "value": "Circuits d'éclairage",
+        "unit": "",
+        "context": "Luminaire, spots, appliques"
+      },
+      {
+        "label": "Rouge",
+        "parameter": "Prises",
+        "value": "Circuits de prises de courant",
+        "unit": "",
+        "context": "Prises 16A, 20A, 32A"
+      }
+    ],
+    "exceptions": [],
+    "specialCases": [
+      "Possibilité d'ajouter des couleurs supplémentaires selon les besoins de l'entreprise",
+      "Scotch bicolore pour circuits mixtes",
+      "Marquage additionnel avec étiquettes écrites pour circuits spécialisés"
+    ],
+    "commonErrors": [
+      "Ne pas appliquer le scotch sur tous les conducteurs du circuit",
+      "Utiliser des couleurs non standardisées",
+      "Oublier de repérer les circuits spécialisés",
+      "Scotch mal fixé qui se détache"
+    ],
+    "risks": [
+      {
+        "description": "Confusion entre circuits lors de maintenance",
+        "level": "moyen",
+        "consequences": ["Erreur de manipulation", "Temps perdu"]
+      }
+    ],
+    "controls": [
+      "Vérifier la présence du scotch sur chaque circuit",
+      "Vérifier la cohérence des couleurs",
+      "Contrôler la fixation des scotchs"
+    ],
+    "checklist": [
+      {
+        "item": "Scotch appliqué sur tous les circuits",
+        "mandatory": true
+      },
+      {
+        "item": "Code couleur respecté",
+        "mandatory": true
+      },
+      {
+        "item": "Scotchs bien fixés",
+        "mandatory": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "pratique",
+      "type": "pratique",
+      "title": "Pratique professionnelle",
+      "reference": "Standard entreprise",
+      "date": "2024"
+    }
+  ],
+  "relatedSheets": ["sections-cables-courant", "eclairage-logement", "prises-cuisine"],
+  "author": "ElecNorme",
+  "verifier": "ElecNorme",
+  "history": [
+    {
+      "date": "2024-01-15",
+      "author": "ElecNorme",
+      "action": "created",
+      "description": "Création de la fiche"
+    }
+  ],
+  "tags": ["scotch", "couleur", "repérage", "circuit", "identification"]
+}

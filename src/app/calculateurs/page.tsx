@@ -22,6 +22,11 @@ const calculators = [
     name: 'Chute de tension',
     description: 'Calculer la chute de tension dans un câble',
   },
+  {
+    id: 'section-cable',
+    name: 'Section de câble',
+    description: 'Calculer la section de câble selon puissance et distance',
+  },
 ];
 
 export default function CalculateursPage() {

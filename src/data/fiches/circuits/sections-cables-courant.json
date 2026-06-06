@@ -88,6 +88,112 @@
       "Température ambiante > 30°C : coefficient de correction",
       "Triphasé : sections identiques mais répartition sur 3 phases"
     ],
+    "colorCoding": {
+      "scotchColors": {
+        "title": "Repérage par scotch (entreprise)",
+        "colors": [
+          {
+            "color": "Orange",
+            "usage": "Alimentation"
+          },
+          {
+            "color": "Vert",
+            "usage": "Extérieur"
+          },
+          {
+            "color": "Gris",
+            "usage": "Communication"
+          },
+          {
+            "color": "Bleu",
+            "usage": "Éclairage"
+          },
+          {
+            "color": "Rouge",
+            "usage": "Prises"
+          }
+        ]
+      },
+      "cableColors": {
+        "title": "Couleurs des conducteurs (NFC 15-100)",
+        "monophase": {
+          "title": "Monophasé alternatif",
+          "colors": [
+            {
+              "wire": "Phase",
+              "color": "Marron"
+            },
+            {
+              "wire": "Neutre",
+              "color": "Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        },
+        "triphase": {
+          "title": "Triphasé",
+          "colors": [
+            {
+              "wire": "L1",
+              "color": "Marron"
+            },
+            {
+              "wire": "L2",
+              "color": "Noir"
+            },
+            {
+              "wire": "L3",
+              "color": "Gris"
+            },
+            {
+              "wire": "Neutre",
+              "color": "Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        },
+        "continuousMono": {
+          "title": "Continu monophasé",
+          "colors": [
+            {
+              "wire": "Positif (+)",
+              "color": "Marron ou Noir"
+            },
+            {
+              "wire": "Négatif (-)",
+              "color": "Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        },
+        "continuousTri": {
+          "title": "Continu triphasé",
+          "colors": [
+            {
+              "wire": "Positif (+)",
+              "color": "Marron et Gris"
+            },
+            {
+              "wire": "Négatif (-)",
+              "color": "Noir et Bleu"
+            },
+            {
+              "wire": "Terre",
+              "color": "Vert/Jaune"
+            }
+          ]
+        }
+      }
+    },
     "commonErrors": [
       "Ne pas tenir compte de la longueur du circuit",
       "Utiliser 1,5mm² pour 16A sur plus de 40m",
