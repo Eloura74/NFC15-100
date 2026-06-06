@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Lock, Menu, Zap, Command } from 'lucide-react';
+import { Lock, Menu, Zap, Command, Sparkles, Network } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -140,6 +140,26 @@ export function Header() {
               className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
             >
               Favoris
+            </Button>
+          </Link>
+          <Link href="/guides/schema-circuits">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Network className="w-4 h-4 mr-1" />
+              Schémas
+            </Button>
+          </Link>
+          <Link href="/roadmap">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Sparkles className="w-4 h-4 mr-1" />
+              Roadmap
             </Button>
           </Link>
           <Link href="/login">

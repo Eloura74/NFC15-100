@@ -1,16 +1,16 @@
-import { PowerCurrentConverter } from '@/components/calculators/power-current-converter';
+import { ProtectionCalculator } from '@/components/calculators/protection-calculator';
 import { Disclaimer } from '@/components/ui/disclaimer';
 import { AnimatedSection } from '@/components/sheet/animated-section';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 
 export const metadata = {
-  title: 'Convertisseur Puissance / Intensité | ElecNorme',
+  title: 'Calculateur de calibre de protection | ElecNorme',
   description:
-    'Convertisseur puissance/intensité selon NFC 15-100 : calculer la puissance ou lintensité en monophasé ou triphasé avec facteur de puissance.',
+    'Calculateur de calibre de disjoncteur selon NFC 15-100 : déterminer la protection adaptée à chaque type de circuit.',
 };
 
-export default function PuissanceCalculatorPage() {
+export default function ProtectionCalculatorPage() {
   return (
     <div className="container py-12 max-w-4xl">
       <AnimatedSection>
@@ -28,7 +28,7 @@ export default function PuissanceCalculatorPage() {
       </AnimatedSection>
 
       <AnimatedSection delay={150}>
-        <PowerCurrentConverter />
+        <ProtectionCalculator />
       </AnimatedSection>
     </div>
   );

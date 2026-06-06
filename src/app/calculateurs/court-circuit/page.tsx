@@ -1,16 +1,16 @@
-import { PowerCurrentConverter } from '@/components/calculators/power-current-converter';
+import { ShortCircuitCalculator } from '@/components/calculators/short-circuit-calculator';
 import { Disclaimer } from '@/components/ui/disclaimer';
 import { AnimatedSection } from '@/components/sheet/animated-section';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 
 export const metadata = {
-  title: 'Convertisseur Puissance / Intensité | ElecNorme',
+  title: 'Calculateur de courant de court-circuit | ElecNorme',
   description:
-    'Convertisseur puissance/intensité selon NFC 15-100 : calculer la puissance ou lintensité en monophasé ou triphasé avec facteur de puissance.',
+    'Calculateur de courant de court-circuit présumé selon NFC 15-100 : estimation du Icc pour dimensionner les protections.',
 };
 
-export default function PuissanceCalculatorPage() {
+export default function CourtCircuitCalculatorPage() {
   return (
     <div className="container py-12 max-w-4xl">
       <AnimatedSection>
@@ -24,11 +24,11 @@ export default function PuissanceCalculatorPage() {
       </AnimatedSection>
 
       <AnimatedSection delay={100}>
-        <Disclaimer className="mb-8" variant="info" />
+        <Disclaimer className="mb-8" variant="warning" />
       </AnimatedSection>
 
       <AnimatedSection delay={150}>
-        <PowerCurrentConverter />
+        <ShortCircuitCalculator />
       </AnimatedSection>
     </div>
   );
