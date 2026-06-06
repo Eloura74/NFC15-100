@@ -12,7 +12,7 @@ export class SearchEngine {
   }
 
   private initializeFuse() {
-    const options: Fuse.IFuseOptions<ContentSheet> = {
+    const options = {
       keys: [
         { name: 'title', weight: 3 },
         { name: 'summary', weight: 2 },
@@ -45,14 +45,15 @@ export class SearchEngine {
       .map((result) => ({
         sheet: result.item,
         score: 1 - (result.score || 0),
-        matches: result.matches?.map((match) => ({
-          field: match.key as any,
-          value: match.value || '',
-        })) || [],
+        matches:
+          result.matches?.map((match) => ({
+            field: match.key as any,
+            value: match.value || '',
+          })) || [],
       }))
       .filter((result) => {
         if (!options.filters) return true;
-        
+
         const { filters } = options;
         const { sheet } = result;
 
@@ -60,7 +61,11 @@ export class SearchEngine {
           return false;
         }
 
-        if (filters.subDomains && sheet.subDomain && !filters.subDomains.includes(sheet.subDomain)) {
+        if (
+          filters.subDomains &&
+          sheet.subDomain &&
+          !filters.subDomains.includes(sheet.subDomain)
+        ) {
           return false;
         }
 
@@ -68,7 +73,10 @@ export class SearchEngine {
           return false;
         }
 
-        if (filters.criticality && !filters.criticality.includes(sheet.criticality)) {
+        if (
+          filters.criticality &&
+          !filters.criticality.includes(sheet.criticality)
+        ) {
           return false;
         }
 
