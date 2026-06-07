@@ -59,14 +59,14 @@ export function Header() {
             </SheetTrigger>
             <SheetContent
               side="left"
-              className="p-0 w-80 bg-background/95 border-r border-white/10"
+              className="p-0 w-full sm:w-80 h-full bg-background/95 border-r border-white/10"
             >
               <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
               <SheetDescription className="sr-only">
                 Accédez aux domaines, calculatrices et recherches.
               </SheetDescription>
               <div className="h-full overflow-y-auto">
-                <Sidebar className="block w-full border-none h-auto sticky top-0" />
+                <Sidebar className="block w-full border-none h-auto" />
                 <div className="border-t border-white/10 p-4 space-y-2">
                   <Link href="/recherche" onClick={() => setIsOpen(false)}>
                     <Button variant="ghost" className="w-full justify-start">
