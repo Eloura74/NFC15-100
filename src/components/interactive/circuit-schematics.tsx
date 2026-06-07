@@ -32,6 +32,538 @@ interface CircuitInfo {
   usage: string[];
 }
 
+// SVG Schematics for each circuit type
+const CircuitSVG = ({ type }: { type: CircuitType }) => {
+  if (type === 'va-et-vient') {
+    return (
+      <svg
+        viewBox="0 0 400 250"
+        className="w-full h-auto bg-slate-900/50 rounded-lg p-4"
+      >
+        <line
+          x1="20"
+          y1="50"
+          x2="380"
+          y2="50"
+          stroke="#f59e0b"
+          strokeWidth="3"
+        />
+        <text x="25" y="40" fill="#f59e0b" fontSize="14" fontWeight="bold">
+          L (Phase)
+        </text>
+
+        <rect
+          x="60"
+          y="80"
+          width="60"
+          height="80"
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="90" y="120" fill="#3b82f6" fontSize="12" textAnchor="middle">
+          INT 1
+        </text>
+        <circle cx="90" cy="95" r="5" fill="#3b82f6" />
+        <line
+          x1="90"
+          y1="95"
+          x2="110"
+          y2="85"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <rect
+          x="280"
+          y="80"
+          width="60"
+          height="80"
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="310" y="120" fill="#3b82f6" fontSize="12" textAnchor="middle">
+          INT 2
+        </text>
+        <circle cx="310" cy="95" r="5" fill="#3b82f6" />
+        <line
+          x1="310"
+          y1="95"
+          x2="330"
+          y2="85"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <line
+          x1="120"
+          y1="110"
+          x2="280"
+          y2="110"
+          stroke="#10b981"
+          strokeWidth="2"
+          strokeDasharray="5,5"
+        />
+        <line
+          x1="120"
+          y1="130"
+          x2="280"
+          y2="130"
+          stroke="#10b981"
+          strokeWidth="2"
+          strokeDasharray="5,5"
+        />
+        <text x="200" y="105" fill="#10b981" fontSize="10" textAnchor="middle">
+          Voyageuses
+        </text>
+
+        <line
+          x1="90"
+          y1="160"
+          x2="90"
+          y2="190"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+        <line
+          x1="90"
+          y1="190"
+          x2="200"
+          y2="190"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+        <text x="145" y="185" fill="#8b5cf6" fontSize="10" textAnchor="middle">
+          Navette
+        </text>
+
+        <circle
+          cx="200"
+          cy="210"
+          r="20"
+          fill="none"
+          stroke="#eab308"
+          strokeWidth="2"
+        />
+        <text x="200" y="215" fill="#eab308" fontSize="12" textAnchor="middle">
+          L
+        </text>
+
+        <line
+          x1="220"
+          y1="210"
+          x2="380"
+          y2="210"
+          stroke="#64748b"
+          strokeWidth="3"
+        />
+        <text x="230" y="230" fill="#64748b" fontSize="14" fontWeight="bold">
+          N (Neutre)
+        </text>
+
+        <line
+          x1="220"
+          y1="225"
+          x2="380"
+          y2="225"
+          stroke="#22c55e"
+          strokeWidth="3"
+        />
+        <text x="230" y="245" fill="#22c55e" fontSize="14" fontWeight="bold">
+          PE (Terre)
+        </text>
+
+        <text x="20" y="245" fill="#94a3b8" fontSize="10">
+          Schéma va-et-vient NFC 15-100
+        </text>
+      </svg>
+    );
+  }
+
+  if (type === 'telerupteur') {
+    return (
+      <svg
+        viewBox="0 0 400 250"
+        className="w-full h-auto bg-slate-900/50 rounded-lg p-4"
+      >
+        <line
+          x1="20"
+          y1="50"
+          x2="380"
+          y2="50"
+          stroke="#f59e0b"
+          strokeWidth="3"
+        />
+        <text x="25" y="40" fill="#f59e0b" fontSize="14" fontWeight="bold">
+          L (Phase)
+        </text>
+
+        <rect
+          x="80"
+          y="80"
+          width="80"
+          height="100"
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="120" y="120" fill="#3b82f6" fontSize="12" textAnchor="middle">
+          TÉLÉ
+        </text>
+        <text x="120" y="135" fill="#3b82f6" fontSize="10" textAnchor="middle">
+          RUPTEUR
+        </text>
+        <circle cx="120" cy="95" r="5" fill="#3b82f6" />
+        <line
+          x1="120"
+          y1="95"
+          x2="140"
+          y2="85"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <rect
+          x="100"
+          y="145"
+          width="40"
+          height="25"
+          fill="none"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+          rx="2"
+        />
+        <text x="120" y="162" fill="#8b5cf6" fontSize="8" textAnchor="middle">
+          Bobine
+        </text>
+
+        <rect
+          x="220"
+          y="80"
+          width="50"
+          height="50"
+          fill="none"
+          stroke="#10b981"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="245" y="110" fill="#10b981" fontSize="10" textAnchor="middle">
+          BP1
+        </text>
+
+        <rect
+          x="220"
+          y="140"
+          width="50"
+          height="50"
+          fill="none"
+          stroke="#10b981"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="245" y="170" fill="#10b981" fontSize="10" textAnchor="middle">
+          BP2
+        </text>
+
+        <line
+          x1="140"
+          y1="157"
+          x2="220"
+          y2="105"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+        <line
+          x1="140"
+          y1="157"
+          x2="220"
+          y2="165"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+
+        <circle
+          cx="320"
+          cy="130"
+          r="20"
+          fill="none"
+          stroke="#eab308"
+          strokeWidth="2"
+        />
+        <text x="320" y="135" fill="#eab308" fontSize="12" textAnchor="middle">
+          L
+        </text>
+
+        <line
+          x1="160"
+          y1="95"
+          x2="300"
+          y2="130"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <line
+          x1="340"
+          y1="130"
+          x2="380"
+          y2="130"
+          stroke="#64748b"
+          strokeWidth="3"
+        />
+        <text x="345" y="150" fill="#64748b" fontSize="12" fontWeight="bold">
+          N
+        </text>
+
+        <line
+          x1="340"
+          y1="145"
+          x2="380"
+          y2="145"
+          stroke="#22c55e"
+          strokeWidth="3"
+        />
+        <text x="345" y="165" fill="#22c55e" fontSize="12" fontWeight="bold">
+          PE
+        </text>
+
+        <text x="20" y="245" fill="#94a3b8" fontSize="10">
+          Schéma télérupteur NFC 15-100
+        </text>
+      </svg>
+    );
+  }
+
+  if (type === 'minuterie') {
+    return (
+      <svg
+        viewBox="0 0 400 250"
+        className="w-full h-auto bg-slate-900/50 rounded-lg p-4"
+      >
+        <line
+          x1="20"
+          y1="50"
+          x2="380"
+          y2="50"
+          stroke="#f59e0b"
+          strokeWidth="3"
+        />
+        <text x="25" y="40" fill="#f59e0b" fontSize="14" fontWeight="bold">
+          L (Phase)
+        </text>
+
+        <rect
+          x="80"
+          y="80"
+          width="80"
+          height="100"
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="120" y="115" fill="#3b82f6" fontSize="12" textAnchor="middle">
+          MINUTERIE
+        </text>
+        <circle cx="120" cy="95" r="5" fill="#3b82f6" />
+        <line
+          x1="120"
+          y1="95"
+          x2="140"
+          y2="85"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <circle
+          cx="120"
+          cy="150"
+          r="15"
+          fill="none"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+        <line
+          x1="120"
+          y1="150"
+          x2="120"
+          y2="140"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+        <line
+          x1="120"
+          y1="150"
+          x2="128"
+          y2="155"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+
+        <rect
+          x="220"
+          y="100"
+          width="50"
+          height="50"
+          fill="none"
+          stroke="#10b981"
+          strokeWidth="2"
+          rx="4"
+        />
+        <text x="245" y="130" fill="#10b981" fontSize="10" textAnchor="middle">
+          BP
+        </text>
+
+        <line
+          x1="140"
+          y1="150"
+          x2="220"
+          y2="125"
+          stroke="#8b5cf6"
+          strokeWidth="2"
+        />
+
+        <circle
+          cx="320"
+          cy="130"
+          r="20"
+          fill="none"
+          stroke="#eab308"
+          strokeWidth="2"
+        />
+        <text x="320" y="135" fill="#eab308" fontSize="12" textAnchor="middle">
+          L
+        </text>
+
+        <line
+          x1="160"
+          y1="95"
+          x2="300"
+          y2="130"
+          stroke="#3b82f6"
+          strokeWidth="2"
+        />
+
+        <line
+          x1="340"
+          y1="130"
+          x2="380"
+          y2="130"
+          stroke="#64748b"
+          strokeWidth="3"
+        />
+        <text x="345" y="150" fill="#64748b" fontSize="12" fontWeight="bold">
+          N
+        </text>
+
+        <line
+          x1="340"
+          y1="145"
+          x2="380"
+          y2="145"
+          stroke="#22c55e"
+          strokeWidth="3"
+        />
+        <text x="345" y="165" fill="#22c55e" fontSize="12" fontWeight="bold">
+          PE
+        </text>
+
+        <text x="20" y="245" fill="#94a3b8" fontSize="10">
+          Schéma minuterie NFC 15-100
+        </text>
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      viewBox="0 0 400 250"
+      className="w-full h-auto bg-slate-900/50 rounded-lg p-4"
+    >
+      <line x1="20" y1="50" x2="380" y2="50" stroke="#f59e0b" strokeWidth="3" />
+      <text x="25" y="40" fill="#f59e0b" fontSize="14" fontWeight="bold">
+        L (Phase)
+      </text>
+
+      <rect
+        x="150"
+        y="80"
+        width="60"
+        height="80"
+        fill="none"
+        stroke="#3b82f6"
+        strokeWidth="2"
+        rx="4"
+      />
+      <text x="180" y="120" fill="#3b82f6" fontSize="12" textAnchor="middle">
+        INT
+      </text>
+      <circle cx="180" cy="95" r="5" fill="#3b82f6" />
+      <line
+        x1="180"
+        y1="95"
+        x2="200"
+        y2="85"
+        stroke="#3b82f6"
+        strokeWidth="2"
+      />
+
+      <circle
+        cx="280"
+        cy="130"
+        r="20"
+        fill="none"
+        stroke="#eab308"
+        strokeWidth="2"
+      />
+      <text x="280" y="135" fill="#eab308" fontSize="12" textAnchor="middle">
+        L
+      </text>
+
+      <line
+        x1="210"
+        y1="95"
+        x2="260"
+        y2="130"
+        stroke="#3b82f6"
+        strokeWidth="2"
+      />
+
+      <line
+        x1="300"
+        y1="130"
+        x2="380"
+        y2="130"
+        stroke="#64748b"
+        strokeWidth="3"
+      />
+      <text x="305" y="150" fill="#64748b" fontSize="12" fontWeight="bold">
+        N
+      </text>
+
+      <line
+        x1="300"
+        y1="145"
+        x2="380"
+        y2="145"
+        stroke="#22c55e"
+        strokeWidth="3"
+      />
+      <text x="305" y="165" fill="#22c55e" fontSize="12" fontWeight="bold">
+        PE
+      </text>
+
+      <text x="20" y="245" fill="#94a3b8" fontSize="10">
+        Schéma allumage simple NFC 15-100
+      </text>
+    </svg>
+  );
+};
+
 const circuitsData: Record<CircuitType, CircuitInfo> = {
   'va-et-vient': {
     title: 'Va-et-vient',
@@ -282,39 +814,18 @@ export function CircuitSchematics() {
             {showSchematic ? 'Masquer' : 'Afficher'} le schéma de principe
           </Button>
 
-          {/* Schéma simplifié */}
+          {/* Schéma SVG détaillé */}
           {showSchematic && (
-            <div className="p-6 bg-slate-900/60 rounded-lg border border-white/10 animate-[fadeIn_0.3s_ease-out]">
+            <div className="animate-[fadeIn_0.3s_ease-out]">
               <div className="text-center mb-4 text-sm text-muted-foreground">
-                Schéma de principe simplifié
+                Schéma de principe NFC 15-100
               </div>
-              <div className="flex items-center justify-center gap-4 text-xs">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-                    <Power className="w-6 h-6 text-primary" />
-                  </div>
-                  <span>Phase</span>
-                </div>
-                <div className="h-0.5 w-8 bg-primary/40" />
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-slate-700 border-2 border-slate-500 flex items-center justify-center">
-                    <ToggleLeft className="w-6 h-6 text-slate-300" />
-                  </div>
-                  <span>Commande</span>
-                </div>
-                <div className="h-0.5 w-8 bg-primary/40" />
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-yellow-500/20 border-2 border-yellow-500 flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <span>Lampe</span>
-                </div>
-              </div>
+              <CircuitSVG type={selectedCircuit} />
               <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs text-blue-200">
                 <p className="font-semibold mb-1">ℹ️ Note :</p>
                 <p>
-                  Schéma simplifié pour compréhension. Toujours se référer aux
-                  schémas normalisés NFC 15-100 pour le câblage réel.
+                  Schéma conforme NFC 15-100. Toujours se référer aux schémas
+                  normalisés officiels pour le câblage réel.
                 </p>
               </div>
             </div>

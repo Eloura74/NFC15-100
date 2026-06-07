@@ -4,7 +4,16 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Lock, Menu, Zap, Command, Sparkles, Network } from 'lucide-react';
+import {
+  Lock,
+  Menu,
+  Zap,
+  Command,
+  Sparkles,
+  Network,
+  Home,
+  Shield,
+} from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -150,6 +159,36 @@ export function Header() {
             >
               <Network className="w-4 h-4 mr-1" />
               Schémas
+            </Button>
+          </Link>
+          <Link href="/guides/tableaux-types">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Home className="w-4 h-4 mr-1" />
+              Tableaux
+            </Button>
+          </Link>
+          <Link href="/guides/conformite">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Shield className="w-4 h-4 mr-1" />
+              Conformité
+            </Button>
+          </Link>
+          <Link href="/assistant-projet">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Sparkles className="w-4 h-4 mr-1" />
+              Assistant
             </Button>
           </Link>
           <Link href="/roadmap">
