@@ -67,8 +67,8 @@ export default function RootLayout({
           </div>
           <Header />
           <div className="flex flex-1">
-            <Sidebar />
-            <main className="flex-1 overflow-y-auto relative">
+            <Sidebar className="hidden xl:block" />
+            <main className="flex-1 overflow-y-auto relative w-full">
               <Breadcrumbs />
               {children}
             </main>
