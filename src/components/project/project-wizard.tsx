@@ -13,6 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Disclaimer } from '@/components/ui/disclaimer';
+import { ExportPDF } from '@/components/export/export-pdf';
 import {
   Home,
   Zap,
@@ -446,15 +447,49 @@ export function ProjectWizard() {
               </div>
 
               {/* Actions */}
-              <div className="flex gap-2">
-                <Button className="flex-1" size="lg">
-                  <FileText className="w-4 h-4 mr-2" />
-                  Générer la liste de matériel
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Calculator className="w-4 h-4 mr-2" />
-                  Voir les calculateurs
-                </Button>
+              <div className="flex flex-col gap-3">
+                <ExportPDF
+                  title={`Projet Électrique - ${projectData.type} (${projectData.surface} m²)`}
+                  content={`
+                <h1>Projet Électrique NFC 15-100</h1>
+                <h2>Caractéristiques du projet</h2>
+                <ul>
+                  <li>Type de logement : ${projectData.type}</li>
+                  <li>Surface : ${projectData.surface} m²</li>
+                  <li>Chauffage électrique : ${projectData.chauffageElectrique ? 'Oui' : 'Non'}</li>
+                  <li>VMC : ${projectData.vmc ? 'Oui' : 'Non'}</li>
+                  <li>Borne IRVE : ${projectData.irve ? 'Oui' : 'Non'}</li>
+                  <li>Photovoltaïque : ${projectData.photovoltaique ? 'Oui' : 'Non'}</li>
+                </ul>
+                <h2>Circuits recommandés</h2>
+                <ul>
+                  <li>Éclairage : ${results.circuits.eclairage} circuits</li>
+                  <li>Prises : ${results.circuits.prises} circuits</li>
+                  <li>Chauffage : ${results.circuits.chauffage} circuits</li>
+                  <li>Spécialisés : ${results.circuits.specialises} circuits</li>
+                </ul>
+                <h2>Budget estimé</h2>
+                <ul>
+                  <li>Matériaux : ${results.budget.materiaux.toLocaleString()} €</li>
+                  <li>Main d'œuvre : ${results.budget.mainOeuvre.toLocaleString()} €</li>
+                  <li><strong>Total : ${results.budget.total.toLocaleString()} €</strong></li>
+                </ul>
+                <div class="disclaimer">
+                  <div class="disclaimer-title">⚠️ Avertissement</div>
+                  <p>Ce document est fourni à titre indicatif. Les calculs sont basés sur la NFC 15-100 mais ne remplacent pas une étude professionnelle. Toujours consulter un électricien qualifié pour la réalisation des travaux.</p>
+                </div>
+              `}
+                  filename={`projet-electrique-${projectData.type}-${projectData.surface}m2`}
+                  variant="default"
+                  size="lg"
+                  className="w-full"
+                />
+                <div className="flex gap-2">
+                  <Button variant="outline" size="lg" className="flex-1">
+                    <Calculator className="w-4 h-4 mr-2" />
+                    Voir les calculateurs
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>

@@ -13,6 +13,7 @@ import {
   Network,
   Home,
   Shield,
+  BookOpen,
 } from 'lucide-react';
 import {
   Sheet,
@@ -179,6 +180,16 @@ export function Header() {
             >
               <Shield className="w-4 h-4 mr-1" />
               Conformité
+            </Button>
+          </Link>
+          <Link href="/guides/references">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <BookOpen className="w-4 h-4 mr-1" />
+              Références
             </Button>
           </Link>
           <Link href="/assistant-projet">

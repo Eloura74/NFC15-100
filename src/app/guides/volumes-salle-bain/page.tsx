@@ -27,8 +27,8 @@ export default function VolumesSalleBainPage() {
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">Volumes de salle de bain</h1>
           <p className="text-lg text-muted-foreground">
-            Comprendre les règles d'installation électrique dans les salles de
-            bain selon la NFC 15-100
+            Comprendre les règles d&apos;installation électrique dans les salles
+            de bain selon la NFC 15-100
           </p>
         </div>
       </AnimatedSection>
@@ -65,8 +65,8 @@ export default function VolumesSalleBainPage() {
             </p>
             <p>
               <strong className="text-foreground">Hauteur des volumes :</strong>{' '}
-              Volume 0 et 1 : jusqu'à 2,25m. Volume 2 : jusqu'à 3m. Au-delà de
-              3m : hors volumes.
+              Volume 0 et 1 : jusqu&apos;à 2,25m. Volume 2 : jusqu&apos;à 3m.
+              Au-delà de 3m : hors volumes.
             </p>
           </div>
         </div>
