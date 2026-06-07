@@ -143,6 +143,16 @@ export function Header() {
               Calculateurs
             </Button>
           </Link>
+          <Link href="/recherche-naturelle">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm text-slate-300 hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+            >
+              <Sparkles className="w-4 h-4 mr-1" />
+              Recherche IA
+            </Button>
+          </Link>
           <Link href="/favoris">
             <Button
               variant="ghost"
