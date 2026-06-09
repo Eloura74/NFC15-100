@@ -21,6 +21,7 @@ import {
   Folder,
   ChevronDown,
   ChevronRight,
+  CheckSquare,
 } from 'lucide-react';
 
 export function Sidebar({ className }: { className?: string }) {
@@ -173,6 +174,18 @@ export function Sidebar({ className }: { className?: string }) {
           <div className="px-3 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
             Outils
           </div>
+          <Link
+            href="/checklists"
+            className={cn(
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
+              isActive('/checklists')
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
+            )}
+          >
+            <CheckSquare className="w-4 h-4" />
+            <span className="text-sm font-medium">Checklists</span>
+          </Link>
           <Link
             href="/recherche"
             className={cn(

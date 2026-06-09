@@ -14,6 +14,7 @@ import {
   Home,
   Shield,
   BookOpen,
+  Sun,
 } from 'lucide-react';
 import {
   Sheet,
@@ -26,11 +27,24 @@ import { Sidebar } from '@/components/layout/sidebar';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSosMode, setIsSosMode] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  const toggleSosMode = () => {
+    const root = document.documentElement;
+    if (isSosMode) {
+      root.classList.remove('theme-sos');
+      root.classList.add('dark');
+    } else {
+      root.classList.add('theme-sos');
+      root.classList.remove('dark');
+    }
+    setIsSosMode(!isSosMode);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -99,6 +113,19 @@ export function Header() {
             <Command className="w-3.5 h-3.5" />
             <span className="text-xs font-mono font-semibold">K</span>
           </div>
+          <Button
+            variant={isSosMode ? 'default' : 'ghost'}
+            size="sm"
+            onClick={toggleSosMode}
+            className={
+              isSosMode
+                ? 'bg-yellow-500 hover:bg-yellow-600 text-black'
+                : 'text-yellow-500 hover:text-yellow-600 hover:bg-yellow-500/10'
+            }
+            title="Mode Plein Soleil (Contraste Maximum)"
+          >
+            <Sun className="w-4 h-4" />
+          </Button>
           <Link href="/recherche">
             <Button variant="ghost" size="sm">
               Recherche

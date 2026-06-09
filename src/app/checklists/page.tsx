@@ -6,74 +6,55 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { checklistsData } from '@/lib/data/checklists';
+import { AnimatedSection } from '@/components/sheet/animated-section';
+import Link from 'next/link';
+import { CheckSquare, ArrowRight } from 'lucide-react';
 
-const checklistTemplates = [
-  {
-    id: 'logement-neuf',
-    name: 'Logement neuf',
-    description: 'Checklist complète pour une installation neuve',
-    itemCount: 25,
-  },
-  {
-    id: 'tableau',
-    name: 'Tableau électrique',
-    description: "Contrôle d'un tableau électrique",
-    itemCount: 15,
-  },
-  {
-    id: 'salle-eau',
-    name: "Salle d'eau",
-    description: "Vérifications pour une salle d'eau",
-    itemCount: 12,
-  },
-];
+export const metadata = {
+  title: 'Checklists Consuel | ElecNorme',
+  description: 'Listes de contrôle interactives pour vérifier la conformité de vos installations électriques.',
+};
 
 export default function ChecklistsPage() {
   return (
-    <div className="container py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Checklists</h1>
-        <p className="text-muted-foreground">
-          Listes de contrôle pour vos chantiers
+    <div className="container py-12 max-w-5xl">
+      <AnimatedSection className="mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-3 bg-primary/10 rounded-xl">
+            <CheckSquare className="w-8 h-8 text-primary" />
+          </div>
+          <h1 className="text-4xl font-bold tracking-tight">Checklists d'Autocontrôle</h1>
+        </div>
+        <p className="text-xl text-muted-foreground max-w-2xl">
+          Préparez le passage du Consuel avec nos listes de contrôle interactives. Vos avancées sont sauvegardées automatiquement hors-ligne sur votre appareil.
         </p>
-      </div>
+      </AnimatedSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {checklistTemplates.map((template) => (
-          <Card key={template.id}>
-            <CardHeader>
-              <CardTitle>{template.name}</CardTitle>
-              <CardDescription>{template.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                {template.itemCount} points de contrôle
-              </p>
-              <Button variant="outline" className="w-full" disabled>
-                Créer une checklist (à venir)
-              </Button>
-            </CardContent>
-          </Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {checklistsData.map((template, index) => (
+          <AnimatedSection key={template.id} delay={100 + index * 50}>
+            <Link href={`/checklists/${template.id}`} className="block h-full group">
+              <Card className="h-full transition-all duration-300 hover:border-primary/50 hover:shadow-md hover:-translate-y-1">
+                <CardHeader>
+                  <CardTitle className="group-hover:text-primary transition-colors">{template.name}</CardTitle>
+                  <CardDescription>{template.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {template.items.length} points de contrôle
+                    </span>
+                    <Button variant="ghost" size="sm" className="group-hover:bg-primary/10 group-hover:text-primary">
+                      Commencer <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          </AnimatedSection>
         ))}
       </div>
-
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Fonctionnalité en développement</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Les checklists personnalisables seront bientôt disponibles avec :
-          </p>
-          <ul className="list-disc list-inside mt-4 space-y-2 text-muted-foreground">
-            <li>Création de checklists personnalisées</li>
-            <li>Sauvegarde locale sur votre appareil</li>
-            <li>Ajout de photos et notes</li>
-            <li>Export en PDF</li>
-            <li>Disponible hors ligne</li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

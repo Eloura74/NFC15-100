@@ -11,20 +11,20 @@ export function Disclaimer({ className, variant = 'warning' }: DisclaimerProps) 
     warning: {
       bg: 'bg-yellow-500/10',
       border: 'border-yellow-500/30',
-      text: 'text-yellow-200',
-      icon: 'text-yellow-400',
+      text: 'text-yellow-800 dark:text-yellow-200',
+      icon: 'text-yellow-600 dark:text-yellow-400',
     },
     info: {
       bg: 'bg-blue-500/10',
       border: 'border-blue-500/30',
-      text: 'text-blue-200',
-      icon: 'text-blue-400',
+      text: 'text-blue-800 dark:text-blue-200',
+      icon: 'text-blue-600 dark:text-blue-400',
     },
     critical: {
       bg: 'bg-red-500/10',
       border: 'border-red-500/30',
-      text: 'text-red-200',
-      icon: 'text-red-400',
+      text: 'text-red-800 dark:text-red-200',
+      icon: 'text-red-600 dark:text-red-400',
     },
   };
 
@@ -45,9 +45,11 @@ export function Disclaimer({ className, variant = 'warning' }: DisclaimerProps) 
           <p className="font-semibold mb-1">Information importante</p>
           <p>
             Ce site présente des informations basées sur la{' '}
-            <span className="font-semibold">NFC 15-100 (édition 2020 + amendements 2021-2026)</span>.
-            Les données sont fournies à titre informatif et ne se substituent pas aux textes normatifs officiels.
-            Consultez toujours un professionnel qualifié pour votre projet.
+            <span className="font-semibold">
+              NFC 15-100 (édition 2020 + amendements 2021-2026)
+            </span>
+            . Les données sont fournies à titre informatif et ne se substituent
+            pas aux textes normatifs officiels. Consultez toujours un professionnel qualifié pour votre projet.
           </p>
           <p className="mt-2 text-xs opacity-80">
             Dernière vérification : Juin 2026 • Version du site : 1.0.0
