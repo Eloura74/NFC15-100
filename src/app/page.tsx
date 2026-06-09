@@ -38,6 +38,7 @@ import {
   CheckCircle2,
   Zap,
   CheckSquare,
+  Crosshair,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -268,9 +269,9 @@ export default function HomePage() {
             </span>{' '}
             Outils
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             <Link href="/checklists">
-              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
+              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
@@ -286,42 +287,59 @@ export default function HomePage() {
                 </CardHeader>
               </Card>
             </Link>
-            <Link href="/calculateurs/section-cable">
-              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
+            <Link href="/calculateurs">
+              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
-                      <Cable className="w-6 h-6" />
+                      <Calculator className="w-6 h-6" />
                     </span>
                     <CardTitle className="text-base group-hover:text-primary transition-colors">
-                      Section de câble
+                      Calculateurs
                     </CardTitle>
                   </div>
                   <CardDescription className="text-sm">
-                    Calculateur expert
+                    Outils de dimensionnement
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/outils/volumes-image">
+              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md h-full">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
+                      <Crosshair className="w-6 h-6" />
+                    </span>
+                    <CardTitle className="text-base group-hover:text-primary transition-colors">
+                      Analyseur Volumes
+                    </CardTitle>
+                  </div>
+                  <CardDescription className="text-sm">
+                    Vérification sur photo
                   </CardDescription>
                 </CardHeader>
               </Card>
             </Link>
             <Link href="/recherche">
-              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
+              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
                       <Search className="w-6 h-6" />
                     </span>
                     <CardTitle className="text-base group-hover:text-primary transition-colors">
-                      Recherche avancée
+                      Recherche
                     </CardTitle>
                   </div>
                   <CardDescription className="text-sm">
-                    Trouvez exactement ce que vous cherchez
+                    Trouvez facilement
                   </CardDescription>
                 </CardHeader>
               </Card>
             </Link>
             <Link href="/favoris">
-              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
+              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
