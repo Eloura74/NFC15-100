@@ -68,29 +68,9 @@ export function Header() {
               <div className="h-full overflow-y-auto">
                 <Sidebar className="block w-full border-none h-auto" />
                 <div className="border-t border-white/10 p-4 space-y-2">
-                  <Link href="/recherche" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
-                      Recherche
-                    </Button>
-                  </Link>
-                  <Link href="/domaines" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
-                      Domaines
-                    </Button>
-                  </Link>
-                  <Link href="/calculateurs" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
-                      Calculateurs
-                    </Button>
-                  </Link>
-                  <Link href="/favoris" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
-                      Favoris
-                    </Button>
-                  </Link>
                   <Link href="/login" onClick={() => setIsOpen(false)}>
                     <Button variant="outline" className="w-full justify-start">
-                      <Lock className="w-4 h-4 mr-2" /> Admin
+                      <Lock className="w-4 h-4 mr-2" /> Administration
                     </Button>
                   </Link>
                 </div>
