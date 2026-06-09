@@ -22,6 +22,7 @@ import {
   ChevronDown,
   ChevronRight,
   CheckSquare,
+  Crosshair,
 } from 'lucide-react';
 
 export function Sidebar({ className }: { className?: string }) {
@@ -209,6 +210,18 @@ export function Sidebar({ className }: { className?: string }) {
           >
             <Calculator className="w-4 h-4" />
             <span className="text-sm font-medium">Calculateurs</span>
+          </Link>
+          <Link
+            href="/outils/volumes-image"
+            className={cn(
+              'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 relative',
+              isActive('/outils/volumes-image')
+                ? 'bg-primary/10 text-primary font-semibold border-l-2 border-primary'
+                : 'hover:bg-primary/5 hover:text-primary text-muted-foreground'
+            )}
+          >
+            <Crosshair className="w-4 h-4" />
+            <span className="text-sm font-medium">Analyseur Volumes</span>
           </Link>
           <Link
             href="/favoris"

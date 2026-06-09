@@ -31,9 +31,10 @@ export const viewport: Viewport = {
   ],
 };
 
-import { Header } from '@/components/layout/header';
+import { Header } from "@/components/layout/header";
 import { Footer } from '@/components/layout/footer';
-import { Sidebar } from '@/components/layout/sidebar';
+import { Sidebar } from "@/components/layout/sidebar";
+import { AssistantChat } from "@/components/ai/assistant-chat";
 import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { CommandMenu } from '@/components/layout/command-menu';
 import { Providers } from './providers';
@@ -56,11 +57,12 @@ export default function RootLayout({
           <Header />
           <div className="flex flex-1">
             <Sidebar className="hidden xl:block" />
-            <main className="flex-1 overflow-y-auto relative w-full">
+            <main className="flex-1 overflow-auto bg-muted/20">
               <Breadcrumbs />
               {children}
             </main>
           </div>
+          <AssistantChat />
           <Footer />
         </Providers>
       </body>

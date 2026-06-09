@@ -303,23 +303,6 @@ export default function HomePage() {
                 </CardHeader>
               </Card>
             </Link>
-            <Link href="/calculateurs">
-              <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="p-2 bg-primary/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
-                      <Calculator className="w-6 h-6" />
-                    </span>
-                    <CardTitle className="text-base group-hover:text-primary transition-colors">
-                      Calculateurs
-                    </CardTitle>
-                  </div>
-                  <CardDescription className="text-sm">
-                    Sections, puissance, chute de tension
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
             <Link href="/recherche">
               <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md">
                 <CardHeader className="pb-3">

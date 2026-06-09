@@ -6,9 +6,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
-import { RotateCcw, Save, CheckCircle2, AlertCircle } from 'lucide-react';
+import { RotateCcw, Save, CheckCircle2, AlertCircle, FileDown, Loader2 } from 'lucide-react';
 import { ChecklistTemplate } from '@/lib/data/checklists';
 import { cn } from '@/lib/utils';
+import { exportToPdf } from '@/lib/utils/pdf-export';
 
 interface InteractiveChecklistProps {
   template: ChecklistTemplate;
@@ -19,6 +20,7 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const [isLoaded, setIsLoaded] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const [isExporting, setIsExporting] = useState(false);
 
   const storageKey = `elecnorme_checklist_${template.id}`;
 
@@ -61,6 +63,21 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
     }
   };
 
+  const handleExportPdf = async () => {
+    setIsExporting(true);
+    try {
+      await exportToPdf({
+        elementId: `checklist-container-${template.id}`,
+        filename: `elecnorme-rapport-${template.id}`,
+        title: `Rapport de conformité : ${template.name}`,
+      });
+    } catch (error) {
+      alert("Une erreur est survenue lors de l'export PDF.");
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   const totalItems = template.items.length;
   const completedItems = template.items.filter(item => checkedItems[item.id]).length;
   const progressPercent = totalItems === 0 ? 0 : Math.round((completedItems / totalItems) * 100);
@@ -71,7 +88,7 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" id={`checklist-container-${template.id}`}>
       {/* Header and Progress */}
       <Card className={cn("transition-colors duration-500", isComplete ? "border-green-500/50" : "")}>
         <CardHeader className="pb-4">
@@ -83,7 +100,7 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
               </CardTitle>
               <CardDescription>{template.description}</CardDescription>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground" data-html2canvas-ignore="true">
               {lastSaved && (
                 <span className="flex items-center gap-1">
                   <Save className="w-3 h-3" />
@@ -165,6 +182,17 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
         <p>
           <strong>Rappel :</strong> Cette checklist est un outil d'aide à l'autocontrôle. Elle ne remplace en aucun cas l'expertise ou l'attestation officielle d'un inspecteur Consuel.
         </p>
+      </div>
+
+      <div className="flex justify-end pt-4" data-html2canvas-ignore="true">
+        <Button 
+          onClick={handleExportPdf} 
+          disabled={isExporting}
+          className="gap-2"
+        >
+          {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <FileDown className="w-4 h-4" />}
+          {isExporting ? 'Génération du PDF...' : 'Exporter le rapport (PDF)'}
+        </Button>
       </div>
     </div>
   );

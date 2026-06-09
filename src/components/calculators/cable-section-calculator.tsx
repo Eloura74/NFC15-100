@@ -19,6 +19,7 @@ interface CalculationResult {
   isValid: boolean;
   warnings: string[];
   recommendations: string[];
+  protection?: number;
 }
 
 export function CableSectionCalculator() {
@@ -36,8 +37,9 @@ export function CableSectionCalculator() {
 
     if (!P || !U || !L) return;
 
-    // Calcul du courant
-    const I = P / U;
+    // Calcul du courant (monophasé vs triphasé)
+    const isTriphase = U === 400;
+    const I = isTriphase ? P / (U * Math.sqrt(3)) : P / U;
 
     // Résistivité (Ω·mm²/m)
     const rho = cableType === 'cuivre' ? 0.023 : 0.037;
@@ -46,7 +48,8 @@ export function CableSectionCalculator() {
     const maxVoltDrop = U <= 230 ? 0.03 * U : 0.05 * U; // 3% éclairage, 5% autres
 
     // Section minimale pour chute de tension
-    const sectionVoltDrop = (2 * rho * L * I) / maxVoltDrop;
+    const voltDropFactor = isTriphase ? Math.sqrt(3) : 2;
+    const sectionVoltDrop = (voltDropFactor * rho * L * I) / maxVoltDrop;
 
     // Sections normalisées (mm²)
     const standardSections = [1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240];
@@ -110,7 +113,7 @@ export function CableSectionCalculator() {
     }
 
     // Calcul de la chute de tension réelle
-    const actualVoltDrop = (2 * rho * L * I) / selectedSection;
+    const actualVoltDrop = (voltDropFactor * rho * L * I) / selectedSection;
     const voltDropPercent = (actualVoltDrop / U) * 100;
 
     // Vérifications
@@ -136,6 +139,10 @@ export function CableSectionCalculator() {
       recommendations.push('Aluminium : vérifier compatibilité avec les bornes de connexion');
     }
 
+    // Détermination de la protection (disjoncteur standard >= I)
+    const standardBreakers = [10, 16, 20, 25, 32, 40, 50, 63, 80, 100, 125, 160, 200, 250];
+    const recProtection = standardBreakers.find(b => b >= I && b <= currentCapacity[installationType][selectedSection]) || Math.ceil(I * 1.25);
+
     setResult({
       section: selectedSection,
       maxCurrent: currentCapacity[installationType][selectedSection] || 0,
@@ -143,6 +150,7 @@ export function CableSectionCalculator() {
       isValid,
       warnings,
       recommendations,
+      protection: recProtection,
     });
   };
 
@@ -301,7 +309,7 @@ export function CableSectionCalculator() {
               <div className="text-xs text-muted-foreground space-y-1">
                 <p>
                   <strong>Protection recommandée :</strong>{' '}
-                  {Math.ceil((parseFloat(power) / parseFloat(voltage)) * 1.25)} A
+                  {result.protection} A
                 </p>
                 <p>
                   <strong>Câble conseillé :</strong> {result.section} mm² -{' '}
