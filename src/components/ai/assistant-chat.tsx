@@ -17,16 +17,7 @@ export function AssistantChat() {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { messages, status, error, sendMessage } = useChat({
-    api: '/api/chat',
-    initialMessages: [
-      {
-        id: 'welcome',
-        role: 'assistant',
-        parts: [{ type: 'text', text: 'Bonjour ! Je suis l\'assistant expert ElecNorme. Posez-moi vos questions sur la norme NFC 15-100 (ex: "Quelle est la section pour une plaque de cuisson ?").' }]
-      }
-    ]
-  });
+  const { messages, status, error, sendMessage } = useChat();
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
@@ -73,7 +64,7 @@ export function AssistantChat() {
               <div>
                 <CardTitle className="text-base font-bold">Assistant Normatif</CardTitle>
                 <p className="text-xs text-muted-foreground flex items-center gap-1">
-                  <Zap className="w-3 h-3 text-yellow-500" /> Propulsé par l'IA
+                  <Zap className="w-3 h-3 text-yellow-500" /> Propulsé par l&apos;IA
                 </p>
               </div>
             </div>
@@ -116,7 +107,7 @@ export function AssistantChat() {
             {error && (
               <div className="p-3 bg-destructive/10 text-destructive text-sm rounded-lg flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
-                Une erreur est survenue de la part de l'assistant.
+                Une erreur est survenue de la part de l&apos;assistant.
               </div>
             )}
             

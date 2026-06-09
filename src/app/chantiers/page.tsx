@@ -88,7 +88,7 @@ export default function ChantiersPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">Mes Chantiers</h1>
           <p className="text-muted-foreground">
-            Gérez vos projets, centralisez vos calculs et vos rapports d'autocontrôle.
+            Gérez vos projets, centralisez vos calculs et vos rapports d&apos;autocontrôle.
           </p>
         </div>
 

@@ -12,7 +12,7 @@ export default function VolumeAnalyzerPage() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight mb-2">Calcul des Volumes par l&apos;Image</h1>
         <p className="text-muted-foreground">
-          Importez une photo de la salle de bain et tracez le receveur pour visualiser instantanément l'emprise des Volumes 1 et 2 selon la norme NFC 15-100.
+          Importez une photo de la salle de bain et tracez le receveur pour visualiser instantanément l&apos;emprise des Volumes 1 et 2 selon la norme NFC 15-100.
         </p>
       </div>
 

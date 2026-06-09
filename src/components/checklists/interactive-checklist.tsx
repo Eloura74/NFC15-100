@@ -180,7 +180,7 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
       <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg text-xs text-yellow-700 dark:text-yellow-400 flex items-start gap-2">
         <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
         <p>
-          <strong>Rappel :</strong> Cette checklist est un outil d'aide à l'autocontrôle. Elle ne remplace en aucun cas l'expertise ou l'attestation officielle d'un inspecteur Consuel.
+          <strong>Rappel :</strong> Cette checklist est un outil d&apos;aide à l&apos;autocontrôle. Elle ne remplace en aucun cas l&apos;expertise ou l&apos;attestation officielle d&apos;un inspecteur Consuel.
         </p>
       </div>
 
