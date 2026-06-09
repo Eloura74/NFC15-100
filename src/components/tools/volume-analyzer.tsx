@@ -260,8 +260,10 @@ export function VolumeAnalyzer() {
     if (!canvas) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
 
     if (mode === 'draw') {
       if (points.length >= 4) return;
@@ -307,25 +309,25 @@ export function VolumeAnalyzer() {
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       {/* Top Banner indicating current step */}
-      <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl border">
-        <div className={`flex items-center gap-2 ${mode === 'upload' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${mode === 'upload' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>1</div>
+      <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/50 rounded-xl border text-sm sm:text-base">
+        <div className={`flex items-center gap-1.5 sm:gap-2 ${mode === 'upload' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
+          <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border-2 text-xs sm:text-sm ${mode === 'upload' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>1</div>
           Photo
         </div>
-        <div className="w-8 h-px bg-border" />
-        <div className={`flex items-center gap-2 ${mode === 'draw' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${mode === 'draw' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>2</div>
+        <div className="w-4 sm:w-8 h-px bg-border hidden sm:block" />
+        <div className={`flex items-center gap-1.5 sm:gap-2 ${mode === 'draw' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
+          <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border-2 text-xs sm:text-sm ${mode === 'draw' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>2</div>
           Volume
         </div>
-        <div className="w-8 h-px bg-border" />
-        <div className={`flex items-center gap-2 ${mode === 'place' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${mode === 'place' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>3</div>
+        <div className="w-4 sm:w-8 h-px bg-border hidden sm:block" />
+        <div className={`flex items-center gap-1.5 sm:gap-2 ${mode === 'place' ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
+          <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border-2 text-xs sm:text-sm ${mode === 'place' ? 'border-primary bg-primary/10' : 'border-muted-foreground'}`}>3</div>
           Équipements
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="md:col-span-2">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:gap-6">
+        <Card className="xl:col-span-2 shadow-sm border-primary/10">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Crosshair className="w-5 h-5 text-primary" />
@@ -361,7 +363,7 @@ export function VolumeAnalyzer() {
                   <canvas 
                     ref={canvasRef}
                     onClick={handleCanvasClick}
-                    className={`w-full ${mode === 'draw' && points.length < 4 ? 'cursor-crosshair' : ''} ${mode === 'place' ? 'cursor-copy' : ''}`}
+                    className={`w-full h-auto object-contain touch-none ${mode === 'draw' && points.length < 4 ? 'cursor-crosshair' : ''} ${mode === 'place' ? 'cursor-copy' : ''}`}
                   />
                   {mode === 'draw' && points.length < 4 && (
                     <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1.5 rounded-full text-sm font-medium backdrop-blur flex items-center gap-2">
@@ -377,14 +379,14 @@ export function VolumeAnalyzer() {
                   )}
                 </div>
                 
-                <div className="flex gap-2 justify-end">
-                  <Button variant="outline" onClick={() => setEquipments([])} className="gap-2" disabled={equipments.length === 0}>
-                    <RotateCcw className="w-4 h-4" /> Vider équipements
+                <div className="flex flex-wrap gap-2 justify-center sm:justify-end mt-4">
+                  <Button variant="outline" onClick={() => setEquipments([])} className="gap-2 w-full sm:w-auto" disabled={equipments.length === 0}>
+                    <RotateCcw className="w-4 h-4" /> Vider
                   </Button>
-                  <Button variant="outline" onClick={resetPoints} className="gap-2">
-                    <Crosshair className="w-4 h-4" /> Refaire le tracé
+                  <Button variant="outline" onClick={resetPoints} className="gap-2 w-full sm:w-auto">
+                    <Crosshair className="w-4 h-4" /> Refaire tracé
                   </Button>
-                  <Button variant="ghost" onClick={resetTool} className="text-muted-foreground">
+                  <Button variant="ghost" onClick={resetTool} className="text-muted-foreground w-full sm:w-auto">
                     Nouvelle photo
                   </Button>
                 </div>
@@ -406,7 +408,7 @@ export function VolumeAnalyzer() {
               <div className="text-sm text-muted-foreground mb-4">
                 Sélectionnez l&apos;équipement à vérifier :
               </div>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-1 gap-2">
                 {(Object.entries(EQUIPMENT_CATALOG) as [EquipmentType, any][]).map(([key, data]) => (
                   <Button
                     key={key}
