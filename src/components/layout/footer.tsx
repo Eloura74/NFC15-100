@@ -12,7 +12,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="hidden md:block">
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
