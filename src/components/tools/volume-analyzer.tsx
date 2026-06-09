@@ -404,7 +404,7 @@ export function VolumeAnalyzer() {
             </CardHeader>
             <CardContent className="pt-4 space-y-2">
               <div className="text-sm text-muted-foreground mb-4">
-                Sélectionnez l'équipement à vérifier :
+                Sélectionnez l&apos;équipement à vérifier :
               </div>
               <div className="grid grid-cols-1 gap-2">
                 {(Object.entries(EQUIPMENT_CATALOG) as [EquipmentType, any][]).map(([key, data]) => (
@@ -462,7 +462,7 @@ export function VolumeAnalyzer() {
           {equipments.length === 0 && mode === 'place' && (
             <div className="p-4 bg-blue-500/10 text-blue-800 dark:text-blue-200 rounded-lg text-sm flex gap-3 border border-blue-500/20">
               <Info className="w-5 h-5 shrink-0" />
-              <p>Cliquez sur l'image pour placer un équipement. L'outil vérifiera instantanément sa conformité.</p>
+              <p>Cliquez sur l&apos;image pour placer un équipement. L&apos;outil vérifiera instantanément sa conformité.</p>
             </div>
           )}
         </div>

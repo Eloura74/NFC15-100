@@ -24,7 +24,7 @@ export default function ChecklistsPage() {
           <div className="p-3 bg-primary/10 rounded-xl">
             <CheckSquare className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-4xl font-bold tracking-tight">Checklists d'Autocontrôle</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Checklists d&apos;Autocontrôle</h1>
         </div>
         <p className="text-xl text-muted-foreground max-w-2xl">
           Préparez le passage du Consuel avec nos listes de contrôle interactives. Vos avancées sont sauvegardées automatiquement hors-ligne sur votre appareil.

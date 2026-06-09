@@ -172,7 +172,7 @@ export function InteractiveChecklist({ template }: InteractiveChecklistProps) {
           <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />
           <div>
             <p className="font-bold">Félicitations !</p>
-            <p>Tous les points de contrôle sont validés. L'installation semble conforme aux exigences de cette checklist.</p>
+            <p>Tous les points de contrôle sont validés. L&apos;installation semble conforme aux exigences de cette checklist.</p>
           </div>
         </div>
       )}

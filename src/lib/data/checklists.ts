@@ -58,3 +58,5 @@ export const checklistsData: ChecklistTemplate[] = [
     ]
   }
 ];
+
+export const getChecklistTemplate = (id: string) => checklistsData.find(c => c.id === id);
