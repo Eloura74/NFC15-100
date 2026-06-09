@@ -88,7 +88,7 @@ export default function RecherchePage() {
 
           <div className="flex gap-2">
             <Select value={selectedDomain} onValueChange={setSelectedDomain}>
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-full sm:w-[200px]">
                 <SelectValue placeholder="Tous les domaines" />
               </SelectTrigger>
               <SelectContent>
@@ -105,7 +105,7 @@ export default function RecherchePage() {
               value={selectedCriticality}
               onValueChange={setSelectedCriticality}
             >
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-full sm:w-[200px]">
                 <SelectValue placeholder="Toutes criticités" />
               </SelectTrigger>
               <SelectContent>

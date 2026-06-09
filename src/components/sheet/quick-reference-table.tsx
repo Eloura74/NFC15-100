@@ -35,7 +35,7 @@ export function QuickReferenceTable({
                 {headers.map((header, i) => (
                   <th
                     key={i}
-                    className="px-6 py-4 text-sm font-bold text-muted-foreground uppercase tracking-wider"
+                    className="px-3 py-2 sm:px-6 sm:py-4 text-xs sm:text-sm font-bold text-muted-foreground uppercase tracking-wider whitespace-nowrap"
                   >
                     {header}
                   </th>
@@ -55,7 +55,7 @@ export function QuickReferenceTable({
                   {row.cols.map((col, j) => (
                     <td
                       key={j}
-                      className={`px-6 py-4 ${j === 1 ? 'font-bold text-lg' : 'text-sm'}`}
+                      className={`px-3 py-2 sm:px-6 sm:py-4 ${j === 1 ? 'font-bold text-base sm:text-lg' : 'text-xs sm:text-sm'}`}
                     >
                       {j === 0 && row.highlight && (
                         <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />

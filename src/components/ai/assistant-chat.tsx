@@ -52,7 +52,7 @@ export function AssistantChat() {
 
       {/* Chat Window */}
       <div className={cn(
-        "fixed bottom-6 right-6 z-50 w-[350px] sm:w-[400px] transition-all duration-300 transform origin-bottom-right",
+        "fixed bottom-6 right-6 z-50 w-[calc(100vw-32px)] sm:w-[400px] transition-all duration-300 transform origin-bottom-right",
         isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
       )}>
         <Card className="border-primary/20 shadow-2xl overflow-hidden flex flex-col h-[500px] max-h-[80vh]">

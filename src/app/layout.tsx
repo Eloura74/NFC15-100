@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark" suppressHydrationWarning>
       <body
-        className={`min-h-screen antialiased flex flex-col ${inter.className}`}
+        className={`min-h-screen antialiased flex flex-col overflow-x-hidden ${inter.className}`}
       >
         <Providers>
           <CommandMenu />

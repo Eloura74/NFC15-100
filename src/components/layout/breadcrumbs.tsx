@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -125,11 +126,11 @@ export function Breadcrumbs() {
       <Breadcrumb>
         <BreadcrumbList>
           {breadcrumbs.map((crumb, index) => (
-            <div key={crumb.href} className="flex items-center gap-2">
+            <React.Fragment key={crumb.href}>
               {index > 0 && <BreadcrumbSeparator />}
               <BreadcrumbItem>
                 {crumb.isLast ? (
-                  <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                  <BreadcrumbPage className="truncate max-w-[150px] sm:max-w-[200px] md:max-w-none">{crumb.label}</BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink asChild>
                     <Link href={crumb.href}>
@@ -145,7 +146,7 @@ export function Breadcrumbs() {
                   </BreadcrumbLink>
                 )}
               </BreadcrumbItem>
-            </div>
+            </React.Fragment>
           ))}
         </BreadcrumbList>
       </Breadcrumb>
