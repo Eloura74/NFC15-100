@@ -182,16 +182,17 @@ export default function SheetPage({ params }: { params: { id: string } }) {
             </nav>
 
             <div className="text-center space-y-4 mt-8 relative z-10">
-              {/* MÉMO RAPIDE - OPTIMISÉ MOBILE CHANTIER */}
+              {/* MÉMO RAPIDE CHANTIER - RÉPONSE IMMÉDIATE */}
               {sheet.immediateAnswer && (
-                <div className="bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 border-4 border-primary/60 rounded-2xl p-5 md:p-6 mb-6 backdrop-blur-md shadow-xl">
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <Zap className="w-6 h-6 md:w-7 md:h-7 text-primary" />
-                    <span className="text-sm md:text-base font-bold uppercase tracking-wider text-primary">
-                      Mémo rapide
+                <div className="bg-gradient-to-r from-yellow-500/20 via-primary/30 to-yellow-500/20 border-4 border-yellow-500/60 rounded-2xl p-4 md:p-5 mb-4 backdrop-blur-md shadow-2xl animate-pulse">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Zap className="w-7 h-7 md:w-9 md:h-9 text-yellow-500" />
+                    <span className="text-base md:text-xl font-black uppercase tracking-widest text-yellow-500">
+                      ⚡ RÉPONSE IMMÉDIATE
                     </span>
+                    <Zap className="w-7 h-7 md:w-9 md:h-9 text-yellow-500" />
                   </div>
-                  <p className="text-lg md:text-2xl font-black text-foreground leading-relaxed text-center">
+                  <p className="text-xl md:text-3xl font-black text-foreground leading-tight text-center drop-shadow-lg">
                     {sheet.immediateAnswer}
                   </p>
                 </div>
@@ -255,51 +256,49 @@ export default function SheetPage({ params }: { params: { id: string } }) {
       )}
 
       {sheet.content.values && sheet.content.values.length > 0 && (
-        <AnimatedSection delay={300}>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold flex items-center gap-2">
-              <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                <Pin className="w-6 h-6" />
-              </span>
-              Valeurs normatives
-            </h2>
+        <AnimatedSection delay={200}>
+          <div className="space-y-3">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <Pin className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+              <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-wide">
+                📊 Valeurs Techniques
+              </h2>
+            </div>
 
-            {useTableForValues ? (
-              <QuickReferenceTable
-                title="Tableau des correspondances"
-                headers={[
-                  'Paramètre / Élément',
-                  'Valeur Requise',
-                  'Contexte / Conditions',
-                ]}
-                rows={sheet.content.values.map((v, i) => ({
-                  cols: [
-                    v.label || v.parameter || '-',
-                    `${v.value} ${v.unit || ''}`.trim(),
-                    [v.context, ...(v.conditions || [])]
-                      .filter(Boolean)
-                      .join(', ') || '-',
-                  ],
-                  highlight:
-                    i === 0 || v.value.toString().includes('obligatoire'),
-                }))}
-              />
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* FORMAT TABLEAU ULTRA-COMPACT - Tout visible d'un coup */}
+            <div className="bg-card/95 backdrop-blur rounded-xl border-3 border-primary/40 overflow-hidden shadow-xl">
+              <div className="divide-y-2 divide-border">
                 {sheet.content.values.map((value, i) => (
-                  <VisualValueCard
+                  <div
                     key={i}
-                    label={value.label || value.parameter || ''}
-                    value={value.value.toString()}
-                    unit={value.unit}
-                    context={value.context}
-                    highlight={
+                    className={`p-3 md:p-4 hover:bg-primary/5 transition-colors ${
                       i === 0 || value.value.toString().includes('obligatoire')
-                    }
-                  />
+                        ? 'bg-yellow-500/10 border-l-4 border-l-yellow-500'
+                        : ''
+                    }`}
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
+                      {/* Paramètre */}
+                      <div className="font-bold text-primary text-sm md:text-base">
+                        🔹 {value.label || value.parameter || '-'}
+                      </div>
+
+                      {/* Valeur - GROS et VISIBLE */}
+                      <div className="text-lg md:text-2xl font-black text-foreground">
+                        {value.value} {value.unit || ''}
+                      </div>
+
+                      {/* Contexte */}
+                      <div className="text-xs md:text-sm text-muted-foreground">
+                        {[value.context, ...(value.conditions || [])]
+                          .filter(Boolean)
+                          .join(' · ') || '-'}
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
-            )}
+            </div>
           </div>
         </AnimatedSection>
       )}

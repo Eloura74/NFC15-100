@@ -308,81 +308,104 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* Quick reference cards - Valeurs ultra-rapides - OPTIMISÉ MOBILE CHANTIER */}
+      {/* MÉMO TECHNIQUE CHANTIER - Format ultra-compact tableau */}
       <AnimatedSection delay={250}>
-        <section className="bg-gradient-to-br from-primary/5 to-cyan-500/5 border-2 border-primary/30 rounded-xl p-4 md:p-6 shadow-lg">
-          <h3 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
-            <Zap className="w-6 h-6 text-primary" />
-            Mémo rapide - Valeurs clés
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Différentiel 30mA
+        <section className="bg-gradient-to-br from-primary/10 to-cyan-500/10 border-4 border-primary/50 rounded-2xl p-3 md:p-5 shadow-2xl">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Zap className="w-7 h-7 md:w-8 md:h-8 text-primary animate-pulse" />
+            <h3 className="text-xl md:text-3xl font-black text-primary uppercase tracking-wide">
+              Mémo Technique Chantier
+            </h3>
+            <Zap className="w-7 h-7 md:w-8 md:h-8 text-primary animate-pulse" />
+          </div>
+
+          {/* Format tableau ultra-compact - TOUT visible sans scroll */}
+          <div className="bg-card/95 backdrop-blur rounded-xl border-2 border-primary/30 overflow-hidden">
+            <div className="divide-y-2 divide-border">
+              {/* Ligne 1 */}
+              <div className="grid grid-cols-2 divide-x-2 divide-border">
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    ⚡ DIFFÉRENTIEL 30mA
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    Min 2 DDR · 1 Type A
+                  </div>
+                </div>
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    🔌 SECTIONS CÂBLES
+                  </div>
+                  <div className="text-xs md:text-base font-bold text-foreground leading-tight">
+                    10A→1.5 | 16A→1.5 | 20A→2.5 | 32A→6mm²
+                  </div>
+                </div>
               </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                Min 2 DDR | 1 type A obligatoire
+
+              {/* Ligne 2 */}
+              <div className="grid grid-cols-2 divide-x-2 divide-border">
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    🌍 TERRE
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    ≤ 100Ω · Mesure oblig.
+                  </div>
+                </div>
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    🍳 PRISES CUISINE
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    Min 6 · 4 au plan 8-25cm
+                  </div>
+                </div>
+              </div>
+
+              {/* Ligne 3 */}
+              <div className="grid grid-cols-2 divide-x-2 divide-border">
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    💡 ÉCLAIRAGE
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    Max 8 pts/circuit 16A
+                  </div>
+                </div>
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    📦 GTL
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    600×250mm · Sol→Plafond
+                  </div>
+                </div>
+              </div>
+
+              {/* Ligne 4 */}
+              <div className="grid grid-cols-2 divide-x-2 divide-border">
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    📉 CHUTE TENSION
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    Éclairage ≤3% · Autres ≤5%
+                  </div>
+                </div>
+                <div className="p-2 md:p-3 hover:bg-primary/5 transition-colors">
+                  <div className="text-xs md:text-sm font-bold text-primary mb-1">
+                    🚿 VOLUMES SALLE EAU
+                  </div>
+                  <div className="text-sm md:text-lg font-black text-foreground">
+                    V0:baignoire · V1:2.25m · V2:60cm
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Sections câbles
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium leading-relaxed">
-                10A→1.5mm²
-                <br className="sm:hidden" /> | 16A→1.5mm²
-                <br className="sm:hidden" /> | 20A→2.5mm²
-                <br className="sm:hidden" /> | 32A→6mm²
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Prise de terre
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                ≤ 100Ω recommandé | Mesure obligatoire
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Prises cuisine
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                Min 6 dont 4 au plan (8-25cm)
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Éclairage
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                Max 8 points/circuit 16A
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                GTL
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                Min 600×250mm | Sol au plafond
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Chute tension
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                Éclairage ≤3% | Autres ≤5%
-              </div>
-            </div>
-            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
-              <div className="font-bold text-primary mb-2 text-base md:text-lg">
-                Volume salle d&apos;eau
-              </div>
-              <div className="text-sm md:text-base text-foreground font-medium">
-                V0: baignoire | V1: 2.25m | V2: 60cm
-              </div>
-            </div>
+          </div>
+
+          <div className="text-center mt-3 text-xs md:text-sm text-muted-foreground font-medium">
+            ⚠️ Valeurs NFC 15-100 · Vérifier conditions spécifiques
           </div>
         </section>
       </AnimatedSection>
