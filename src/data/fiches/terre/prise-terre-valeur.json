@@ -53,7 +53,12 @@
     "specialCases": [
       "Terrain rocheux : valeur plus élevée acceptable si DDR 30mA",
       "Terrain humide : valeur généralement bonne",
-      "Plusieurs bâtiments : interconnexion des terres"
+      "Plusieurs bâtiments : interconnexion des terres",
+      "Exemple 1 : Mesure 45Ω → Excellent, conforme",
+      "Exemple 2 : Mesure 95Ω → Bon, conforme",
+      "Exemple 3 : Mesure 150Ω avec DDR 30mA → Acceptable mais amélioration recommandée",
+      "Exemple 4 : Mesure 250Ω sans DDR 30mA → Non conforme, travaux obligatoires",
+      "Exemple 5 : Impossibilité d'obtenir < 100Ω → Installer DDR 30mA obligatoirement"
     ],
     "commonErrors": [
       "Pas de mesure effectuée",

@@ -23,6 +23,8 @@ import { GTLDiagram } from '@/components/diagrams/gtl-diagram';
 import { EarthDiagram } from '@/components/diagrams/earth-diagram';
 import { DiffDiagram } from '@/components/diagrams/diff-diagram';
 import { ImageWithFallback } from '@/components/ui/image-with-fallback';
+import { FavoriteButton } from '@/components/ui/favorite-button';
+import { SheetViewTracker } from '@/components/sheet/sheet-view-tracker';
 import { notFound } from 'next/navigation';
 import {
   ArrowLeft,
@@ -119,6 +121,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="container py-8 max-w-4xl space-y-8">
+      <SheetViewTracker sheetId={sheet.id} />
       <AnimatedSection>
         <div className="relative rounded-3xl overflow-hidden mb-8 border border-white/10 shadow-2xl glass-card">
           <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
@@ -179,7 +182,23 @@ export default function SheetPage({ params }: { params: { id: string } }) {
             </nav>
 
             <div className="text-center space-y-4 mt-8 relative z-10">
+              {/* MÉMO RAPIDE - OPTIMISÉ MOBILE CHANTIER */}
+              {sheet.immediateAnswer && (
+                <div className="bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 border-4 border-primary/60 rounded-2xl p-5 md:p-6 mb-6 backdrop-blur-md shadow-xl">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <Zap className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+                    <span className="text-sm md:text-base font-bold uppercase tracking-wider text-primary">
+                      Mémo rapide
+                    </span>
+                  </div>
+                  <p className="text-lg md:text-2xl font-black text-foreground leading-relaxed text-center">
+                    {sheet.immediateAnswer}
+                  </p>
+                </div>
+              )}
+
               <div className="flex items-center justify-center gap-2 flex-wrap">
+                <FavoriteButton sheetId={sheet.id} size="sm" showLabel />
                 <Badge
                   variant="outline"
                   className="border-primary/30 text-primary bg-primary/10 backdrop-blur-md"
@@ -219,35 +238,7 @@ export default function SheetPage({ params }: { params: { id: string } }) {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={100}>
-        <Card className="bg-primary/5 border-primary shadow-lg overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-          <CardHeader className="pb-4">
-            <CardTitle className="text-xl flex items-center gap-2 text-primary">
-              <Zap className="w-6 h-6 text-primary" />
-              L&apos;essentiel en 3 secondes
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {immediateAnswers.length > 1 ? (
-              <ul className="space-y-3">
-                {immediateAnswers.map((answer, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-lg font-medium leading-relaxed">
-                      {answer}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-xl font-medium leading-relaxed">
-                {sheet.immediateAnswer}
-              </p>
-            )}
-          </CardContent>
-        </Card>
-      </AnimatedSection>
+      {/* Section "L'essentiel" supprimée - déjà affiché dans le mémo rapide en haut */}
 
       {diagram && (
         <AnimatedSection delay={200}>

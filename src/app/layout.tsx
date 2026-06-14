@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ElecNorme - Référence métier pour électriciens',
+  title: 'ElecNorme - Référence NFC 15-100 pour professionnels',
   description:
-    "Application web de référence pour les professionnels de l'électricité en France. Normes, calculs, checklists et outils pratiques.",
+    'Référence technique NF C 15-100 (édition 2020) pour électriciens : valeurs normatives, tableaux de dimensionnement, calculateurs et checklists conformité. Accès rapide aux règles essentielles des installations électriques en France.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -31,14 +31,15 @@ export const viewport: Viewport = {
   ],
 };
 
-import { Header } from "@/components/layout/header";
+import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Sidebar } from "@/components/layout/sidebar";
-import { AssistantChat } from "@/components/ai/assistant-chat";
+import { Sidebar } from '@/components/layout/sidebar';
+import { AssistantChat } from '@/components/ai/assistant-chat';
 import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { CommandMenu } from '@/components/layout/command-menu';
 import { Providers } from './providers';
 import { Inter } from 'next/font/google';
+import { ThemeInitializer } from '@/components/theme/theme-initializer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
         className={`min-h-screen antialiased flex flex-col overflow-x-hidden ${inter.className}`}
       >
         <Providers>
+          <ThemeInitializer />
           <CommandMenu />
           <Header />
           <div className="flex flex-1">

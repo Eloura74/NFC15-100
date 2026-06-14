@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,8 +14,9 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { getAllDomains } from '@/lib/content/get-domains';
 import { getCurrentVersion } from '@/lib/content/get-versions';
-import { getAllSheets } from '@/lib/content/get-sheets';
+import { getAllSheets, getSheetById } from '@/lib/content/get-sheets';
 import { ImageWithFallback } from '@/components/ui/image-with-fallback';
+import { FavoritesManager } from '@/lib/favorites/favorites-manager';
 import { AnimatedSection } from '@/components/sheet/animated-section';
 import { Disclaimer } from '@/components/ui/disclaimer';
 import {
@@ -39,6 +43,7 @@ import {
   Zap,
   CheckSquare,
   Crosshair,
+  History,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -46,6 +51,20 @@ export default function HomePage() {
   const currentVersion = getCurrentVersion();
   const sheets = getAllSheets();
   const totalSheets = sheets.length;
+  const [recentlyViewed, setRecentlyViewed] = useState<string[]>([]);
+
+  useEffect(() => {
+    loadRecentlyViewed();
+  }, []);
+
+  async function loadRecentlyViewed() {
+    try {
+      const recent = await FavoritesManager.getRecentlyViewed(6);
+      setRecentlyViewed(recent.map((r) => r.id));
+    } catch (error) {
+      console.error('Error loading recently viewed:', error);
+    }
+  }
 
   const getDomainIcon = (id: string, className: string = 'w-6 h-6') => {
     switch (id) {
@@ -68,33 +87,37 @@ export default function HomePage() {
     }
   };
 
-  const popularSheets = sheets.slice(0, 6);
+  // Get most critical sheets for quick access
+  const popularSheets = sheets
+    .filter(
+      (s) => s.criticality === 'critique' || s.criticality === 'danger_immediat'
+    )
+    .slice(0, 6)
+    .concat(
+      sheets.slice(
+        0,
+        6 -
+          Math.min(
+            6,
+            sheets.filter(
+              (s) =>
+                s.criticality === 'critique' ||
+                s.criticality === 'danger_immediat'
+            ).length
+          )
+      )
+    );
 
   return (
     <div className="container py-8 space-y-12 max-w-7xl relative">
-      {/* Animated background particles */}
+      {/* Subtle background gradient - Mode Chantier compatible */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '4s' }}
-        />
-        <div
-          className="absolute top-40 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '6s', animationDelay: '1s' }}
-        />
-        <div
-          className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '5s', animationDelay: '2s' }}
-        />
-        <div
-          className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '7s', animationDelay: '0.5s' }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-cyan-500/5" />
       </div>
       <AnimatedSection>
-        <section className="text-center space-y-3 py-8 relative rounded-xl overflow-hidden border border-primary/20 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80 backdrop-blur-sm animate-[fadeIn_0.6s_ease-out]">
+        <section className="text-center space-y-3 py-8 relative rounded-xl overflow-hidden border border-border bg-card backdrop-blur-sm animate-[fadeIn_0.6s_ease-out]">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-background/50 to-background"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-card via-background/50 to-background"></div>
             {/* Tech grid pattern */}
             <div className="absolute inset-0 opacity-15">
               <div
@@ -125,46 +148,56 @@ export default function HomePage() {
           </div>
           <div className="relative z-10 p-5 space-y-4">
             <div className="inline-block animate-[fadeIn_0.8s_ease-out]">
-              <h1 className="relative text-2xl md:text-4xl font-bold tracking-tight text-white animate-[fadeIn_1s_ease-out]">
+              <h1 className="relative text-2xl md:text-4xl font-bold tracking-tight text-foreground animate-[fadeIn_1s_ease-out]">
                 ElecNorme
               </h1>
+              <p className="text-xs md:text-sm text-primary/80 font-medium mt-1">
+                Référence NFC 15-100 pour professionnels
+              </p>
             </div>
-            <p className="text-sm md:text-base text-slate-400 max-w-xl mx-auto font-normal leading-relaxed text-balance">
-              La référence visuelle de la norme{' '}
-              <span className="text-primary font-medium animate-[pulse_2s_ease-in-out_infinite]">
-                NFC 15-100
-              </span>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed text-balance">
+              Accédez rapidement aux valeurs normatives, tableaux de
+              dimensionnement et règles essentielles de la{' '}
+              <span className="text-primary font-semibold">
+                NF C 15-100 édition 2020
+              </span>{' '}
+              pour vos installations électriques en France.
             </p>
-            {/* Integrated search bar */}
+            {/* Quick access search */}
             <div className="max-w-lg mx-auto animate-[fadeIn_1.2s_ease-out]">
-              <div className="relative flex gap-2 p-1.5 bg-slate-900/60 backdrop-blur-md rounded-xl border border-primary/30 focus-within:border-primary/50 transition-all">
-                <Input
-                  type="search"
-                  placeholder="Rechercher une règle, un circuit, une section..."
-                  className="flex-1 border-0 focus-visible:ring-0 text-sm bg-transparent placeholder:text-muted-foreground/50 h-9 px-3"
-                />
-                <Link href="/recherche" tabIndex={-1}>
+              <Link href="/recherche" className="block">
+                <div className="relative flex gap-2 p-1.5 bg-muted/60 backdrop-blur-md rounded-xl border border-border hover:border-primary/50 transition-all cursor-pointer group">
+                  <div className="flex-1 flex items-center px-3 h-9 text-sm text-muted-foreground/70 group-hover:text-foreground transition-colors">
+                    <Search className="w-4 h-4 mr-2" />
+                    Rechercher une règle, un circuit, une section...
+                  </div>
                   <Button
                     size="sm"
-                    className="px-4 h-9 text-sm font-medium bg-primary hover:bg-primary/90 text-white"
+                    className="px-4 h-9 text-sm font-medium bg-primary hover:bg-primary/90 text-primary-foreground"
                   >
                     Rechercher
                   </Button>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
             <div className="flex items-center justify-center gap-2 flex-wrap">
               <Badge
                 variant="outline"
                 className="text-xs px-2.5 py-0.5 border-primary/30 bg-primary/5 text-primary flex items-center gap-1"
               >
-                <Zap className="w-3 h-3" /> {totalSheets} fiches
+                <Zap className="w-3 h-3" /> {totalSheets} fiches techniques
               </Badge>
               <Badge
                 variant="outline"
                 className="text-xs px-2.5 py-0.5 border-primary/30 bg-primary/5 text-primary flex items-center gap-1"
               >
                 <Folder className="w-3 h-3" /> {domains.length} domaines
+              </Badge>
+              <Badge
+                variant="outline"
+                className="text-xs px-2.5 py-0.5 border-green-500/30 bg-green-500/5 text-green-600 dark:text-green-400 flex items-center gap-1"
+              >
+                <CheckCircle2 className="w-3 h-3" /> Conforme NFC 15-100:2020
               </Badge>
             </div>
           </div>
@@ -175,14 +208,61 @@ export default function HomePage() {
         <Disclaimer className="mb-8" />
       </AnimatedSection>
 
+      {recentlyViewed.length > 0 && (
+        <AnimatedSection delay={150}>
+          <section>
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <History className="w-6 h-6" />
+              </span>{' '}
+              Récemment consultées
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {recentlyViewed.map((sheetId, index) => {
+                const sheet = getSheetById(sheetId);
+                if (!sheet) return null;
+
+                return (
+                  <AnimatedSection key={sheet.id} delay={150 + index * 30}>
+                    <Link href={`/fiches/${sheet.id}`}>
+                      <Card className="hover:bg-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full group border-border/50 hover:border-primary/50 shadow-sm hover:shadow-md overflow-hidden flex flex-col">
+                        <CardHeader className="pb-3 pt-4 flex-1">
+                          <div className="flex items-start justify-between gap-2">
+                            <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                              {sheet.title}
+                            </CardTitle>
+                            <Badge
+                              variant="secondary"
+                              className="text-xs shrink-0"
+                            >
+                              {sheet.domain}
+                            </Badge>
+                          </div>
+                          <CardDescription className="text-sm line-clamp-2 mt-2">
+                            {sheet.summary}
+                          </CardDescription>
+                        </CardHeader>
+                      </Card>
+                    </Link>
+                  </AnimatedSection>
+                );
+              })}
+            </div>
+          </section>
+        </AnimatedSection>
+      )}
+
       <AnimatedSection delay={200}>
         <section>
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="p-2 bg-red-500/10 text-red-500 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.3)]">
               <Flame className="w-6 h-6" />
             </span>{' '}
-            Fiches populaires
+            Valeurs essentielles - Accès rapide
           </h2>
+          <p className="text-sm text-muted-foreground mb-6">
+            Les valeurs normatives les plus consultées sur chantier
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {popularSheets.map((sheet, index) => (
               <AnimatedSection key={sheet.id} delay={200 + index * 30}>
@@ -212,7 +292,9 @@ export default function HomePage() {
                       <div className="flex items-center gap-3 text-xs text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {Math.floor(Math.random() * 5) + 2} min
+                          {sheet.content?.values?.length
+                            ? `${sheet.content.values.length} valeurs`
+                            : '2-3 min'}
                         </span>
                         <span>•</span>
                         <span>Mis à jour récemment</span>
@@ -226,13 +308,92 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
+      {/* Quick reference cards - Valeurs ultra-rapides - OPTIMISÉ MOBILE CHANTIER */}
+      <AnimatedSection delay={250}>
+        <section className="bg-gradient-to-br from-primary/5 to-cyan-500/5 border-2 border-primary/30 rounded-xl p-4 md:p-6 shadow-lg">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
+            <Zap className="w-6 h-6 text-primary" />
+            Mémo rapide - Valeurs clés
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Différentiel 30mA
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                Min 2 DDR | 1 type A obligatoire
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Sections câbles
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium leading-relaxed">
+                10A→1.5mm²
+                <br className="sm:hidden" /> | 16A→1.5mm²
+                <br className="sm:hidden" /> | 20A→2.5mm²
+                <br className="sm:hidden" /> | 32A→6mm²
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Prise de terre
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                ≤ 100Ω recommandé | Mesure obligatoire
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Prises cuisine
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                Min 6 dont 4 au plan (8-25cm)
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Éclairage
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                Max 8 points/circuit 16A
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                GTL
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                Min 600×250mm | Sol au plafond
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Chute tension
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                Éclairage ≤3% | Autres ≤5%
+              </div>
+            </div>
+            <div className="bg-card border-2 border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow active:scale-95 cursor-pointer">
+              <div className="font-bold text-primary mb-2 text-base md:text-lg">
+                Volume salle d&apos;eau
+              </div>
+              <div className="text-sm md:text-base text-foreground font-medium">
+                V0: baignoire | V1: 2.25m | V2: 60cm
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       <AnimatedSection delay={300}>
         <section>
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
             <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]">
               <Folder className="w-6 h-6" />
             </span>{' '}
-            Explorer par domaine
+            Tous les domaines
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {domains.map((domain, index) => (

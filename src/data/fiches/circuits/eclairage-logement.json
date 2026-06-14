@@ -57,9 +57,11 @@
       "Spots LED basse consommation : possibilité de plus de 8 points si puissance totale < 2300W"
     ],
     "specialCases": [
-      "Exemple 1 : Salon avec 6 spots + 1 plafonnier + 1 applique = 8 points → OK sur 1 circuit 16A",
-      "Exemple 2 : Couloir avec 3 spots = 3 points → OK sur circuit 10A ou 16A",
-      "Exemple 3 : Chambre avec 1 plafonnier + 2 appliques = 3 points → OK"
+      "Exemple 1 : Salon avec 6 spots + 1 plafonnier + 1 applique = 8 points → OK sur circuit 16A",
+      "Exemple 2 : Chambre avec 4 spots + 1 lampe chevet = 5 points → OK sur circuit 16A",
+      "Exemple 3 : Couloir avec 10 spots → Diviser sur 2 circuits (5+5 points)",
+      "Exemple 4 : Cuisine avec 8 spots LED basse conso → OK sur circuit 10A si < 2300W total",
+      "Exemple 5 : Bureau avec 1 plafonnier + 2 appliques = 3 points → OK sur circuit 10A ou 16A"
     ],
     "colorCoding": {
       "scotchColor": {

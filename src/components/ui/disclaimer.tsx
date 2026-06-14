@@ -6,7 +6,10 @@ interface DisclaimerProps {
   variant?: 'warning' | 'info' | 'critical';
 }
 
-export function Disclaimer({ className, variant = 'warning' }: DisclaimerProps) {
+export function Disclaimer({
+  className,
+  variant = 'warning',
+}: DisclaimerProps) {
   const variants = {
     warning: {
       bg: 'bg-yellow-500/10',
@@ -42,17 +45,25 @@ export function Disclaimer({ className, variant = 'warning' }: DisclaimerProps) 
       <div className="flex gap-3">
         <AlertTriangle className={cn('w-5 h-5 shrink-0 mt-0.5', style.icon)} />
         <div className={cn('text-sm leading-relaxed', style.text)}>
-          <p className="font-semibold mb-1">Information importante</p>
+          <p className="font-semibold mb-1">⚠️ Avertissement réglementaire</p>
           <p>
-            Ce site présente des informations basées sur la{' '}
+            Ce site présente des informations de référence basées sur la{' '}
             <span className="font-semibold">
-              NFC 15-100 (édition 2020 + amendements 2021-2026)
+              NF C 15-100 (édition novembre 2020 + amendements A1:2021, A2:2022)
             </span>
-            . Les données sont fournies à titre informatif et ne se substituent
-            pas aux textes normatifs officiels. Consultez toujours un professionnel qualifié pour votre projet.
+            . Les contenus sont fournis à titre informatif et pédagogique
+            uniquement.
+          </p>
+          <p className="mt-2">
+            <span className="font-semibold">Important :</span> Ces informations
+            ne se substituent en aucun cas aux textes normatifs officiels AFNOR,
+            ni à l&apos;intervention d&apos;un professionnel qualifié et
+            habilité. Seul un électricien certifié peut garantir la conformité
+            de votre installation.
           </p>
           <p className="mt-2 text-xs opacity-80">
-            Dernière vérification : Juin 2026 • Version du site : 1.0.0
+            Dernière vérification des données : Juin 2026 • Version : 1.0.0 •
+            Conformité : NF C 15-100:2020+A1+A2
           </p>
         </div>
       </div>

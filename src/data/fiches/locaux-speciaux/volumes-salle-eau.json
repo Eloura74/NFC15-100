@@ -71,7 +71,12 @@
       "Volume 0 : Uniquement TBTS 12V",
       "Volume 1 : Chauffe-eau instantané autorisé",
       "Volume 2 : Prises interdites sauf rasoir",
-      "Hors volumes : Installation normale"
+      "Hors volumes : Installation normale",
+      "Exemple 1 : Douche italienne → Volume 0 au sol, Volume 1 jusqu'à 2.25m de hauteur",
+      "Exemple 2 : Baignoire standard → Volume 0 dans la baignoire, Volume 1 au-dessus",
+      "Exemple 3 : Interrupteur éclairage → Obligatoirement hors volume 1 (minimum volume 2)",
+      "Exemple 4 : Sèche-serviette électrique → Autorisé en volume 2 si IPX4 et classe II",
+      "Exemple 5 : Prise rasoir → Seule prise autorisée en volume 2 (transformateur de séparation)"
     ],
     "commonErrors": [
       "Prise de courant en volume 1 ou 2",

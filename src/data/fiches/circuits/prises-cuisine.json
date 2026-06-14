@@ -60,7 +60,11 @@
       "Plaques de cuisson : circuit spécialisé 32A",
       "Four : circuit spécialisé 20A",
       "Lave-vaisselle : circuit spécialisé 20A",
-      "Lave-linge : circuit spécialisé 20A (si en cuisine)"
+      "Lave-linge : circuit spécialisé 20A (si en cuisine)",
+      "Exemple 1 : Cuisine 12m² → 6 prises dont 4 au plan de travail (8-25cm de hauteur)",
+      "Exemple 2 : Kitchenette 3m² → 3 prises minimum",
+      "Exemple 3 : Cuisine avec îlot → Prévoir prises sur l'îlot (comptent dans les 6 minimum)",
+      "Exemple 4 : Plan de travail 3m → 4 prises réparties (éviter regroupement)"
     ],
     "colorCoding": {
       "scotchColor": {

@@ -60,7 +60,11 @@
       "Logement ≤ 35m² : 1 seul DDR autorisé si ≤ 8 circuits",
       "Installation avec IRVE : prévoir DDR type F ou B dédié",
       "Circuits extérieurs : peuvent nécessiter un DDR supplémentaire",
-      "Congélateur : prévoir DDR type F pour éviter déclenchements intempestifs"
+      "Congélateur : prévoir DDR type F pour éviter déclenchements intempestifs",
+      "Exemple 1 : Logement 80m² → Minimum 2 DDR (1 type A + 1 type AC)",
+      "Exemple 2 : Studio 30m² → 1 DDR type A suffit si ≤ 8 circuits",
+      "Exemple 3 : Maison avec IRVE → 3 DDR (1 type A, 1 type AC, 1 type F pour IRVE)",
+      "Exemple 4 : Tableau avec 20 circuits → Minimum 3 DDR (20÷8 = 2.5 arrondi à 3)"
     ],
     "commonErrors": [
       "Installer un seul DDR pour toute l'installation",
