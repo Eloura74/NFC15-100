@@ -44,6 +44,9 @@ import {
   CheckSquare,
   Crosshair,
   History,
+  Image as ImageIcon,
+  Droplets,
+  Activity,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -410,7 +413,122 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      <AnimatedSection delay={300}>
+      {/* SCHÉMAS RAPIDES CHANTIER - Accès visuel direct */}
+      <AnimatedSection delay={280}>
+        <section className="bg-gradient-to-br from-cyan-500/5 to-blue-500/5 border-2 border-cyan-500/30 rounded-2xl p-4 md:p-6">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <ImageIcon className="w-6 h-6 md:w-7 md:h-7 text-cyan-500" />
+            <h3 className="text-xl md:text-2xl font-black text-cyan-500 uppercase tracking-wide">
+              🖼️ Schémas Rapides
+            </h3>
+            <ImageIcon className="w-6 h-6 md:w-7 md:h-7 text-cyan-500" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {/* Volumes salle d'eau */}
+            <Link href="/fiches/volumes-salle-eau" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-red-500/20 to-blue-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Droplets className="w-8 h-8 md:w-10 md:h-10 text-cyan-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Volumes Salle Eau
+                </div>
+              </div>
+            </Link>
+
+            {/* Sections câbles */}
+            <Link href="/fiches/sections-cables-courant" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Cable className="w-8 h-8 md:w-10 md:h-10 text-yellow-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Sections Câbles
+                </div>
+              </div>
+            </Link>
+
+            {/* GTL */}
+            <Link href="/fiches/gaine-technique-logement" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Settings className="w-8 h-8 md:w-10 md:h-10 text-purple-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  GTL / ETEL
+                </div>
+              </div>
+            </Link>
+
+            {/* Différentiels */}
+            <Link href="/fiches/diff-30ma-logement" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Shield className="w-8 h-8 md:w-10 md:h-10 text-green-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Différentiels 30mA
+                </div>
+              </div>
+            </Link>
+
+            {/* Prise de terre */}
+            <Link href="/fiches/prise-terre-valeur" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-green-600/20 to-lime-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Globe className="w-8 h-8 md:w-10 md:h-10 text-green-600" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Prise de Terre
+                </div>
+              </div>
+            </Link>
+
+            {/* Puissance/Calibre */}
+            <Link href="/fiches/puissance-souscrite-calibre" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Power className="w-8 h-8 md:w-10 md:h-10 text-blue-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Puissance/Calibre
+                </div>
+              </div>
+            </Link>
+
+            {/* Circuits */}
+            <Link href="/outils/circuits" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Activity className="w-8 h-8 md:w-10 md:h-10 text-orange-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Schémas Circuits
+                </div>
+              </div>
+            </Link>
+
+            {/* Volumes Image */}
+            <Link href="/outils/volumes-image" className="group">
+              <div className="bg-card border-2 border-border hover:border-cyan-500 rounded-xl p-3 transition-all hover:scale-105 hover:shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg mb-2 flex items-center justify-center">
+                  <Crosshair className="w-8 h-8 md:w-10 md:h-10 text-pink-500" />
+                </div>
+                <div className="text-xs md:text-sm font-bold text-center text-foreground group-hover:text-cyan-500">
+                  Analyse Photo
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-3 text-xs md:text-sm text-muted-foreground">
+            👁️ Accès direct aux schémas et diagrammes techniques
+          </div>
+        </section>
+      </AnimatedSection>
+
+      <AnimatedSection delay={320}>
         <section>
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
             <span className="p-2 bg-primary/10 text-primary rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]">
