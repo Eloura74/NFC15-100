@@ -18,6 +18,7 @@ interface FavoritesDB extends DBSchema {
       viewedAt: number;
       viewCount: number;
     };
+    indexes: { viewedAt: number };
   };
 }
 
@@ -34,7 +35,9 @@ async function getDB() {
           db.createObjectStore('favorites', { keyPath: 'id' });
         }
         if (!db.objectStoreNames.contains('recentlyViewed')) {
-          const store = db.createObjectStore('recentlyViewed', { keyPath: 'id' });
+          const store = db.createObjectStore('recentlyViewed', {
+            keyPath: 'id',
+          });
           store.createIndex('viewedAt', 'viewedAt');
         }
       },
@@ -64,7 +67,9 @@ export class FavoritesManager {
     return !!favorite;
   }
 
-  static async getAllFavorites(): Promise<Array<{ id: string; addedAt: number; notes?: string }>> {
+  static async getAllFavorites(): Promise<
+    Array<{ id: string; addedAt: number; notes?: string }>
+  > {
     const db = await getDB();
     const favorites = await db.getAll('favorites');
     return favorites.sort((a, b) => b.addedAt - a.addedAt);
@@ -91,12 +96,12 @@ export class FavoritesManager {
     });
   }
 
-  static async getRecentlyViewed(limit: number = 10): Promise<Array<{ id: string; viewedAt: number; viewCount: number }>> {
+  static async getRecentlyViewed(
+    limit: number = 10
+  ): Promise<Array<{ id: string; viewedAt: number; viewCount: number }>> {
     const db = await getDB();
     const all = await db.getAll('recentlyViewed');
-    return all
-      .sort((a, b) => b.viewedAt - a.viewedAt)
-      .slice(0, limit);
+    return all.sort((a, b) => b.viewedAt - a.viewedAt).slice(0, limit);
   }
 
   static async clearRecentlyViewed(): Promise<void> {
@@ -115,10 +120,10 @@ export class FavoritesManager {
       if (!Array.isArray(favorites)) {
         throw new Error('Invalid format');
       }
-      
+
       const db = await getDB();
       let count = 0;
-      
+
       for (const fav of favorites) {
         if (fav.id) {
           await db.put('favorites', {
@@ -129,7 +134,7 @@ export class FavoritesManager {
           count++;
         }
       }
-      
+
       return count;
     } catch (error) {
       throw new Error('Failed to import favorites');
