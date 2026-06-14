@@ -136,8 +136,8 @@ export default function FavorisPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Parcourez les fiches et cliquez sur l'étoile ⭐ pour les ajouter
-                à vos favoris.
+                Parcourez les fiches et cliquez sur l&apos;étoile ⭐ pour les
+                ajouter à vos favoris.
               </p>
               <p className="text-sm text-muted-foreground">
                 Les favoris sont sauvegardés localement sur votre appareil et
